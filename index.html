@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AIROVIA – Water From Air Infrastructure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg-dark: #020617;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --accent: #38bdf8;
+            --max-width: 1120px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* IMPORTANT: no scroll, full viewport */
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            /* disables scroll */
+        }
+
+        body {
+            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #020617 0, #000 55%);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Top Bar / Nav */
+
+        .top-bar {
+            position: fixed;
+            inset: 0 0 auto 0;
+            height: 76px;
+            z-index: 20;
+            backdrop-filter: blur(22px);
+            background: linear-gradient(to bottom,
+                    rgba(15, 23, 42, 0.9),
+                    rgba(15, 23, 42, 0.5),
+                    transparent);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+        }
+
+        .nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .brand-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 20% 15%, #f9fafb, #0ea5e9 55%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .brand-text-main {
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+        }
+
+        .brand-text-sub {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        /* Hero */
+
+        .hero {
+            position: relative;
+            flex: 1;
+            /* fill remaining height */
+            padding-top: 110px;
+            /* for header */
+            display: flex;
+            align-items: center;
+            color: #f9fafb;
+            isolation: isolate;
+            background: url("AIROVIA-HEAD-OFFICEimage-NIGHT.png") center center / cover no-repeat;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr);
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.1rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            line-height: 1.1;
+            font-weight: 600;
+            margin-bottom: 0.9rem;
+        }
+
+        .hero-highlight {
+            background: linear-gradient(90deg, #38bdf8, #0ea5e9, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Footer OVER hero */
+
+        footer {
+            position: fixed;
+            /* sit over the hero */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-top: 1px solid rgba(15, 23, 42, 0.9);
+            background: rgba(2, 6, 23, 0.9);
+            /* slightly transparent over image */
+            padding: 1.2rem 0 1.4rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            z-index: 15;
+            /* under nav, over hero */
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 720px) {
+            .footer-inner {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+        }
+
+        /* Make the logo scale properly */
+        .brand-logo {
+            height: 42px;
+            /* perfect height for a 76px navbar */
+            width: auto;
+            /* keeps proportions */
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+            /* optional: subtle glow */
+        }
+
+        /* Align the brand section */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-top: 4px;
+            /* fine-tuning vertical alignment */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header class="top-bar">
+            <div class="container nav">
+                <a href="#top" class="brand">
+                    <img class="brand-logo" src="image.png" alt="AIROVIA Logo">
+                </a>
+            </div>
+        </header>
+
+        <main id="top" class="hero">
+            <div class="container hero-inner">
+                <div>
+                    <h1 class="hero-title">
+                        Utility Scale
+                        <span class="hero-highlight">Water From Air Plants</span>
+                        Infrastructure.
+                    </h1>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container footer-inner">
+                <div>
+                    © <span id="year"></span> AIROVIA. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:sam@airovia.io">Contact Us</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AIROVIA – Water From Air Infrastructure</title>
+    <meta name="description"
+        content="AIROVIA delivers independent on-site water infrastructure for water-stressed regions—modular, scalable, and designed for resilient supply." />
+    <link rel="icon" href="images/icon.webp" type="image/webp" sizes="16x16" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg2: #f6f8fb;
+            --card: #ffffff;
+            --card2: #f9fafc;
+
+            --text: #0b1220;
+            --muted: #4b5565;
+            --muted2: #6b7280;
+
+            --line: rgba(0, 0, 0, .08);
+            --line2: rgba(0, 0, 0, .05);
+
+            --shadow: 0 18px 50px rgba(0, 0, 0, .10);
+
+            --a1: #2f7cf6;
+            --a2: #18c9a8;
+            --a3: #6a5cff;
+
+            --radius: 18px;
+            --radius2: 26px;
+            --max: 1180px;
+
+            --h1: clamp(34px, 4.2vw, 64px);
+            --h2: clamp(26px, 2.7vw, 40px);
+            --h3: clamp(18px, 1.7vw, 22px);
+            --p: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+            color: var(--text);
+            background:
+                radial-gradient(1200px 600px at 15% -10%, rgba(47, 124, 246, .08), transparent 55%),
+                radial-gradient(900px 520px at 90% 0%, rgba(24, 201, 168, .06), transparent 55%),
+                linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        /* Layout */
+        .container {
+            width: min(var(--max), calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 86px 0;
+            position: relative;
+        }
+
+        .section.tight {
+            padding: 62px 0;
+        }
+
+        .section.divider {
+            border-top: 1px solid var(--line2);
+        }
+
+        .section.alt {
+            background: linear-gradient(180deg, rgba(0, 0, 0, .01), rgba(0, 0, 0, .00));
+        }
+
+        /* soft transition between sections */
+        .section::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 70px;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(246, 248, 251, .55));
+            opacity: .6;
+        }
+
+        .section.divider::after {
+            opacity: .35;
+        }
+
+        .grid {
+            display: grid;
+            gap: 22px;
+        }
+
+        .row {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .wrap {
+            flex-wrap: wrap;
+        }
+
+        /* Subtle grain */
+        .grain {
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            opacity: .03;
+            mix-blend-mode: multiply;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+            background-size: 240px 240px;
+            animation: grainMove 12s linear infinite;
+        }
+
+        @keyframes grainMove {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(-120px, 60px, 0);
+            }
+        }
+
+        /* =========================================
+       AIROVIA Visual System — Consistency Layer
+       ========================================= */
+
+        .section-head {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 26px;
+        }
+
+        .section-head.left {
+            text-align: left;
+            margin: 0;
+            max-width: 64ch;
+        }
+
+        .surface {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .surface::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            background:
+                radial-gradient(700px 220px at 18% 0%, rgba(47, 124, 246, .10), transparent 58%),
+                radial-gradient(700px 220px at 88% 12%, rgba(24, 201, 168, .08), transparent 58%);
+            opacity: .6;
+            pointer-events: none;
+        }
+
+        .surface>* {
+            position: relative;
+        }
+
+        .soft {
+            background: rgba(255, 255, 255, .72);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, .55);
+        }
+
+        .badge {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: rgba(0, 0, 0, .02);
+            color: rgba(11, 18, 32, .72);
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .card.clean {
+            padding: 22px;
+            border-radius: var(--radius2);
+        }
+
+        .media-card {
+            border-radius: var(--radius2);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .media-card .img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            display: block;
+            filter: saturate(1.03) contrast(1.02);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 9999;
+
+            background: rgba(255, 255, 255, .85);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .header.is-stuck {
+            background: rgba(255, 255, 255, .95);
+            border-bottom: 1px solid rgba(0, 0, 0, .10);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 220px;
+        }
+
+        .logo {
+            height: 44px;
+            /* 👈 ideal for this logo */
+            width: auto;
+            display: block;
+        }
+
+        .brand-text {
+            line-height: 1.1;
+        }
+
+        .brand-text .name {
+            font-weight: 800;
+            letter-spacing: .08em;
+        }
+
+        .brand-text .tag {
+            font-size: 12px;
+            color: var(--muted2);
+            letter-spacing: .04em;
+            margin-top: 4px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .menu a {
+            font-size: 14px;
+            color: rgba(11, 18, 32, .82);
+            padding: 10px 10px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: .22s ease;
+            white-space: nowrap;
+        }
+
+        .menu a:hover {
+            color: #000;
+            border-color: var(--line);
+            background: rgba(0, 0, 0, .03);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 11px 14px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: #ffffff;
+            color: var(--text);
+            font-weight: 750;
+            font-size: 14px;
+            transition: .22s ease;
+            cursor: pointer;
+            user-select: none;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            border-color: rgba(0, 0, 0, .12);
+            background: rgba(0, 0, 0, .02);
+        }
+
+        .btn.primary {
+            border: none;
+            background: linear-gradient(90deg, var(--a1), var(--a2));
+            color: #ffffff;
+            box-shadow: 0 14px 34px rgba(47, 124, 246, .20);
+        }
+
+        .btn.primary:hover {
+            transform: translateY(-1px);
+            filter: saturate(1.05);
+        }
+
+        .hamburger {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: #ffffff;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
+        }
+
+        .hamburger span {
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            height: 2px;
+            background: rgba(11, 18, 32, .82);
+            border-radius: 2px;
+            transition: .22s ease;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 15px;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 21px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 27px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        /* Mobile menu */
+        .mobile-panel {
+            display: none;
+            border-top: 1px solid var(--line2);
+            padding: 12px 0 16px;
+        }
+
+        .mobile-panel a {
+            display: block;
+            padding: 12px 10px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            color: rgba(11, 18, 32, .86);
+        }
+
+        .mobile-panel a:hover {
+            border-color: var(--line);
+            background: rgba(0, 0, 0, .03);
+            color: #000;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 99px 0 44px;
+            position: relative;
+            border-bottom: 1px solid var(--line2);
+            background:
+                radial-gradient(1200px 520px at 20% 0%, rgba(47, 124, 246, .10), transparent 55%),
+                radial-gradient(900px 520px at 90% 10%, rgba(24, 201, 168, .08), transparent 55%),
+                linear-gradient(180deg, rgba(0, 0, 0, .01), transparent 55%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right,
+                    transparent,
+                    rgba(0, 0, 0, .08),
+                    transparent);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .crumbs {
+            font-size: 13px;
+            color: rgba(11, 18, 32, .60);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .crumbs a {
+            color: rgba(11, 18, 32, .70);
+        }
+
+        .crumbs a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 99px;
+            background: rgba(11, 18, 32, .28);
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: var(--h1);
+            line-height: 1.02;
+            margin: 12px 0 12px;
+            letter-spacing: .01em;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 16px;
+            color: var(--muted);
+            max-width: 62ch;
+            line-height: 1.75;
+        }
+
+        .hero-card {
+            background: #ffffff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .hero-card .media {
+            height: 360px;
+            background:
+                radial-gradient(600px 200px at 30% 20%, rgba(47, 124, 246, .18), transparent 55%),
+                radial-gradient(600px 200px at 80% 30%, rgba(24, 201, 168, .12), transparent 55%),
+                url("airhouse.png") center / cover no-repeat;
+            filter: saturate(1.05) contrast(1.02);
+        }
+
+        .hero-card .meta {
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            bottom: 14px;
+            padding: 12px;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .45);
+            background: rgba(255, 255, 255, .78);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--line);
+            background: rgba(0, 0, 0, .02);
+            padding: 8px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            color: rgba(11, 18, 32, .70);
+            white-space: nowrap;
+        }
+
+        /* Typography blocks */
+        .subtitle {
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(47, 124, 246, .95);
+        }
+
+        h2 {
+            font-size: var(--h2);
+            line-height: 1.1;
+            margin: 12px 0 14px;
+        }
+
+        h3 {
+            font-size: var(--h3);
+            margin: 0 0 8px;
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .muted {
+            color: var(--muted2);
+        }
+
+        /* Cards */
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            padding: 18px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            background:
+                radial-gradient(500px 160px at 20% 0%, rgba(47, 124, 246, .10), transparent 55%),
+                radial-gradient(420px 160px at 90% 20%, rgba(24, 201, 168, .08), transparent 55%);
+            opacity: .55;
+            pointer-events: none;
+        }
+
+        .card>* {
+            position: relative;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .stat {
+            padding: 14px 14px 12px;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: rgba(0, 0, 0, .02);
+        }
+
+        .stat .num {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: .01em;
+        }
+
+        .stat .label {
+            margin-top: 6px;
+            font-size: 13px;
+            color: rgba(11, 18, 32, .70);
+        }
+
+        /* Two-column sections */
+        .overlap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+            align-items: center;
+        }
+
+        /* Two-image overlap block (LOCKED ratio, no conflicting .shot rules) */
+        .stack {
+            position: relative;
+            width: 100%;
+            max-width: 560px;
+            height: 430px;
+            margin-left: auto;
+            transform: translateX(10px);
+        }
+
+        .stack .shot {
+            position: absolute;
+            border-radius: var(--radius2);
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 24px 70px rgba(15, 23, 42, .16);
+            outline: 6px solid #fff;
+            border: 1px solid rgba(0, 0, 0, .06);
+            width: 440px;
+            aspect-ratio: 16 / 11;
+        }
+
+        .stack .shot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 58%;
+            display: block;
+        }
+
+        .stack .shot.one {
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transform: scale(.92);
+            opacity: .88;
+            filter: saturate(.98) contrast(.98);
+        }
+
+        .stack .shot.two {
+            right: -80px;
+            bottom: -12px;
+            z-index: 2;
+        }
+
+        /* Check list */
+        .check {
+            margin: 18px 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .check li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: rgba(11, 18, 32, .84);
+            line-height: 1.55;
+        }
+
+        .check li:before {
+            content: "";
+            width: 18px;
+            height: 18px;
+            border-radius: 6px;
+            margin-top: 2px;
+            background:
+                radial-gradient(circle at 30% 30%, rgba(47, 124, 246, .55), transparent 60%),
+                radial-gradient(circle at 70% 30%, rgba(24, 201, 168, .45), transparent 60%),
+                rgba(0, 0, 0, .02);
+            border: 1px solid var(--line);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+            flex: 0 0 auto;
+        }
+
+        /* Solutions cards */
+        .solutions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .service {
+            border-radius: var(--radius2);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: #ffffff;
+            box-shadow: var(--shadow);
+            transition: .22s ease;
+            position: relative;
+        }
+
+        .service:hover {
+            transform: translateY(-3px);
+            border-color: rgba(0, 0, 0, .12);
+        }
+
+        .service .img {
+            height: 190px;
+            border-bottom: 1px solid var(--line2);
+            background: center/cover no-repeat;
+            filter: saturate(1.05) contrast(1.02);
+        }
+
+        .service .body {
+            padding: 16px 16px 18px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .00), rgba(0, 0, 0, .02));
+        }
+
+        .service h4 {
+            margin: 0 0 6px;
+            font-size: 18px;
+            letter-spacing: .01em;
+        }
+
+        .service p {
+            margin: 0;
+            color: rgba(11, 18, 32, .70);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .service .arrow {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .85);
+            display: grid;
+            place-items: center;
+            transition: .22s ease;
+            box-shadow: 0 12px 26px rgba(0, 0, 0, .06);
+        }
+
+        .service:hover .arrow {
+            background: rgba(47, 124, 246, .10);
+            border-color: rgba(47, 124, 246, .18);
+            transform: translateY(-1px);
+        }
+
+        /* Why AIROVIA */
+        .why {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+            align-items: center;
+        }
+
+        .why-media {
+            position: relative;
+            border-radius: var(--radius2);
+            overflow: hidden;
+            min-height: 420px;
+        }
+
+        .why-media .big {
+            position: absolute;
+            inset: 0;
+            background: url("why-airovia.png") center/cover no-repeat;
+            filter: saturate(1.05) contrast(1.02);
+            transform: scale(1.02);
+        }
+
+        .why-media .big::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(0, 0, 0, .18));
+        }
+
+        .why-media .small {
+            position: absolute;
+            right: 18px;
+            bottom: 18px;
+            width: 48%;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .45);
+            background: url("images/misc/s1.webp") center/cover no-repeat;
+            aspect-ratio: 4/3;
+            box-shadow: 0 16px 50px rgba(0, 0, 0, .18);
+        }
+
+        .why-badge {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            width: 200px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .55);
+            background: rgba(255, 255, 255, .80);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 14px 14px 12px;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, .18);
+        }
+
+        .why-badge .bigtext {
+            font-weight: 950;
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        .why-badge .smalltext {
+            margin-top: 8px;
+            color: rgba(11, 18, 32, .70);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .feature {
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: rgba(0, 0, 0, .02);
+            padding: 14px;
+        }
+
+        .feature .k {
+            font-weight: 900;
+            margin: 0 0 6px;
+        }
+
+        .feature .d {
+            margin: 0;
+            color: rgba(11, 18, 32, .70);
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        /* Slider */
+        .slider {
+            position: relative;
+            border-radius: var(--radius2);
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform .45s ease;
+            will-change: transform;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+            aspect-ratio: 16/7;
+            background: center/cover no-repeat;
+            filter: saturate(1.05) contrast(1.02);
+        }
+
+        .slide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(0, 0, 0, .55)),
+                radial-gradient(900px 360px at 30% 0%, rgba(47, 124, 246, .18), transparent 60%);
+        }
+
+        .slide-info {
+            position: absolute;
+            left: 22px;
+            right: 22px;
+            bottom: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 14px;
+            z-index: 2;
+            color: #ffffff;
+        }
+
+        .slide-info h3 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .slide-info p {
+            margin: 6px 0 0;
+            color: rgba(255, 255, 255, .85);
+            font-size: 14px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .iconbtn {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .85);
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: .22s ease;
+            box-shadow: 0 12px 26px rgba(0, 0, 0, .12);
+        }
+
+        .iconbtn:hover {
+            background: rgba(255, 255, 255, .92);
+            transform: translateY(-1px);
+        }
+
+        .arrowico {
+            width: 14px;
+            height: 14px;
+            border-right: 2px solid rgba(11, 18, 32, .75);
+            border-bottom: 2px solid rgba(11, 18, 32, .75);
+            transform: rotate(-45deg);
+        }
+
+        .prev .arrowico {
+            transform: rotate(135deg);
+        }
+
+        .dots {
+            position: absolute;
+            left: 22px;
+            top: 16px;
+            display: flex;
+            gap: 8px;
+            z-index: 3;
+        }
+
+        .dots button {
+            width: 10px;
+            height: 10px;
+            border-radius: 99px;
+            border: 1px solid rgba(255, 255, 255, .35);
+            background: rgba(255, 255, 255, .55);
+            cursor: pointer;
+            padding: 0;
+            transition: .2s ease;
+        }
+
+        .dots button[aria-current="true"] {
+            width: 26px;
+            background: linear-gradient(90deg, rgba(47, 124, 246, .95), rgba(24, 201, 168, .85));
+            border-color: rgba(255, 255, 255, .55);
+        }
+
+        /* Testimonial split */
+        .split {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 0;
+            border-radius: var(--radius2);
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .split-media {
+            min-height: 420px;
+            background: url("images/misc/s2.webp") center/cover no-repeat;
+            filter: saturate(1.05) contrast(1.02);
+            position: relative;
+        }
+
+        .split-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, .08), rgba(0, 0, 0, .35));
+        }
+
+        .split-body {
+            padding: 26px;
+            background:
+                radial-gradient(800px 320px at 25% 15%, rgba(47, 124, 246, .08), transparent 55%),
+                radial-gradient(700px 320px at 90% 40%, rgba(24, 201, 168, .06), transparent 55%),
+                #ffffff;
+        }
+
+        .quote {
+            font-size: 20px;
+            line-height: 1.4;
+            margin: 0;
+            color: rgba(11, 18, 32, .92);
+            transition: opacity .2s ease;
+        }
+
+        .who {
+            margin-top: 14px;
+            color: rgba(11, 18, 32, .70);
+            font-size: 14px;
+            transition: opacity .2s ease;
+        }
+
+        .quote-nav {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        /* FAQ */
+        .faq {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .accordion {
+            display: grid;
+            gap: 10px;
+        }
+
+        .qa {
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, .08);
+        }
+
+        details.qa summary {
+            list-style: none;
+        }
+
+        details.qa summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .q {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            color: rgba(11, 18, 32, .92);
+            text-align: left;
+            padding: 16px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            gap: 12px;
+        }
+
+        .q span {
+            font-weight: 900;
+        }
+
+        .chev {
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid rgba(11, 18, 32, .55);
+            border-bottom: 2px solid rgba(11, 18, 32, .55);
+            transform: rotate(45deg);
+            transition: .2s ease;
+            flex: 0 0 auto;
+        }
+
+        .qa[open] .chev {
+            transform: rotate(-135deg);
+        }
+
+        .a {
+            padding: 0 18px 18px;
+            color: rgba(11, 18, 32, .70);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* Contact */
+        .contact {
+            display: grid;
+            grid-template-columns: .95fr 1.05fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .contact-card {
+            padding: 22px;
+        }
+
+        .contact-list {
+            margin: 14px 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: grid;
+            grid-template-columns: 46px 1fr;
+            gap: 12px;
+            align-items: center;
+            padding: 12px;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: rgba(0, 0, 0, .02);
+        }
+
+        .contact-ico {
+            width: 46px;
+            height: 46px;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .85);
+            display: grid;
+            place-items: center;
+            box-shadow: 0 12px 26px rgba(0, 0, 0, .06);
+            font-weight: 900;
+            color: rgba(11, 18, 32, .78);
+        }
+
+        .contact-item .k {
+            margin: 0;
+            font-weight: 900;
+        }
+
+        .contact-item .v {
+            margin: 3px 0 0;
+            color: rgba(11, 18, 32, .70);
+            line-height: 1.55;
+            font-size: 14px;
+        }
+
+        .form {
+            display: grid;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 13px;
+            color: rgba(11, 18, 32, .72);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .input,
+        .textarea,
+        .select {
+            width: 100%;
+            padding: 12px 12px;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .92);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, .04);
+            outline: none;
+            transition: .18s ease;
+            color: rgba(11, 18, 32, .92);
+        }
+
+        .textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .input:focus,
+        .textarea:focus,
+        .select:focus {
+            border-color: rgba(47, 124, 246, .35);
+            box-shadow: 0 14px 30px rgba(47, 124, 246, .10);
+        }
+
+        .form-note {
+            margin: 0;
+            font-size: 13px;
+            color: rgba(11, 18, 32, .65);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 980px) {
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .field-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            padding: 56px 0 0;
+            background: #f6f8fb;
+            border-top: 1px solid var(--line);
+            position: relative;
+        }
+
+        .subfooter {
+            border-top: 1px solid var(--line);
+            padding: 14px 0;
+            background: #ffffff;
+            color: rgba(11, 18, 32, .68);
+            font-size: 13px;
+        }
+
+        .subfooter-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .mini-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .mini-links a {
+            color: rgba(11, 18, 32, .68);
+        }
+
+        .mini-links a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* Back to top */
+        .topbtn {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, .85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: .22s ease;
+            z-index: 60;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, .12);
+        }
+
+        .topbtn.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .topbtn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(47, 124, 246, .22);
+            background: rgba(47, 124, 246, .10);
+        }
+
+        .topbtn .up {
+            width: 12px;
+            height: 12px;
+            border-left: 2px solid rgba(11, 18, 32, .75);
+            border-top: 2px solid rgba(11, 18, 32, .75);
+            transform: rotate(45deg);
+            margin-top: 4px;
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .stack {
+                height: 520px;
+                transform: none;
+                margin: 0 auto;
+            }
+
+            .stack .shot {
+                width: min(520px, 92vw);
+                outline: 5px solid #fff;
+            }
+
+            .stack .shot.two {
+                bottom: 0;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: inline-grid;
+                place-items: center;
+            }
+
+            .mobile-panel {
+                display: none;
+            }
+
+            .mobile-panel.open {
+                display: block;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .overlap {
+                grid-template-columns: 1fr;
+            }
+
+            .solutions {
+                grid-template-columns: 1fr;
+            }
+
+            .why {
+                grid-template-columns: 1fr;
+            }
+
+            .faq {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .stack {
+                height: 560px;
+            }
+
+            .stack .shot.one,
+            .stack .shot.two {
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+
+            .stack .shot.one {
+                top: 0;
+            }
+
+            .stack .shot.two {
+                bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grain"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="siteHeader">
+        <div class="container">
+            <nav class="nav" aria-label="Primary navigation">
+                <a class="brand" href="index.html">
+                    <div class="brand-text">
+                        <img src="logo.png" alt="AIROVIA" class="logo" />
+                    </div>
+                </a>
+
+                <div class="menu" role="navigation">
+                    <a href="#about">About</a>
+                    <a href="#solutions">Solutions</a>
+                    <a href="#Capabilities">Capabilities</a>
+                    <a href="#whyairovia">Why Airovia</a>
+                    <a href="#usecases">Use Cases</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="nav-cta">
+                    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                        aria-controls="mobilePanel">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="mobile-panel" id="mobilePanel">
+                <a href="#about">About</a>
+                <a href="#solutions">Solutions</a>
+                <a href="#Capabilities">Capabilities</a>
+                <a href="#whyairovia">Why Airovia</a>
+                <a href="#usecases">Use Cases</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="crumbs reveal"></div>
+
+                    <h1 class="reveal" style="transition-delay:.05s;">
+                        Utility Scale Water From Air Infrastructure.
+                    </h1>
+
+                    <p class="reveal" style="transition-delay:.10s;">
+                        AIROVIA enables independent on-site water supply by extracting water from the air at the point
+                        of need, reducing
+                        reliance on long pipelines, stressed sources, and fragile supply chains.
+                    </p>
+
+                    <div class="row wrap" style="margin-top:18px;">
+                        <a class="btn primary reveal" style="transition-delay:.15s;" href="#contact">Talk
+                            to Us →</a>
+                        <a class="btn reveal" style="transition-delay:.20s;" href="#solutions">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="hero-card reveal" style="transition-delay:.12s;">
+                    <div class="media" role="img" aria-label="AIROVIA infrastructure visual"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section tight" id="about">
+        <div class="container">
+            <div class="overlap">
+                <div class="card clean reveal">
+                    <div class="subtitle">About Us</div>
+                    <h2>Resilience, independence, and scalable deployment.</h2>
+                    <p class="lead">
+                        AIROVIA is a next-generation water infrastructure platform designed for water-stressed regions,
+                        enabling on-site water
+                        production from atmospheric air. Its modular design supports scalable deployment for
+                        governments, industry, and remote
+                        communities.
+                    </p>
+
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="num" data-count="24">0</div>
+                            <div class="label">Operations Ready (24/7)</div>
+                        </div>
+                        <div class="stat">
+                            <div class="num" data-count="3">0</div>
+                            <div class="label">Deployment Scenarios</div>
+                        </div>
+                        <div class="stat">
+                            <div class="num" data-count="12">0</div>
+                            <div class="label">Telemetry Domains</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack reveal" aria-label="AIROVIA deployment imagery">
+                    <div class="shot one"><img src="about01.png" alt="AIROVIA deployment"></div>
+                    <div class="shot two"><img src="about02.png" alt="AIROVIA modular infrastructure"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="section divider" id="Capabilities">
+        <div class="container">
+            <div class="overlap">
+                <div class="reveal section-head left">
+                    <div class="subtitle">Resilient Water Infrastructure</div>
+                    <h2>Centralized water systems are inherently vulnerable to disruption.</h2>
+                    <p class="lead">
+                        AIROVIA is designed to generate water from atmospheric air directly on-site, enabling
+                        operational continuity for cities,
+                        industrial facilities, remote sites, and communities when conventional supply chains are
+                        constrained.
+                    </p>
+                    <ul class="check">
+                        <li>Reduced dependence on long pipelines, trucking, and centralized distribution.</li>
+                        <li>Step-by-step scaling through modular system expansion.</li>
+                        <li>Telemetry-ready architecture for dashboards, alarms, analytics, and reporting.</li>
+                        <li>Designed for grid-connected, hybrid, or renewable power strategies.</li>
+                    </ul>
+
+                    <div style="margin-top:16px;">
+                        <a class="btn primary" href="#contact">Contact Us →</a>
+                    </div>
+                </div>
+
+                <div class="card clean reveal">
+                    <h3 style="margin-bottom:10px;">Operational infrastructure mindset</h3>
+                    <p class="lead">
+                        Designed for oversight, continuity, and phased growth—allowing deployments to begin at priority
+                        sites and expand output
+                        systematically as demand increases.
+                    </p>
+
+                    <div class="row wrap soft" style="margin-top:12px; padding:10px; border-radius:16px;">
+                        <span class="pill">On-site generation</span>
+                        <span class="pill">Modular scaling</span>
+                        <span class="pill">Remote monitoring</span>
+                        <span class="pill">Quality assurance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section class="section alt" id="solutions">
+        <div class="container">
+            <div class="section-head reveal">
+                <div class="subtitle">AIROVIA Solutions</div>
+                <h2>Reliable, scalable, and deployment ready.</h2>
+                <p class="lead">
+                    AIROVIA supports resilient water access for governments, industry, and remote communities—built for
+                    continuity, oversight, and phased scale.
+                </p>
+            </div>
+
+            <div class="solutions">
+                <a class="service reveal" href="#" style="transition-delay:.05s;">
+                    <div class="arrow" aria-hidden="true">↗</div>
+                    <div class="img" style="background-image:url('government.png');"></div>
+                    <div class="body">
+                        <h4>Government &amp; Utilities</h4>
+                        <p>Decentralized supply nodes to strengthen resilience and continuity planning.</p>
+                    </div>
+                </a>
+
+                <a class="service reveal" href="#" style="transition-delay:.10s;">
+                    <div class="arrow" aria-hidden="true">↗</div>
+                    <div class="img" style="background-image:url('industry.png');"></div>
+                    <div class="body">
+                        <h4>Industry &amp; Logistics</h4>
+                        <p>On-site water support for operations monitoring, reporting, and continuity focus.</p>
+                    </div>
+                </a>
+
+                <a class="service reveal" href="#" style="transition-delay:.15s;">
+                    <div class="arrow" aria-hidden="true">↗</div>
+                    <div class="img" style="background-image:url('communities.png');"></div>
+                    <div class="body">
+                        <h4>Remote Communities</h4>
+                        <p>Deployable infrastructure where supply chains are unreliable or constrained.</p>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- WHY AIROVIA -->
+    <section class="section divider" id="whyairovia">
+        <div class="container">
+            <div class="why">
+                <div class="why-media surface reveal" aria-label="AIROVIA operations imagery">
+                    <div class="big"></div>
+                    <div class="why-badge">
+                        <div class="bigtext">24/7</div>
+                        <div class="smalltext">Monitoring &amp; operational visibility</div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <div class="subtitle">Designed for Deployment</div>
+                    <h2>Why AIROVIA?</h2>
+                    <p class="lead">
+                        Built as infrastructure: deploy in phases, monitor in real time, and maintain continuity when
+                        conventional supply is constrained.
+                    </p>
+
+                    <div class="feature-grid">
+                        <div class="feature">
+                            <p class="k">Infrastructure Mindset</p>
+                            <p class="d">Built for continuity planning, not short-term workarounds.</p>
+                        </div>
+                        <div class="feature">
+                            <p class="k">Modular Scaling</p>
+                            <p class="d">Start with priority sites and expand output as demand grows.</p>
+                        </div>
+                        <div class="feature">
+                            <p class="k">Telemetry-Ready</p>
+                            <p class="d">Dashboards, alarms, analytics, and reporting workflows.</p>
+                        </div>
+                        <div class="feature">
+                            <p class="k">Water Quality Assurance</p>
+                            <p class="d">Multi-stage treatment with operational oversight for stable output.</p>
+                        </div>
+                        <div class="feature">
+                            <p class="k">Harsh Climate Design</p>
+                            <p class="d">Engineered for hot, humid, and remote operational environments.</p>
+                        </div>
+                        <div class="feature">
+                            <p class="k">Deployment Support</p>
+                            <p class="d">Site scoping, phased rollout planning, performance baselining.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USE CASES SLIDER -->
+    <section class="section" id="usecases">
+        <div class="container">
+            <div class="section-head reveal" style="margin-bottom:18px;">
+                <div class="subtitle">Deployments &amp; Use Cases</div>
+                <h2>Infrastructure that adapts to context.</h2>
+                <p class="lead">
+                    From city resilience to remote sites and industrial continuity—AIROVIA is designed for scalable
+                    deployment with operational visibility.
+                </p>
+            </div>
+
+            <div class="slider surface reveal" id="slider">
+                <div class="dots" id="dots" aria-label="Slide navigation"></div>
+                <div class="slider-nav">
+                    <button class="iconbtn prev" id="prevBtn" aria-label="Previous slide"><span
+                            class="arrowico"></span></button>
+                    <button class="iconbtn next" id="nextBtn" aria-label="Next slide"><span
+                            class="arrowico"></span></button>
+                </div>
+
+                <div class="slides" id="slides">
+                    <div class="slide" style="background-image:url('CityResilience.png');">
+                        <div class="slide-info">
+                            <div>
+                                <h3>City Resilience</h3>
+                                <p>Decentralized supply nodes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image:url('IndustrialContinuity.png');">
+                        <div class="slide-info">
+                            <div>
+                                <h3>Industrial Continuity</h3>
+                                <p>Operational assurance &amp; reporting</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image:url('RemoteCommunities.png');">
+                        <div class="slide-info">
+                            <div>
+                                <h3>Remote Communities</h3>
+                                <p>Deployable water access</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image:url('EmergencyResponse.png');">
+                        <div class="slide-info">
+                            <div>
+                                <h3>Emergency Response</h3>
+                                <p>Rapid, scalable infrastructure</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image:url('FieldOperations.png');">
+                        <div class="slide-info">
+                            <div>
+                                <h3>Field Operations</h3>
+                                <p>Operational independence</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide" style="background-image:url('HotelsResorts.png');">
+                        <div class="slide-info">
+                            <div>
+                                <h3>Hotels &amp; Resorts</h3>
+                                <p>Resilience &amp; supply assurance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <div class="faq">
+                <div class="reveal">
+                    <div class="subtitle">Everything You Need to Know</div>
+                    <h2>Frequently Asked Questions</h2>
+                    <p class="lead">Clear, direct answers for first conversations and stakeholder review.</p>
+                </div>
+
+                <div class="accordion reveal">
+                    <details class="qa" open>
+                        <summary class="q">
+                            <span>What is AIROVIA?</span>
+                            <i class="chev" aria-hidden="true"></i>
+                        </summary>
+                        <div class="a">
+                            AIROVIA is an independent on-site water infrastructure platform designed for water-stressed
+                            regions. It enables resilient water access through modular deployment and operational
+                            visibility.
+                        </div>
+                    </details>
+
+                    <details class="qa">
+                        <summary class="q">
+                            <span>What problems does AIROVIA solve?</span>
+                            <i class="chev" aria-hidden="true"></i>
+                        </summary>
+                        <div class="a">
+                            AIROVIA reduces dependence on long pipelines, trucking, and centralized systems by producing
+                            water on-site. This supports continuity when conventional supply chains are constrained or
+                            disrupted.
+                        </div>
+                    </details>
+
+                    <details class="qa">
+                        <summary class="q">
+                            <span>Where can AIROVIA be deployed?</span>
+                            <i class="chev" aria-hidden="true"></i>
+                        </summary>
+                        <div class="a">
+                            AIROVIA is designed for governments, utilities, industry, and remote sites—anywhere water
+                            resilience and independence are priorities. Output and configuration depend on climate and
+                            site requirements.
+                        </div>
+                    </details>
+
+                    <details class="qa">
+                        <summary class="q">
+                            <span>How is water quality managed?</span>
+                            <i class="chev" aria-hidden="true"></i>
+                        </summary>
+                        <div class="a">
+                            Water quality is supported through multi-stage treatment and operational monitoring. Final
+                            treatment configuration can be aligned to intended use and applicable local standards.
+                        </div>
+                    </details>
+
+                    <details class="qa">
+                        <summary class="q">
+                            <span>Can AIROVIA run with renewable power?</span>
+                            <i class="chev" aria-hidden="true"></i>
+                        </summary>
+                        <div class="a">
+                            AIROVIA can be planned for grid, hybrid, or renewable power strategies depending on target
+                            output, site climate profile, and available energy resources.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section divider" id="contact">
+        <div class="container">
+            <div class="contact">
+                <!-- Left: Contact details -->
+                <div class="surface card clean contact-card reveal">
+                    <div class="subtitle">Contact</div>
+                    <h2>Talk to AIROVIA</h2>
+                    <p class="lead">
+                        Share your location, use case, and target output. We will respond with next steps and required
+                        inputs for scoping.
+                    </p>
+
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <div class="contact-ico">✉</div>
+                            <div>
+                                <p class="k">Email</p>
+                                <p class="v"><a href="mailto:info@airovia.io">info@airovia.io</a></p>
+                            </div>
+                        </li>
+
+                        <li class="contact-item">
+                            <div class="contact-ico">🏛</div>
+                            <div>
+                                <p class="k">Headquarters</p>
+                                <p class="v">Tallinn, Estonia • Dubai, UAE</p>
+                            </div>
+                        </li>
+
+                        <li class="contact-item">
+                            <div class="contact-ico">🌍</div>
+                            <div>
+                                <p class="k">Operations</p>
+                                <p class="v">Worldwide deployment capability, from single sites to national-scale
+                                    programs.</p>
+                            </div>
+                        </li>
+
+                        <div class="row wrap" style="margin-top:14px;">
+                            <a class="btn primary" href="https://www.linkedin.com/company/airovia"
+                                target="_blank">Follow us on LinkedIn</a>
+                        </div>
+                </div>
+
+                <!-- Right: Contact form -->
+                <div class="surface card clean contact-card reveal" style="transition-delay:.05s;">
+                    <div class="subtitle">Request a discussion</div>
+                    <h3 style="margin-top:10px;">Send your project details</h3>
+                    <iframe name="contactTarget" id="contactTarget" style="display:none;"></iframe>
+
+                    <form class="form" id="contactForm"
+                        action="https://script.google.com/macros/s/AKfycbzuXwmEwNhq4EP7z59I5BuzWw0aJNALg1zPiLFRL3-szA_07QrAyaDviQts174I6rc/exec"
+                        method="POST" target="contactTarget">
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="name">Full name</label>
+                                <input class="input" id="name" name="name" type="text" placeholder="Your name" required>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input class="input" id="email" name="email" type="email" placeholder="name@company.com"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="org">Organization</label>
+                                <input class="input" id="org" name="org" type="text"
+                                    placeholder="Company / Government / NGO">
+                            </div>
+                            <div class="field">
+                                <label for="country">Country / City</label>
+                                <input class="input" id="country" name="country" type="text"
+                                    placeholder="Project location (country, city)">
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="usecase">Use case</label>
+                                <select class="select" id="usecase" name="usecase">
+                                    <option value="Government & Utilities">Government & Utilities</option>
+                                    <option value="Industry & Logistics">Industry & Logistics</option>
+                                    <option value="Remote Communities">Remote Communities</option>
+                                    <option value="Emergency Response">Emergency Response</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="output">Target output (optional)</label>
+                                <input class="input" id="output" name="output" type="text"
+                                    placeholder="e.g., 250,000 L/day">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea class="textarea" id="message" name="message"
+                                placeholder="Tell us the context, timeline, and constraints (power, space, water quality requirements)."
+                                required></textarea>
+                        </div>
+
+                        <div class="row wrap" style="justify-content: space-between; gap: 12px;">
+                            <p class="form-note">By submitting, you agree we may contact you about your inquiry.</p>
+                            <button class="btn primary" type="submit">Send Message →</button>
+                        </div>
+
+                        <!-- Status line (recommended placement: under the buttons) -->
+                        <p id="formStatus" style="margin-top:10px;color:var(--muted2);font-size:14px;"></p>
+                    </form>
+
+                    <!-- Hidden iframe target (required for silent submission without fetch/CORS issues) -->
+                    <iframe name="contactTarget" style="display:none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="subfooter">
+            <div class="container">
+                <div class="subfooter-row">
+                    <div>© 2026 — AIROVIA. All Rights Reserved.</div>
+                    <ul class="mini-links">
+                        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="topbtn" id="topbtn" aria-label="Back to top"><span class="up" aria-hidden="true"></span></button>
+
+    <script>
+        /* =========================================================
+           AIROVIA — Single-file JS
+           - Sticky header state
+           - Mobile menu
+           - Reveal on scroll
+           - Count-up stats
+           - Slider (use cases)
+           - Testimonial rotator
+           - Back to top
+           - FAQ accordion single-open
+           ========================================================= */
+
+        (function () {
+            const header = document.getElementById('siteHeader');
+            const topbtn = document.getElementById('topbtn');
+
+            const onScroll = () => {
+                const y = window.scrollY || 0;
+                if (y > 18) header.classList.add('is-stuck');
+                else header.classList.remove('is-stuck');
+
+                if (y > 600) topbtn.classList.add('show');
+                else topbtn.classList.remove('show');
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            topbtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        })();
+
+        (function () {
+            const hamburger = document.getElementById('hamburger');
+            const panel = document.getElementById('mobilePanel');
+            if (!hamburger || !panel) return;
+
+            const close = () => {
+                hamburger.classList.remove('active');
+                panel.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            };
+
+            hamburger.addEventListener('click', () => {
+                const open = !panel.classList.contains('open');
+                hamburger.classList.toggle('active', open);
+                panel.classList.toggle('open', open);
+                hamburger.setAttribute('aria-expanded', String(open));
+            });
+
+            panel.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+            window.addEventListener('resize', () => { if (window.innerWidth > 980) close(); });
+        })();
+
+        (function () {
+            const els = Array.from(document.querySelectorAll('.reveal'));
+            if (!els.length) return;
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('show');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.14 });
+            els.forEach(el => io.observe(el));
+        })();
+
+        (function () {
+            const nums = Array.from(document.querySelectorAll('[data-count]'));
+            if (!nums.length) return;
+
+            const animate = (el) => {
+                const target = parseFloat(el.getAttribute('data-count') || '0');
+                const dur = 900;
+                const t0 = performance.now();
+
+                const step = (t) => {
+                    const p = Math.min(1, (t - t0) / dur);
+                    const v = Math.round(target * (1 - Math.pow(1 - p, 3)));
+                    el.textContent = v;
+                    if (p < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+            };
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        animate(e.target);
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.35 });
+
+            nums.forEach(n => io.observe(n));
+        })();
+
+        (function () {
+            const slides = document.getElementById('slides');
+            const prev = document.getElementById('prevBtn');
+            const next = document.getElementById('nextBtn');
+            const dotsWrap = document.getElementById('dots');
+
+            if (!slides || !prev || !next || !dotsWrap) return;
+
+            const total = slides.children.length;
+            let idx = 0;
+            let timer = null;
+
+            const makeDots = () => {
+                dotsWrap.innerHTML = '';
+                for (let i = 0; i < total; i++) {
+                    const b = document.createElement('button');
+                    b.type = 'button';
+                    b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                    b.addEventListener('click', () => go(i, true));
+                    dotsWrap.appendChild(b);
+                }
+            };
+
+            const renderDots = () => {
+                Array.from(dotsWrap.children).forEach((b, i) => {
+                    b.setAttribute('aria-current', i === idx ? 'true' : 'false');
+                });
+            };
+
+            const go = (to, user = false) => {
+                idx = (to + total) % total;
+                slides.style.transform = `translateX(${-idx * 100}%)`;
+                renderDots();
+                if (user) restart();
+            };
+
+            const restart = () => {
+                if (timer) clearInterval(timer);
+                timer = setInterval(() => go(idx + 1), 5200);
+            };
+
+            makeDots();
+            go(0);
+            restart();
+
+            prev.addEventListener('click', () => go(idx - 1, true));
+            next.addEventListener('click', () => go(idx + 1, true));
+
+            let x0 = null;
+            slides.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+            slides.addEventListener('touchend', (e) => {
+                if (x0 == null) return;
+                const x1 = e.changedTouches[0].clientX;
+                const dx = x1 - x0;
+                if (Math.abs(dx) > 40) {
+                    if (dx > 0) go(idx - 1, true);
+                    else go(idx + 1, true);
+                }
+                x0 = null;
+            }, { passive: true });
+
+            const slider = document.getElementById('slider');
+            slider.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
+            slider.addEventListener('mouseleave', restart);
+        })();
+
+        (function () {
+            const quoteText = document.getElementById('quoteText');
+            const quoteWho = document.getElementById('quoteWho');
+            const prev = document.getElementById('quotePrev');
+            const next = document.getElementById('quoteNext');
+
+            if (!quoteText || !quoteWho || !prev || !next) return;
+
+            const items = [
+                { q: "“AIROVIA fits resilience planning because it delivers water where it is needed, without relying on long transport or centralized networks.”", w: "— Infrastructure Stakeholder" },
+                { q: "“The operational model—monitoring, alarms, and reporting—aligns with how industrial sites manage continuity and risk.”", w: "— Industrial Operations" },
+                { q: "“Modular deployment enables phased rollout: start with priority sites and expand output as demand grows.”", w: "— Deployment Planning" },
+                { q: "“On-site supply reduces exposure to trucking disruptions and improves predictability for remote facilities.”", w: "— Remote Logistics" }
+            ];
+
+            let i = 0;
+
+            const render = () => {
+                quoteText.style.opacity = 0;
+                quoteWho.style.opacity = 0;
+                setTimeout(() => {
+                    quoteText.textContent = items[i].q;
+                    quoteWho.textContent = items[i].w;
+                    quoteText.style.opacity = 1;
+                    quoteWho.style.opacity = 1;
+                }, 140);
+            };
+
+            prev.addEventListener('click', () => { i = (i - 1 + items.length) % items.length; render(); });
+            next.addEventListener('click', () => { i = (i + 1) % items.length; render(); });
+
+            setInterval(() => { i = (i + 1) % items.length; render(); }, 9000);
+        })();
+
+    </script>
+
+    <script>
+        (function () {
+            const form = document.getElementById('contactForm');
+            const status = document.getElementById('formStatus');
+            const iframe = document.getElementById('contactTarget');
+            if (!form) return;
+
+            let submitted = false;
+
+            form.addEventListener('submit', () => {
+                submitted = true;
+                if (status) status.textContent = "Sending…";
+            });
+
+            // When Google Script responds, iframe loads — treat as success
+            iframe.addEventListener('load', () => {
+                if (!submitted) return;
+                submitted = false;
+                if (status) status.textContent = "Message sent successfully. We will respond shortly.";
+                form.reset();
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

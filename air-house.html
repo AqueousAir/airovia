@@ -1,0 +1,497 @@
+<!-- ============================================================
+AIROVIA — AIR HOUSE SUBPAGE (MATCHED TO OTHER SUBPAGES)
+File: air-house.html
+Style: Clean institutional, no boxes, strong hierarchy
+============================================================ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <!-- =========================
+AIROVIA SEO (air-house.html)
+========================= -->
+<title>AIROVIA Air House — Modular Water-from-Air Production Asset</title>
+<meta name="description" content="Air House is AIROVIA’s standardized production unit. Designed for operational continuity, rapid deployment, and scalable clustering with governance-ready monitoring." />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<meta name="theme-color" content="#0b1220" />
+
+<link rel="canonical" href="https://airovia.io/air-house.html" />
+
+<link rel="icon" href="images/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+
+<meta property="og:site_name" content="AIROVIA" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AIROVIA Air House — Modular Water-from-Air Production Asset" />
+<meta property="og:description" content="Air House is AIROVIA’s standardized production unit. Designed for operational continuity, rapid deployment, and scalable clustering with governance-ready monitoring." />
+<meta property="og:url" content="https://airovia.io/air-house.html" />
+<meta property="og:image" content="https://airovia.io/images/og-air-house.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AIROVIA Air House — Modular Water-from-Air Production Asset" />
+<meta name="twitter:description" content="Air House is AIROVIA’s standardized production unit. Designed for operational continuity, rapid deployment, and scalable clustering with governance-ready monitoring." />
+<meta name="twitter:image" content="https://airovia.io/images/og-air-house.jpg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AIROVIA",
+  "url": "https://airovia.io",
+  "logo": "https://airovia.io/images/airovia-logo.png",
+  "sameAs": ["https://www.linkedin.com/company/airovia/"],
+  "contactPoint": [
+    { "@type": "ContactPoint", "contactType": "general", "email": "info@airovia.io", "availableLanguage": ["en"] },
+    { "@type": "ContactPoint", "contactType": "partnerships", "email": "partners@airovia.io", "availableLanguage": ["en"] }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AIROVIA Air House",
+  "url": "https://airovia.io/air-house.html",
+  "description": "Air House is AIROVIA’s standardized production unit. Designed for operational continuity, rapid deployment, and scalable clustering with governance-ready monitoring.",
+  "isPartOf": { "@type": "WebSite", "name": "AIROVIA", "url": "https://airovia.io" }
+}
+</script>
+ 
+
+  <style>
+    :root{
+      --bg:#070b14;
+      --text:#eef3ff;
+      --muted:rgba(238,243,255,.80);
+      --muted2:rgba(238,243,255,.62);
+      --line:rgba(238,243,255,.14);
+      --accent:#4cc3ff;
+      --accent2:#2dd4bf;
+
+      --max:1180px;
+
+      /* Page hero background */
+      --img-hero: url("images/airovia-air-house-hero.png"); /* replace */
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{ color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible{
+      outline:2px solid rgba(76,195,255,.85);
+      outline-offset:3px;
+      border-radius:10px;
+    }
+
+    /* =========================
+       HEADER (same as subpages)
+       ========================= */
+    .header{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:50;
+      background: rgba(7,11,20,.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(238,243,255,.10);
+    }
+    .header-inner{
+      max-width: var(--max);
+      margin:0 auto;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      min-height:64px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex:0 0 auto;
+    }
+    .brand img{
+      height:40px;
+      width:auto;
+      object-fit:contain;
+    }
+    .brand-text{
+      font-weight:900;
+      letter-spacing:.06em;
+      font-size:18px;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex:1 1 auto;
+      justify-content:flex-end;
+      flex-wrap:nowrap;
+      white-space:nowrap;
+      overflow:hidden;
+    }
+    .nav a{
+      font-size:14px;
+      color: rgba(238,243,255,.82);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      transition:.18s ease;
+    }
+    .nav a:hover{
+      color:#fff;
+      background: rgba(238,243,255,.06);
+      border-color: rgba(238,243,255,.14);
+    }
+    .nav-cta{
+      margin-left:8px;
+      border-color: rgba(76,195,255,.22) !important;
+      background: rgba(76,195,255,.10);
+      color:#eaf7ff;
+      font-weight:800;
+    }
+    .nav-cta:hover{ background: rgba(76,195,255,.16); }
+
+    /* =========================
+       HERO (subpage header)
+       ========================= */
+    .hero{
+      position:relative;
+      padding-top: 84px; /* header offset */
+      min-height: 62vh;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      isolation:isolate;
+      border-bottom:1px solid rgba(238,243,255,.08);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: var(--img-hero);
+      background-size:cover;
+      background-position:center;
+      transform: scale(1.02);
+      filter: contrast(1.06) brightness(1.03);
+      z-index:-2;
+    }
+    /* Overlay tuned to keep background visible (same philosophy as Technology page) */
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(55% 55% at 30% 45%, rgba(76,195,255,0.10), transparent 65%),
+        linear-gradient(to bottom, rgba(7,11,20,0.38), rgba(7,11,20,0.62));
+      z-index:-1;
+    }
+    .hero-inner{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 46px 18px 44px;
+      width:100%;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color: var(--muted2);
+      margin-bottom:14px;
+    }
+    .dot{
+      width:8px; height:8px;
+      border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 12px 26px rgba(76,195,255,.18);
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(34px, 4.2vw, 56px);
+      font-weight:900;
+      line-height:1.08;
+      letter-spacing:.02em;
+      text-shadow: 0 14px 36px rgba(0,0,0,.55);
+    }
+    .lead{
+      margin: 10px 0 0;
+      max-width: 88ch;
+      font-size:16px;
+      color: var(--muted);
+      text-shadow: 0 10px 28px rgba(0,0,0,.45);
+    }
+
+    .hero-actions{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid rgba(238,243,255,.18);
+      background: rgba(238,243,255,.06);
+      color: var(--text);
+      font-weight:800;
+      font-size:13px;
+      transition:.18s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(238,243,255,.10); }
+    .btn.primary{
+      color:#06101e;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 12px 28px rgba(76,195,255,.18);
+    }
+    .btn.primary:hover{ filter: brightness(1.02); }
+
+    /* =========================
+       CONTENT
+       ========================= */
+    .page{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 44px 18px 80px;
+      background: linear-gradient(to bottom, rgba(7,11,20,0.82), rgba(7,11,20,0.92));
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 34px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
+    .section{
+      padding: 22px 0;
+      border-top: 1px solid rgba(238,243,255,.10);
+      scroll-margin-top: 90px;
+    }
+    .section:first-child{ border-top: 0; padding-top:0; }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing:.02em;
+      color: rgba(238,243,255,.95);
+    }
+    p{
+      margin: 10px 0 0;
+      color: rgba(238,243,255,0.82);
+      font-size: 15.5px;
+      max-width: 90ch;
+    }
+
+    .bullets{
+      margin: 12px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .bullets li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color: rgba(238,243,255,.82);
+      font-size: 14.5px;
+    }
+    .bullets li::before{
+      content:"";
+      width:10px; height:10px;
+      margin-top: 6px;
+      border-radius:3px;
+      background: rgba(76,195,255,.95);
+      box-shadow: 0 12px 26px rgba(76,195,255,.18);
+      flex: 0 0 auto;
+    }
+
+    /* Right-side index */
+    .sidebar{
+      position: sticky;
+      top: 88px;
+      border-left: 1px solid rgba(238,243,255,.10);
+      padding-left: 18px;
+    }
+    .sidebar h3{
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(238,243,255,.68);
+    }
+    .sidebar a{
+      display:block;
+      padding: 8px 0;
+      color: rgba(238,243,255,.78);
+      font-size: 14px;
+      border-bottom: 1px solid rgba(238,243,255,.08);
+    }
+    .sidebar a:hover{ color:#fff; }
+
+    /* Footer line */
+    .fineprint{
+      margin-top: 34px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(238,243,255,.12);
+      color: rgba(238,243,255,.58);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .btn:hover{ transform:none; }
+    }
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65MZNKRPW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K65MZNKRPW');
+</script>
+<body>
+  <!-- Header -->
+  <header class="header">
+  <div class="header-inner">
+    <a class="brand" href="#s1" aria-label="AIROVIA Home">
+      <img src="images/logo.png" alt="AIROVIA" />
+     </a>
+
+     <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="Infrastructure.html">Platform</a>
+      <a href="technology.html">How It Works</a>
+      <a href="air-house.html">Air House</a>
+      <a href="deployment.html">Deployment</a>
+      <a href="energy.html">Energy</a>
+      <a href="monitoring.html">Monitoring</a>
+      <a href="use-cases.html">Use Cases</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="kicker"><span class="dot" aria-hidden="true"></span>Core Infrastructure Asset</div>
+      <h1>The AIROVIA Air House</h1>
+      <p class="lead">
+        The Air House is AIROVIA’s standardized atmospheric water production unit — an industrial asset engineered
+        for reliability, scalability, and long-term operation within decentralized water infrastructure programs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Page -->
+  <main class="page">
+    <div class="grid">
+
+      <!-- Main content -->
+      <div>
+
+        <section class="section" id="overview">
+          <h2>Asset Overview</h2>
+          <p>
+            The AIROVIA Air House is a self-contained, industrial-grade unit designed to convert ambient air into potable water under controlled
+            operating conditions. It integrates air handling, moisture capture, purification, monitoring, and safety into a standardized footprint
+            suitable for replication across multiple sites.
+          </p>
+          <ul class="bullets">
+            <li>Industrial deployable asset suitable for strategic sites or facility clusters</li>
+            <li>Standardized architecture to support repeatable procurement and rollout</li>
+            <li>Designed for governance-ready operations and institutional oversight</li>
+          </ul>
+        </section>
+
+        <section class="section" id="systems">
+          <h2>Subsystem Architecture</h2>
+          <p>
+            Air House systems are organized as serviceable subsystems to support operational continuity and maintenance efficiency. This approach
+            reduces downtime risk and enables structured O&amp;M routines appropriate for public-sector and utility environments.
+          </p>
+          <ul class="bullets">
+            <li>Air intake and handling engineered for stable throughput</li>
+            <li>Moisture capture cycle configured for climate variability</li>
+            <li>Multi-stage treatment and stabilization suitable for potable pathways</li>
+            <li>Controls and diagnostics for continuous monitoring and asset health visibility</li>
+          </ul>
+        </section>
+
+        <section class="section" id="scalability">
+          <h2>Scalability and Replication</h2>
+          <p>
+            Capacity growth is achieved through replication rather than redesign. Air Houses can be deployed as single assets for priority locations,
+            clustered into facilities for city-scale supply, or distributed across regions to reduce single-point failure risk in centralized systems.
+          </p>
+          <ul class="bullets">
+            <li>Single-unit deployment for targeted resilience use cases</li>
+            <li>Clustered facilities for scalable capacity buildout</li>
+            <li>Distributed deployment aligned with national water security strategy</li>
+          </ul>
+        </section>
+
+        <section class="section" id="operations">
+          <h2>Operations, Service, and Governance</h2>
+          <p>
+            The Air House is designed for long-term operation with predictable service routines. Operational reporting supports oversight and accountability,
+            including production visibility, energy utilization, maintenance status, and performance baselining during pilots and scale-up phases.
+          </p>
+          <ul class="bullets">
+            <li>Maintenance-aligned design to support uptime and lifecycle performance</li>
+            <li>Monitoring and reporting suitable for ministries, utilities, and stakeholders</li>
+            <li>Structured rollout pathway: validate first, then scale</li>
+          </ul>
+        </section>
+
+        <div class="fineprint">
+         <span>© <span id="year"></span> AIROVIA. All rights reserved</span>
+      <span><a class="inline-link" href="terms.html">Terms</a> • <a class="inline-link" href="privacy.html">Privacy Policy • <a class="inline-link" href="data-protection.html">Data Protection</a></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

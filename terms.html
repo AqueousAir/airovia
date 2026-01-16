@@ -1,162 +1,411 @@
-<!DOCTYPE html>
+<!-- ============================================================
+AIROVIA — TERMS & CONDITIONS
+File: terms.html
+Matches: AIROVIA subpage layout (hero + clean sections)
+============================================================ -->
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms & Conditions | AIROVIA</title>
-  <meta name="description" content="Terms and Conditions governing the use of the AIROVIA website and related communications." />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-<link rel="shortcut icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AIROVIA — Terms & Conditions</title>
+  <meta name="description" content="AIROVIA website terms and conditions governing access and use of the site, content, and communications." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
 
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#0b1220;
-      --muted:#4b5565;
-      --line:rgba(0,0,0,.08);
-      --max:820px;
+      --bg:#070b14;
+      --text:#eef3ff;
+      --muted:rgba(238,243,255,.80);
+      --muted2:rgba(238,243,255,.62);
+      --line:rgba(238,243,255,.14);
+      --accent:#4cc3ff;
+      --accent2:#2dd4bf;
+      --max:1180px;
+
+      /* HERO IMAGE (use a real world/water/infrastructure photo) */
+      --img-hero: url("images/legal.jpg");
     }
 
-    *{box-sizing:border-box}
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
-      background:#ffffff;
-      line-height:1.7;
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{ color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible{
+      outline:2px solid rgba(76,195,255,.85);
+      outline-offset:3px;
+      border-radius:10px;
     }
 
-    .container{
-      width:min(var(--max), calc(100% - 40px));
+    /* Header */
+    .header{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:50;
+      background: rgba(7,11,20,.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(238,243,255,.10);
+    }
+    .header-inner{
+      max-width: var(--max);
       margin:0 auto;
-      padding:64px 0 80px;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      min-height:64px;
     }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex:0 0 auto;
+    }
+    .brand img{ height:40px; width:auto; object-fit:contain; }
+    .brand-text{
+      font-weight:900;
+      letter-spacing:.06em;
+      font-size:18px;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex:1 1 auto;
+      justify-content:flex-end;
+      flex-wrap:nowrap;
+      white-space:nowrap;
+      overflow:hidden;
+    }
+    .nav a{
+      font-size:14px;
+      color: rgba(238,243,255,.82);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      transition:.18s ease;
+    }
+    .nav a:hover{
+      color:#fff;
+      background: rgba(238,243,255,.06);
+      border-color: rgba(238,243,255,.14);
+    }
+    .nav-cta{
+      margin-left:8px;
+      border-color: rgba(76,195,255,.22) !important;
+      background: rgba(76,195,255,.10);
+      color:#eaf7ff;
+      font-weight:800;
+    }
+    .nav-cta:hover{ background: rgba(76,195,255,.16); }
 
+    /* Hero */
+    .hero{
+      position:relative;
+      padding-top: 84px;
+      min-height: 52vh;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      isolation:isolate;
+      border-bottom:1px solid rgba(238,243,255,.08);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: var(--img-hero);
+      background-size:cover;
+      background-position:center;
+      transform: scale(1.02);
+      filter: contrast(1.06) brightness(1.03);
+      z-index:-2;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(55% 55% at 30% 45%, rgba(76,195,255,0.10), transparent 65%),
+        linear-gradient(to bottom, rgba(7,11,20,0.38), rgba(7,11,20,0.70));
+      z-index:-1;
+    }
+    .hero-inner{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 46px 18px 40px;
+      width:100%;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color: var(--muted2);
+      margin-bottom:14px;
+    }
+    .dot{
+      width:8px; height:8px;
+      border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 12px 26px rgba(76,195,255,.18);
+    }
     h1{
-      font-size:clamp(28px,3.2vw,40px);
-      margin:0 0 14px;
-      letter-spacing:.01em;
+      margin:0 0 10px;
+      font-size: clamp(34px, 4.2vw, 52px);
+      font-weight:900;
+      line-height:1.08;
+      letter-spacing:.02em;
+      text-shadow: 0 14px 36px rgba(0,0,0,.55);
     }
-
-    h2{
-      font-size:20px;
-      margin:34px 0 10px;
+    .lead{
+      margin: 10px 0 0;
+      max-width: 90ch;
+      font-size:16px;
+      color: var(--muted);
+      text-shadow: 0 10px 28px rgba(0,0,0,.45);
     }
-
-    p{
-      margin:0 0 14px;
-      color:var(--muted);
-    }
-
-    ul{
-      margin:8px 0 16px 18px;
-      color:var(--muted);
-    }
-
-    li{margin-bottom:6px}
-
     .meta{
-      font-size:13px;
-      color:rgba(11,18,32,.6);
-      margin-bottom:28px;
+      margin-top:14px;
+      font-size:12px;
+      color: rgba(238,243,255,.62);
+      letter-spacing:.06em;
     }
 
-    .divider{
-      border-top:1px solid var(--line);
-      margin:40px 0;
+    /* Page */
+    .page{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 44px 18px 80px;
+      background: linear-gradient(to bottom, rgba(7,11,20,0.82), rgba(7,11,20,0.92));
     }
-
-    a{
-      color:#2f7cf6;
-      text-decoration:none;
+    .section{
+      padding: 22px 0;
+      border-top: 1px solid rgba(238,243,255,.10);
+      scroll-margin-top: 90px;
     }
-
-    a:hover{
-      text-decoration:underline;
+    .section:first-child{ border-top: 0; padding-top:0; }
+    h2{
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing:.02em;
+      color: rgba(238,243,255,.95);
+    }
+    p{
+      margin: 10px 0 0;
+      color: rgba(238,243,255,0.82);
+      font-size: 15.5px;
+      max-width: 96ch;
+    }
+    .bullets{
+      margin: 12px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .bullets li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color: rgba(238,243,255,.82);
+      font-size: 14.5px;
+    }
+    .bullets li::before{
+      content:"";
+      width:10px; height:10px;
+      margin-top: 6px;
+      border-radius:3px;
+      background: rgba(76,195,255,.95);
+      box-shadow: 0 12px 26px rgba(76,195,255,.18);
+      flex: 0 0 auto;
+    }
+    .fineprint{
+      margin-top: 34px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(238,243,255,.12);
+      color: rgba(238,243,255,.58);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .inline-link{
+      color: rgba(238,243,255,.90);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
-        <a href="airovia.html">← Back to Home</a>
-    <h1>Terms & Conditions</h1>
-    <p class="meta">Last updated: January 2026</p>
+  <header class="header">
+  <div class="header-inner">
+    <a class="brand" href="#s1" aria-label="AIROVIA Home">
+      <img src="images/logo.png" alt="AIROVIA" />
+     </a>
 
-    <p>
-      These Terms & Conditions (“Terms”) govern your access to and use of the AIROVIA website and any related
-      communications, materials, or inquiries. By accessing this website, you agree to these Terms.
-    </p>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="Infrastructure.html">Platform</a>
+      <a href="technology.html">How It Works</a>
+      <a href="air-house.html">Air House</a>
+      <a href="deployment.html">Deployment</a>
+      <a href="energy.html">Energy</a>
+      <a href="monitoring.html">Monitoring</a>
+      <a href="use-cases.html">Use Cases</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="divider"></div>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="kicker"><span class="dot" aria-hidden="true"></span>Legal</div>
+      <h1>Terms &amp; Conditions</h1>
+      <p class="lead">
+        These Terms govern access to and use of the AIROVIA website and related communications. By using this website,
+        you acknowledge and agree to the conditions below.
+      </p>
+      <div class="meta">Last updated: <strong>2026-01-03</strong></div>
+    </div>
+  </section>
 
-    <h2>1. Purpose of the Website</h2>
-    <p>
-      The AIROVIA website is provided for informational and introductory purposes only. It presents an overview of
-      AIROVIA’s water-from-air infrastructure concept, deployment philosophy, and potential use cases.
-    </p>
-    <p>
-      Content on this site does not constitute a binding offer, contract, or guarantee of performance, output,
-      availability, or suitability for a specific project.
-    </p>
+  <main class="page">
+    <section class="section" id="scope">
+      <h2>1. Scope and Acceptance</h2>
+      <p>
+        These Terms apply to your access and use of this website and any content, materials, or communications made available
+        through it (collectively, the “Site”). If you do not agree to these Terms, you must not use the Site.
+      </p>
+    </section>
 
-    <h2>2. No Professional or Technical Advice</h2>
-    <p>
-      Information provided on this website is general in nature and should not be interpreted as engineering,
-      financial, regulatory, or legal advice. Deployment feasibility, system design, output, and compliance depend on
-      site-specific conditions and must be assessed separately.
-    </p>
+    <section class="section" id="intended-use">
+      <h2>2. Intended Use (Public Sector / Utility Context)</h2>
+      <p>
+        The Site is provided to support high-level understanding of AIROVIA’s water-from-air infrastructure platform, including
+        potential public-sector, utility, and institutional deployment models. Content is informational and may not reflect final
+        specifications, commercial terms, procurement requirements, or regulatory approvals.
+      </p>
+      <ul class="bullets">
+        <li>Materials may be updated without notice as the platform evolves.</li>
+        <li>Any deployment requires site assessment, engineering validation, and applicable approvals.</li>
+        <li>No content on the Site constitutes a binding offer or commitment to deliver services.</li>
+      </ul>
+    </section>
 
-    <h2>3. Intellectual Property</h2>
-    <p>
-      All content on this website—including text, graphics, visual concepts, layouts, and branding—is the property of
-      AIROVIA or its licensors, unless otherwise stated.
-    </p>
-    <p>
-      You may not reproduce, distribute, modify, or reuse any content without prior written consent.
-    </p>
+    <section class="section" id="no-reliance">
+      <h2>3. No Reliance; No Professional Advice</h2>
+      <p>
+        The Site does not provide legal, financial, engineering, procurement, or regulatory advice. You are responsible for obtaining
+        appropriate professional advice before acting on any information. AIROVIA disclaims liability for decisions made based on
+        Site content.
+      </p>
+    </section>
 
-    <h2>4. Communications & Inquiries</h2>
-    <p>
-      By submitting an inquiry or contacting AIROVIA through this website, you confirm that the information you provide
-      is accurate to the best of your knowledge.
-    </p>
-    <p>
-      Submitting an inquiry does not create a contractual relationship or obligation on either party.
-    </p>
+    <section class="section" id="ip">
+      <h2>4. Intellectual Property</h2>
+      <p>
+        All Site content, including text, graphics, images, designs, trademarks, and logos, is owned by or licensed to AIROVIA and is
+        protected by applicable intellectual property laws. You may view and print pages for internal, non-commercial evaluation only.
+      </p>
+      <ul class="bullets">
+        <li>No copying, redistribution, reverse engineering, or derivative use without written permission.</li>
+        <li>AIROVIA and its marks may not be used in a manner that implies endorsement without authorization.</li>
+      </ul>
+    </section>
 
-    <h2>5. Availability & Changes</h2>
-    <p>
-      AIROVIA may update, modify, or remove website content at any time without notice. We do not guarantee uninterrupted
-      access to the website or that all information will remain current.
-    </p>
+    <section class="section" id="acceptable-use">
+      <h2>5. Acceptable Use</h2>
+      <p>
+        You agree not to misuse the Site, including by attempting unauthorized access, interfering with performance, introducing malicious
+        code, or using automated systems to extract content without permission.
+      </p>
+    </section>
 
-    <h2>6. Limitation of Liability</h2>
-    <p>
-      To the maximum extent permitted by applicable law, AIROVIA shall not be liable for any direct, indirect,
-      incidental, or consequential damages arising from the use of or reliance on this website or its content.
-    </p>
+    <section class="section" id="third-party">
+      <h2>6. Third-Party Links</h2>
+      <p>
+        The Site may include links to third-party websites. AIROVIA is not responsible for third-party content, security, or practices.
+        Access to third-party sites is at your own risk.
+      </p>
+    </section>
 
-    <h2>7. External Links</h2>
-    <p>
-      This website may contain links to third-party websites. AIROVIA is not responsible for the content, accuracy, or
-      practices of any third-party sites.
-    </p>
+    <section class="section" id="confidentiality">
+      <h2>7. Confidentiality and Submissions</h2>
+      <p>
+        Do not submit confidential or sensitive information through the Site unless explicitly requested under a formal process (e.g., NDA).
+        Any information you submit may be treated as non-confidential unless otherwise agreed in writing.
+      </p>
+    </section>
 
-    <h2>8. Governing Principles</h2>
-    <p>
-      These Terms are intended to reflect generally accepted international commercial and digital practices. Specific
-      contractual engagements, if any, will be governed by separately executed agreements.
-    </p>
+    <section class="section" id="disclaimers">
+      <h2>8. Disclaimers</h2>
+      <p>
+        The Site is provided on an “as is” and “as available” basis. AIROVIA makes no warranties regarding uninterrupted operation,
+        accuracy, completeness, or fitness for a particular purpose. To the maximum extent permitted by law, all warranties are disclaimed.
+      </p>
+    </section>
 
-    <h2>9. Contact</h2>
-    <p>
-      For questions regarding these Terms, please contact:
-      <br />
-      <a href="mailto:info@airovia.io">info@airovia.io</a>
-    </p>
+    <section class="section" id="liability">
+      <h2>9. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, AIROVIA will not be liable for indirect, incidental, special, consequential, or punitive
+        damages, or any loss of data, profits, or goodwill, arising from or relating to your use of the Site.
+      </p>
+    </section>
+
+    <section class="section" id="law">
+      <h2>10. Governing Law and Jurisdiction</h2>
+      <p>
+        These Terms are governed by the laws of <strong>[JURISDICTION]</strong>, without regard to conflict of laws principles. Any dispute
+        arising out of or relating to the Site or these Terms shall be subject to the exclusive jurisdiction of the courts of
+        <strong>[VENUE]</strong>.
+      </p>
+    </section>
+
+    <section class="section" id="changes">
+      <h2>11. Changes to These Terms</h2>
+      <p>
+        AIROVIA may update these Terms from time to time. The “Last updated” date indicates the latest revision. Continued use of the Site
+        after changes constitutes acceptance of the revised Terms.
+      </p>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>12. Contact</h2>
+      <p>
+        For questions regarding these Terms, contact: <a class="inline-link" href="mailto:info@airovia.io">info@airovia.io</a>
+        (or write to <strong>[LEGAL ENTITY NAME + ADDRESS]</strong>).
+      </p>
+    </section>
+
+    <div class="fineprint">
+      <span>© <span id="year"></span> AIROVIA</span>
+      <span><a class="inline-link" href="terms.html">Terms</a> • <a class="inline-link" href="privacy.html">Privacy Policy • <a class="inline-link" href="data-protection.html">Data Protection</a></span>
+    </div>
   </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

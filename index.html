@@ -1,0 +1,881 @@
+<!-- ============================================================
+AIROVIA — HOMEPAGE (Polished / Clean / No “Boxes”)
+Model: Full-screen hero background image for EVERY section (100vh)
+Layout: Clean overlay + text on top (no cards, no boxed panels)
+Save as: index.html
+Images: put backgrounds in /images/ and update CSS variables below
+============================================================ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- =========================
+AIROVIA SEO (index.html)
+========================= -->
+<title>AIROVIA — Water-from-Air Infrastructure for Governments & Utilities</title>
+<meta name="description" content="Decentralized water-from-air infrastructure designed for public-sector deployment. Standardized Air House assets, phased rollout, monitoring and reporting for resilience planning and national water security." />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+<meta name="theme-color" content="#0b1220" />
+
+<link rel="canonical" href="https://airovia.io/" />
+
+<link rel="icon" href="images/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+
+<meta property="og:site_name" content="AIROVIA" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AIROVIA — Water-from-Air Infrastructure for Governments & Utilities" />
+<meta property="og:description" content="Decentralized water-from-air infrastructure designed for public-sector deployment. Standardized Air House assets, phased rollout, monitoring and reporting for resilience planning and national water security." />
+<meta property="og:url" content="https://airovia.io/" />
+<meta property="og:image" content="https://airovia.io/images/og-home.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AIROVIA — Water-from-Air Infrastructure for Governments & Utilities" />
+<meta name="twitter:description" content="Decentralized water-from-air infrastructure designed for public-sector deployment. Standardized Air House assets, phased rollout, monitoring and reporting for resilience planning and national water security." />
+<meta name="twitter:image" content="https://airovia.io/images/og-home.jpg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AIROVIA",
+  "url": "https://airovia.io",
+  "logo": "https://airovia.io/images/airovia-logo.png",
+  "sameAs": [
+    "https://www.linkedin.com/company/airovia/"
+  ],
+  "contactPoint": [
+    { "@type": "ContactPoint", "contactType": "general", "email": "info@airovia.io", "availableLanguage": ["en"] },
+    { "@type": "ContactPoint", "contactType": "partnerships", "email": "partners@airovia.io", "availableLanguage": ["en"] }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AIROVIA — Water-from-Air Infrastructure for Governments & Utilities",
+  "url": "https://airovia.io/",
+  "description": "Decentralized water-from-air infrastructure designed for public-sector deployment. Standardized Air House assets, phased rollout, monitoring and reporting for resilience planning and national water security.",
+  "isPartOf": { "@type": "WebSite", "name": "AIROVIA", "url": "https://airovia.io" }
+}
+</script>
+ 
+
+  <style>
+    :root{
+      --bg: #070b14;
+      --text: #eef3ff;
+      --muted: rgba(238,243,255,.78);
+      --muted2: rgba(238,243,255,.60);
+      --line: rgba(238,243,255,.14);
+      --accent: #4cc3ff;
+      --accent2: #2dd4bf;
+
+      --max: 1180px;
+
+      /* Replace these with your actual section images */
+      --img-hero: url("images/hero.png");
+      --img-crisis: url("images/crisis.png");
+      --img-platform: url("images/airovia-platform.png");
+      --img-how: url("images/airovia-how-it-works.png");
+      --img-airhouse: url("images/air-house.png");
+      --img-scale: url("images/airovia-scale.png");
+      --img-energy: url("images/airovia-energy.png");
+      --img-monitor: url("images/airovia-monitoring.png");
+      --img-usecases: url("images/airovia-usecases.png");
+      --img-partners: url("images/airovia-partners.jpeg");
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+      letter-spacing: .1px;
+    }
+    a{ color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible{
+      outline: 2px solid rgba(76,195,255,.85);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    /* =========================
+       HEADER (clean + minimal)
+       ========================= */
+  .header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  background: rgba(7,11,20,.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(238,243,255,.10);
+}
+
+.header-inner{
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 64px; /* keeps it tight and premium */
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto; /* prevents brand from stretching */
+}
+
+.brand img{
+  height: 40px;   /* balanced: bigger but not oversized */
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-text{
+  font-weight: 900;
+  letter-spacing: .06em;
+  font-size: 18px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  flex-wrap: nowrap;      /* IMPORTANT: prevents second row */
+  white-space: nowrap;    /* IMPORTANT: prevents wrapping */
+  overflow: hidden;       /* keeps it clean if screen is tight */
+}
+
+.nav a{
+  font-size: 14px;
+  color: rgba(238,243,255,.82);
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: .18s ease;
+}
+
+.nav a:hover{
+  color: #fff;
+  background: rgba(238,243,255,.06);
+  border-color: rgba(238,243,255,.14);
+}
+
+.nav-cta{
+  margin-left: 8px;
+  border-color: rgba(76,195,255,.22) !important;
+  background: rgba(76,195,255,.10);
+  color: #eaf7ff;
+  font-weight: 800;
+}
+
+.nav-cta:hover{
+  background: rgba(76,195,255,.16);
+}
+
+    /* Mobile */
+    .menu-btn{
+      display:none;
+      border: 1px solid rgba(238,243,255,.16);
+      background: rgba(238,243,255,.06);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    @media (max-width: 980px){
+      .nav{ display:none; }
+      .menu-btn{ display:inline-flex; align-items:center; gap:10px; }
+    }
+
+    .mobile-drawer{
+      display:none;
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      background: rgba(0,0,0,.55);
+    }
+    .mobile-drawer[aria-hidden="false"]{ display:block; }
+    .drawer-panel{
+      position:absolute;
+      top:0; right:0;
+      width: min(420px, 92vw);
+      height: 100%;
+      background: rgba(7,11,20,.96);
+      border-left: 1px solid rgba(238,243,255,.12);
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .drawer-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .drawer-links{
+      display:grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .drawer-links a{
+      padding: 12px 12px;
+      border: 1px solid rgba(238,243,255,.12);
+      border-radius: 14px;
+      color: var(--muted);
+      background: rgba(238,243,255,.04);
+      transition: .18s ease;
+    }
+    .drawer-links a:hover{
+      color: var(--text);
+      background: rgba(238,243,255,.07);
+      border-color: rgba(238,243,255,.18);
+    }
+    .drawer-links a.cta{
+      color: #06101e;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      font-weight: 900;
+    }
+
+    /* =========================
+       SECTIONS (full hero)
+       ========================= */
+    main{ scroll-behavior:smooth; }
+    section.hero{
+      position: relative;
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    /* Background image */
+    section.hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
+      transform: scale(1.02);
+      z-index:-2;
+    }
+
+    /* Full overlay (NO gaps) */
+    section.hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(60% 60% at 30% 30%, rgba(76,195,255,.10), rgba(0,0,0,0) 60%),
+        radial-gradient(40% 40% at 70% 65%, rgba(45,212,191,.07), rgba(0,0,0,0) 62%),
+        linear-gradient(to bottom, rgba(7,11,20,.78), rgba(7,11,20,.66), rgba(7,11,20,.78));
+      z-index:-1;
+    }
+
+    /* Section image mapping */
+    #s1::before{ background-image: var(--img-hero); }
+    #s2::before{ background-image: var(--img-crisis); }
+    #s3::before{ background-image: var(--img-platform); }
+    #s4::before{ background-image: var(--img-how); }
+    #s5::before{ background-image: var(--img-airhouse); }
+    #s6::before{ background-image: var(--img-scale); }
+    #s7::before{ background-image: var(--img-energy); }
+    #s8::before{ background-image: var(--img-monitor); }
+    #s9::before{ background-image: var(--img-usecases); }
+    #s10::before{ background-image: var(--img-partners); }
+
+    /* Clean content container (no box) */
+    .content{
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 96px 18px 70px; /* includes fixed header offset */
+    }
+
+    /* Content width control */
+    .measure{
+      max-width: 78ch;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      margin-bottom: 14px;
+    }
+    .dot{
+      width: 8px; height: 8px;
+      border-radius: 99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 12px 28px rgba(76,195,255,.22);
+      flex: 0 0 auto;
+    }
+
+    h1,h2{
+      margin: 0 0 12px;
+      line-height: 1.08;
+      letter-spacing: .02em;
+      text-shadow: 0 14px 40px rgba(0,0,0,.55);
+    }
+    h1{
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+    }
+    h2{
+      font-size: clamp(28px, 3.4vw, 44px);
+      font-weight: 860;
+    }
+
+    p{
+      margin: 12px 0 0;
+      font-size: 16px;
+      color: var(--muted);
+      text-shadow: 0 10px 28px rgba(0,0,0,.45);
+    }
+
+    .bullets{
+      margin: 18px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+      max-width: 78ch;
+    }
+    .bullets li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color: rgba(238,243,255,.80);
+      font-size: 15px;
+      text-shadow: 0 10px 28px rgba(0,0,0,.45);
+    }
+    .bullets li::before{
+      content:"";
+      width: 10px; height: 10px;
+      margin-top: 6px;
+      border-radius: 3px;
+      background: rgba(76,195,255,.95);
+      box-shadow: 0 12px 26px rgba(76,195,255,.18);
+      flex: 0 0 auto;
+    }
+
+    .actions{
+      margin-top: 22px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(238,243,255,.18);
+      background: rgba(238,243,255,.06);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 13px;
+      cursor:pointer;
+      transition: .18s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(238,243,255,.10); }
+    .btn.primary{
+      color:#06101e;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 12px 28px rgba(76,195,255,.18);
+    }
+    .btn.primary:hover{ filter: brightness(1.02); }
+
+    /* Bottom legal line on last section */
+    .fineprint{
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: rgba(238,243,255,.58);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      max-width: 78ch;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Scroll indicator */
+    .scroll{
+      position:absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      color: rgba(238,243,255,.70);
+      font-size: 12px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      user-select:none;
+      text-shadow: 0 10px 28px rgba(0,0,0,.5);
+    }
+    .scroll .mouse{
+      width: 18px; height: 28px;
+      border-radius: 20px;
+      border: 1px solid rgba(238,243,255,.45);
+      position:relative;
+      overflow:hidden;
+    }
+    .scroll .mouse::after{
+      content:"";
+      position:absolute;
+      top: 6px; left: 50%;
+      width: 3px; height: 6px;
+      border-radius: 3px;
+      transform: translateX(-50%);
+      background: rgba(238,243,255,.7);
+      animation: wheel 1.35s ease-in-out infinite;
+    }
+    @keyframes wheel{
+      0%{ transform: translate(-50%,0); opacity: .95; }
+      65%{ transform: translate(-50%,10px); opacity: .25; }
+      100%{ transform: translate(-50%,0); opacity: .95; }
+    }
+
+    /* Anchor offset for fixed header */
+    .anchor{ position:absolute; top: -78px; height:1px; width:1px; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto !important; }
+      .scroll .mouse::after{ animation:none; }
+      .btn:hover{ transform:none; }
+    }
+    html {
+  scroll-behavior: smooth;
+}
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K65MZNKRPW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K65MZNKRPW');
+</script>
+<body>
+  <!-- HEADER -->
+ <header class="header">
+  <div class="header-inner">
+    <a class="brand" href="#s1" aria-label="AIROVIA Home">
+      <img src="images/logo.png" alt="AIROVIA" />
+     </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#s2">Context</a>
+      <a href="#s3">Platform</a>
+      <a href="#s4">How It Works</a>
+      <a href="#s5">Air House</a>
+      <a href="#s6">Deployment</a>
+      <a href="#s7">Energy</a>
+      <a href="#s8">Monitoring</a>
+      <a href="#s9">Use Cases</a>
+      <a href="#s10">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="drawer-panel" role="document">
+      <div class="drawer-top">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="dot" aria-hidden="true"></span>
+          <div style="font-weight:900; letter-spacing:.18em; font-size:12px;">AIROVIA</div>
+        </div>
+        <button class="btn" id="closeDrawer" type="button">Close</button>
+      </div>
+
+      <div class="drawer-links" aria-label="Mobile navigation">
+        <a href="#s2">Context</a>
+        <a href="#s3">Platform</a>
+        <a href="#s4">How It Works</a>
+        <a href="#s5">Air House</a>
+        <a href="#s6">Deployment</a>
+        <a href="#s7">Energy</a>
+        <a href="#s8">Monitoring</a>
+        <a href="#s9">Use Cases</a>
+         <a href="#s10">Contact</a>
+      </div>
+
+      <div style="margin-top:auto; border-top:1px solid rgba(238,243,255,.12); padding-top:12px; color: rgba(238,243,255,.6); font-size:12px;">
+        Clean executive homepage. Subpages will contain full technical and program detail.
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero" id="s1">
+      <span class="anchor" aria-hidden="true"></span>
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Climate Resilience • Water Security • Infrastructure</div>
+          <h1>AIROVIA<br/>Atmospheric Water Infrastructure</h1>
+          <p>
+            AIROVIA is an infrastructure-grade atmospheric water platform designed for government-scale deployment.
+            It enables decentralized water production using ambient air, supported by standardized Air House assets,
+            scalable facility models, and transparent monitoring aligned with public-sector governance requirements.
+          </p>
+          <p>
+            Built for resilience. Designed for scale. Structured for long-term operations.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="#s5">Explore the Air House</a>
+            <a class="btn" href="infrastructure.html">Infrastructure →</a>
+            <a class="btn" href="#s10">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll" aria-hidden="true">
+        <span class="mouse"></span>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CONTEXT -->
+    <section class="hero" id="s2">
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>National Water Security Context</div>
+          <h2>A Structural Water Challenge Requires Structural Solutions</h2>
+          <p>
+            Water scarcity is increasingly driven by climate volatility, extended drought cycles, aquifer depletion, and infrastructure constraints.
+            Traditional supply pathways can be geographically limited, slow to expand, and capital-intensive to replicate at speed.
+          </p>
+          <p>
+            AIROVIA is designed as decentralized water production infrastructure that reduces dependence on conventional sources,
+            supports resilience planning, and enables phased deployment aligned with public investment cycles.
+          </p>
+
+          <ul class="bullets">
+            <li>Decentralized capacity reduces single-point failure risk in centralized systems.</li>
+            <li>Phased rollout enables validation first, then scale — without overcommitting CAPEX upfront.</li>
+            <li>Operational reporting supports oversight, compliance, and public accountability.</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary" href="#s3">Define the Platform</a>
+            <a class="btn" href="technology.html">Technology →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PLATFORM -->
+    <section class="hero" id="s3">
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Platform Definition</div>
+          <h2>An Atmospheric Water Infrastructure Platform</h2>
+          <p>
+            AIROVIA is not a single device. It is a scalable infrastructure system composed of standardized Air House assets,
+            facility configurations, energy integration options, and centralized monitoring for operations and reporting.
+          </p>
+          <p>
+            This architecture supports predictable replication, geographic flexibility, and a clear path from pilot validation to
+            city-scale deployment and multi-site national rollout.
+          </p>
+
+          <ul class="bullets">
+            <li>Standardized assets designed for scalable replication</li>
+            <li>Facility clusters engineered for redundancy and uptime</li>
+            <li>Centralized monitoring for transparency and performance governance</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary" href="#s4">How It Works</a>
+            <a class="btn" href="infrastructure.html">Infrastructure →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: HOW IT WORKS -->
+    <section class="hero" id="s4">
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Process Overview</div>
+          <h2>From Ambient Air to Potable Water</h2>
+          <p>
+            AIROVIA captures atmospheric moisture through controlled thermodynamic and adsorption-based processes, converting humidity into liquid water.
+            The resulting water is then treated through multi-stage purification and mineral stabilization to meet potable requirements.
+          </p>
+          <p>
+            The platform is designed for adaptive operation across variable climatic conditions, with controls that optimize performance based on
+            temperature, humidity, and available energy.
+          </p>
+
+          <ul class="bullets">
+            <li>Air intake and moisture capture under controlled conditions</li>
+            <li>Condensation / adsorption cycle optimized for climate variability</li>
+            <li>Purification, stabilization, and storage for distribution pathways</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary" href="#s5">The Air House</a>
+            <a class="btn" href="technology.html">Technology →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: AIR HOUSE -->
+    <section class="hero" id="s5">
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Core Industrial Asset</div>
+          <h2>The AIROVIA Air House</h2>
+          <p>
+            The Air House is a standardized, industrial-grade water production unit engineered for rapid deployment and long-term operation.
+            It integrates air handling, water generation, treatment, controls, and safety architecture within a facility-ready asset footprint.
+          </p>
+          <p>
+            Air Houses can operate as single installations for strategic sites or as coordinated clusters forming city-scale production facilities.
+          </p>
+
+          <ul class="bullets">
+            <li>Standardized asset designed for replication and scalability</li>
+            <li>Subsystem architecture optimized for serviceability and uptime</li>
+            <li>Integration-ready for multi-unit facility operations</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary" href="#s6">Deployment Models</a>
+            <a class="btn" href="air-house.html">Air House →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SCALABILITY -->
+    <section class="hero" id="s6">
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Scale Strategy</div>
+          <h2>Designed to Scale from Pilot to National Infrastructure</h2>
+          <p>
+            AIROVIA is structured for phased implementation. Pilot deployments establish performance validation and operational baselines.
+            Expansion then scales through standardized replication, enabling capacity growth without redesign at every stage.
+          </p>
+          <p>
+            Deployment can be configured as distributed sites across multiple regions or concentrated facilities near demand centers.
+          </p>
+
+          <ul class="bullets">
+            <li>Pilot validation and institutional onboarding</li>
+            <li>City-scale facility clusters with redundancy</li>
+            <li>Multi-region rollout supporting national resilience planning</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary" href="#s7">Energy & Operations</a>
+            <a class="btn" href="deployment.html">Deployment Planning →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: ENERGY -->
+    <section class="hero" id="s7">
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Energy Integration</div>
+          <h2>Flexible Power Models for Real-World Operations</h2>
+          <p>
+            AIROVIA is designed for integration with grid power, renewables, or hybrid configurations. The platform supports solar, wind,
+            and storage strategies depending on site conditions, resilience requirements, and operating cost targets.
+          </p>
+          <p>
+            Control systems are structured to optimize energy utilization, operational stability, and maintenance scheduling as part of a long-term O&amp;M model.
+          </p>
+
+          <ul class="bullets">
+            <li>Grid, renewable, or hybrid configurations</li>
+            <li>Energy optimization controls for predictable operations</li>
+            <li>Designed for resilience planning and continuity of supply</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary" href="#s8">Monitoring & Governance</a>
+            <a class="btn" href="energy.html">Energy Strategy →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: MONITORING -->
+    <section class="hero" id="s8">
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Monitoring • Reporting • Oversight</div>
+          <h2>Transparent Operations for Institutional Stakeholders</h2>
+          <p>
+            AIROVIA deployments are designed to support centralized monitoring and reporting. Operational visibility includes water production,
+            performance indicators, energy utilization, asset health, and maintenance status — enabling oversight and accountability.
+          </p>
+          <p>
+            This approach supports government governance requirements and aligns with the expectations of development institutions and climate finance stakeholders.
+          </p>
+
+          <ul class="bullets">
+            <li>Real-time operational visibility across sites and facilities</li>
+            <li>Reporting suitable for oversight and stakeholder accountability</li>
+            <li>Maintenance planning and asset health monitoring</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary" href="#s9">Strategic Use Cases</a>
+            <a class="btn" href="monitoring.html">Monitoring →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: USE CASES -->
+    <section class="hero" id="s9">
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Strategic Applications</div>
+          <h2>Water Supply Where Conventional Sources Are Constrained</h2>
+          <p>
+            AIROVIA is designed for public-sector and strategic applications where supply resilience, deployment speed, and operational accountability matter.
+            Use cases range from municipal supplementation to remote-region continuity and emergency resilience infrastructure.
+          </p>
+
+          <ul class="bullets">
+            <li>Municipal water supplementation and resilience capacity</li>
+            <li>Remote and arid region continuity of supply</li>
+            <li>Climate adaptation programs and strategic infrastructure</li>
+            <li>Emergency resilience and critical-site provisioning</li>
+            <li>Industrial and agricultural water supply pathways (site-dependent)</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary" href="#s10">Engage with AIROVIA</a>
+            <a class="btn" href="use-cases.html">Use Cases →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: ENGAGEMENT -->
+    <section class="hero" id="s10">
+      <div class="content">
+        <div class="measure">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Partnership • Program Design • Deployment</div>
+          <h2>Building the Future of Water Infrastructure</h2>
+          <p>
+            AIROVIA engages with governments, public utilities, development institutions, and strategic partners to design, deploy, and operate
+            atmospheric water infrastructure tailored to regional needs, resilience requirements, and governance frameworks.
+          </p>
+          <p>
+            The recommended pathway begins with structured engagement, feasibility and site assessment, pilot validation, and a phased rollout plan
+            aligned with national water strategy and investment cycles.
+          </p>
+
+          <ul class="bullets">
+            <li>Government and utility engagement framework</li>
+            <li>Pilot design, validation metrics, and rollout planning</li>
+            <li>Partnership models supporting long-term operations</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn primary" href="contact.html">Partnerships &amp; Engagement →</a>
+            <a class="btn" href="#s1">Back to Top</a>
+          </div>
+
+          <div class="fineprint">
+            <span>© <span id="year"></span> AIROVIA. All rights reserved</span>
+      <span><a class="inline-link" href="terms.html">Terms</a> • <a class="inline-link" href="privacy.html">Privacy Policy • <a class="inline-link" href="data-protection.html">Data Protection</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile drawer
+    const drawer = document.getElementById("mobileDrawer");
+    const menuBtn = document.getElementById("menuBtn");
+    const closeDrawer = document.getElementById("closeDrawer");
+
+    function openDrawer(){
+      drawer.setAttribute("aria-hidden","false");
+      menuBtn.setAttribute("aria-expanded","true");
+      document.body.style.overflow = "hidden";
+    }
+    function hideDrawer(){
+      drawer.setAttribute("aria-hidden","true");
+      menuBtn.setAttribute("aria-expanded","false");
+      document.body.style.overflow = "";
+    }
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = drawer.getAttribute("aria-hidden") === "false";
+      isOpen ? hideDrawer() : openDrawer();
+    });
+
+    closeDrawer.addEventListener("click", hideDrawer);
+
+    drawer.addEventListener("click", (e) => {
+      if(e.target === drawer) hideDrawer();
+    });
+
+    drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", hideDrawer));
+
+    window.addEventListener("keydown", (e) => {
+      if(e.key === "Escape" && drawer.getAttribute("aria-hidden") === "false") hideDrawer();
+    });
+  </script>
+</body>
+</html>

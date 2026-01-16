@@ -1,14 +1,14 @@
 <!-- ============================================================
-AIROVIA — PRIVACY POLICY
-File: privacy.html
+AIROVIA — DATA PROTECTION
+File: data-protection.html
 ============================================================ -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AIROVIA — Privacy Policy</title>
-  <meta name="description" content="AIROVIA privacy policy describing how personal data is collected, used, stored, and shared for website operations and communications." />
+  <title>AIROVIA — Data Protection</title>
+  <meta name="description" content="AIROVIA data protection statement covering governance, security controls, vendor management, incident response, and privacy-by-design practices." />
   <meta name="theme-color" content="#0b1220" />
   <link rel="icon" href="images/favicon.png" type="image/png" />
 
@@ -116,6 +116,7 @@ File: privacy.html
       color: var(--muted2); margin-bottom:14px;
     }
     .dot{ width:8px; height:8px; border-radius:99px; background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow: 0 12px 26px rgba(76,195,255,.18); }
+
     h1{
       margin:0 0 10px;
       font-size: clamp(34px, 4.2vw, 52px);
@@ -126,7 +127,7 @@ File: privacy.html
     }
     .lead{
       margin: 10px 0 0;
-      max-width: 92ch;
+      max-width: 96ch;
       font-size:16px;
       color: var(--muted);
       text-shadow: 0 10px 28px rgba(0,0,0,.45);
@@ -146,7 +147,7 @@ File: privacy.html
     }
     .section:first-child{ border-top: 0; padding-top:0; }
     h2{ margin:0 0 10px; font-size:22px; font-weight:900; letter-spacing:.02em; color: rgba(238,243,255,.95); }
-    p{ margin:10px 0 0; color: rgba(238,243,255,0.82); font-size:15.5px; max-width: 100ch; }
+    p{ margin:10px 0 0; color: rgba(238,243,255,0.82); font-size:15.5px; max-width: 102ch; }
 
     .bullets{ margin:12px 0 0; padding:0; list-style:none; display:grid; gap:10px; }
     .bullets li{ display:flex; gap:10px; align-items:flex-start; color: rgba(238,243,255,.82); font-size:14.5px; }
@@ -172,7 +173,7 @@ File: privacy.html
 </head>
 
 <body>
-  <header class="header">
+   <header class="header">
   <div class="header-inner">
     <a class="brand" href="#s1" aria-label="AIROVIA Home">
       <img src="images/logo.png" alt="AIROVIA" />
@@ -194,112 +195,94 @@ File: privacy.html
 
   <section class="hero">
     <div class="hero-inner">
-      <div class="kicker"><span class="dot" aria-hidden="true"></span>Privacy</div>
-      <h1>Privacy Policy</h1>
+      <div class="kicker"><span class="dot" aria-hidden="true"></span>Compliance</div>
+      <h1>Data Protection</h1>
       <p class="lead">
-        AIROVIA is committed to responsible handling of personal data. This Policy explains what we collect, how we use it, and the
-        safeguards we apply—particularly in government and utility engagement contexts.
+        AIROVIA applies governance-oriented data protection practices designed for public-sector, utility, and critical infrastructure
+        engagement—prioritizing security, minimization, accountability, and privacy-by-design principles.
       </p>
       <div class="meta">Last updated: <strong>2026-01-03</strong></div>
     </div>
   </section>
 
   <main class="page">
-    <section class="section" id="controller">
-      <h2>1. Who We Are</h2>
+    <section class="section" id="principles">
+      <h2>1. Core Principles</h2>
       <p>
-        This website is operated by <strong>[LEGAL ENTITY NAME]</strong> (“AIROVIA”, “we”, “us”). For privacy inquiries, contact
-        <a class="inline-link" href="mailto:info@airovia.io">info@airovia.io</a>.
+        AIROVIA’s approach is based on internationally recognized practices and applicable legal requirements.
+        We aim to process data lawfully, transparently, and proportionately to the engagement objective.
       </p>
-    </section>
-
-    <section class="section" id="data-we-collect">
-      <h2>2. Information We Collect</h2>
-      <p>We collect the minimum information required to operate the site, respond to inquiries, and support engagement workflows.</p>
       <ul class="bullets">
-        <li><strong>Contact data:</strong> name, organization, email, phone (if provided), location, inquiry type, and message content.</li>
-        <li><strong>Technical data:</strong> IP address, browser type, device identifiers, and basic usage logs (for security and performance).</li>
-        <li><strong>Communications:</strong> records of correspondence with AIROVIA (email replies, follow-ups, scheduling).</li>
+        <li><strong>Minimization:</strong> collect only what is necessary for engagement and operational communication.</li>
+        <li><strong>Purpose limitation:</strong> use data only for stated and legitimate purposes.</li>
+        <li><strong>Security:</strong> apply controls to reduce unauthorized access and misuse.</li>
+        <li><strong>Accountability:</strong> maintain oversight, logs, and governance records where appropriate.</li>
       </ul>
     </section>
 
-    <section class="section" id="how-we-use">
-      <h2>3. How We Use Personal Data</h2>
+    <section class="section" id="controls">
+      <h2>2. Security Controls (High-Level)</h2>
+      <p>
+        Control selection depends on deployment scope and risk profile. For sensitive engagement contexts,
+        AIROVIA may apply enhanced controls aligned with recognized information security frameworks.
+      </p>
       <ul class="bullets">
-        <li>To respond to inquiries from governments, utilities, partners, and stakeholders.</li>
-        <li>To assess feasibility requirements (e.g., location, intended scope, timelines) and coordinate follow-up.</li>
-        <li>To secure and maintain the Site, prevent abuse, and troubleshoot operational issues.</li>
-        <li>To comply with legal obligations and protect rights, safety, and integrity.</li>
+        <li>Access control and least-privilege administration</li>
+        <li>Secure authentication and credential management</li>
+        <li>Encryption in transit and (where applicable) at rest</li>
+        <li>Logging, monitoring, and security alerting for critical systems</li>
+        <li>Change control and configuration management</li>
       </ul>
     </section>
 
-    <section class="section" id="legal-basis">
-      <h2>4. Legal Basis</h2>
+    <section class="section" id="vendor">
+      <h2>3. Vendor and Subprocessor Management</h2>
       <p>
-        Where applicable, we process personal data based on one or more of the following: (i) legitimate interests in operating and securing
-        the Site and responding to requests; (ii) performance of steps requested prior to entering into a contract; (iii) compliance with legal
-        obligations; and/or (iv) consent, where explicitly requested (e.g., optional updates).
-      </p>
-    </section>
-
-    <section class="section" id="sharing">
-      <h2>5. Sharing and Disclosure</h2>
-      <p>
-        We do not sell personal data. We may share personal data with limited service providers that support website operations and communications
-        (e.g., hosting, email infrastructure), and only to the extent necessary.
+        Where service providers are used for hosting, communications, or operations support, AIROVIA applies vendor due diligence
+        commensurate with the engagement context, including confidentiality obligations and appropriate safeguards.
       </p>
       <ul class="bullets">
-        <li><strong>Service providers:</strong> bound by confidentiality and security obligations.</li>
-        <li><strong>Legal requirements:</strong> where required by law or to protect rights and safety.</li>
-        <li><strong>Engagement partners:</strong> only where necessary and appropriate for delivery discussions, and subject to confidentiality where agreed.</li>
+        <li>Supplier selection based on security posture and reliability</li>
+        <li>Contractual obligations for confidentiality and data handling</li>
+        <li>Controlled access pathways and limited disclosure</li>
       </ul>
     </section>
 
-    <section class="section" id="transfers">
-      <h2>6. International Data Transfers</h2>
+    <section class="section" id="incident">
+      <h2>4. Incident Response</h2>
       <p>
-        If personal data is transferred across borders, we apply appropriate safeguards consistent with applicable laws, including contractual
-        protections and security controls. Transfer pathways depend on hosting and communication providers used by AIROVIA.
+        AIROVIA maintains an incident response approach intended to identify, contain, and remediate security events.
+        Where legally required, notifications will be made to relevant stakeholders and/or competent authorities.
       </p>
+      <ul class="bullets">
+        <li>Event triage, containment, and remediation</li>
+        <li>Root cause analysis and corrective actions</li>
+        <li>Stakeholder communications aligned with legal requirements</li>
+      </ul>
     </section>
 
     <section class="section" id="retention">
-      <h2>7. Data Retention</h2>
+      <h2>5. Retention and Disposal</h2>
       <p>
-        We retain personal data only as long as necessary for the purposes described in this Policy, including to manage engagement requests,
-        maintain security logs, and satisfy legal or compliance obligations. Retention periods may vary by context and requirement.
+        Data is retained only for as long as necessary to support engagement, meet compliance obligations, or resolve disputes.
+        Disposal methods are designed to prevent unintended recovery.
       </p>
     </section>
 
-    <section class="section" id="security">
-      <h2>8. Security</h2>
+    <section class="section" id="requests">
+      <h2>6. Data Subject Requests</h2>
       <p>
-        We implement reasonable administrative, technical, and organizational measures to protect personal data against unauthorized access,
-        alteration, disclosure, or destruction. No system is fully risk-free; if you suspect a security issue, contact us promptly.
+        Subject to applicable law, individuals may request access, correction, deletion, or restriction of personal data.
+        Requests can be submitted to <a class="inline-link" href="mailto:info@airovia.io">info@airovia.io</a>.
       </p>
     </section>
 
-    <section class="section" id="rights">
-      <h2>9. Your Rights</h2>
+    <section class="section" id="public-sector">
+      <h2>7. Public Sector and Utility Engagement</h2>
       <p>
-        Depending on your jurisdiction, you may have rights to access, correct, delete, restrict, or object to processing, and to request portability.
-        To submit a request, contact <a class="inline-link" href="mailto:info@airovia.io">info@airovia.io</a>.
-      </p>
-    </section>
-
-    <section class="section" id="cookies">
-      <h2>10. Cookies and Analytics</h2>
-      <p>
-        We may use cookies or similar technologies to operate the Site and improve performance. If analytics are enabled, they should be configured
-        to minimize data collection and avoid unnecessary tracking. If you deploy analytics, update this section with the provider and controls.
-      </p>
-    </section>
-
-    <section class="section" id="changes">
-      <h2>11. Changes to This Policy</h2>
-      <p>
-        We may update this Policy periodically. The “Last updated” date indicates the most recent revision. Material changes may be communicated
-        through the Site.
+        Where engagement relates to government or utility programs, additional governance and audit expectations may apply.
+        AIROVIA is prepared to align documentation, access controls, and reporting practices with institutional requirements
+        as part of a formal engagement process.
       </p>
     </section>
 

@@ -1,14 +1,9 @@
-<!-- ============================================================
-AIROVIA — TERMS & CONDITIONS
-File: terms.html
-Matches: AIROVIA subpage layout (hero + clean sections)
-============================================================ -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AIROVIA — Terms & Conditions</title>
+  <title>AIROVIA — Terms &amp; Conditions</title>
   <meta name="description" content="AIROVIA website terms and conditions governing access and use of the site, content, and communications." />
   <meta name="theme-color" content="#0b1220" />
   <link rel="icon" href="images/favicon.png" type="image/png" />
@@ -44,7 +39,9 @@ Matches: AIROVIA subpage layout (hero + clean sections)
       border-radius:10px;
     }
 
-    /* Header */
+    /* =========================
+       HEADER
+       ========================= */
     .header{
       position:fixed;
       top:0; left:0; right:0;
@@ -71,13 +68,7 @@ Matches: AIROVIA subpage layout (hero + clean sections)
       flex:0 0 auto;
     }
     .brand img{ height:40px; width:auto; object-fit:contain; }
-    .brand-text{
-      font-weight:900;
-      letter-spacing:.06em;
-      font-size:18px;
-      line-height:1;
-      white-space:nowrap;
-    }
+
     .nav{
       display:flex;
       align-items:center;
@@ -101,16 +92,118 @@ Matches: AIROVIA subpage layout (hero + clean sections)
       background: rgba(238,243,255,.06);
       border-color: rgba(238,243,255,.14);
     }
-    .nav-cta{
-      margin-left:8px;
-      border-color: rgba(76,195,255,.22) !important;
-      background: rgba(76,195,255,.10);
-      color:#eaf7ff;
-      font-weight:800;
-    }
-    .nav-cta:hover{ background: rgba(76,195,255,.16); }
 
-    /* Hero */
+    /* =========================
+       MOBILE MENU BUTTON
+       ========================= */
+    .menu-btn{
+      display:none;
+      border: 1px solid rgba(238,243,255,.16);
+      background: rgba(238,243,255,.06);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .menu-btn svg{ display:block; }
+    @media (max-width: 980px){
+      .nav{ display:none; }
+      .menu-btn{ display:inline-flex; align-items:center; gap:10px; }
+    }
+
+    /* =========================
+       MOBILE DRAWER
+       ========================= */
+    .mobile-drawer{
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(0,0,0,.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s ease;
+    }
+    .mobile-drawer[aria-hidden="false"]{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .drawer-panel{
+      position:absolute;
+      top:0; right:0;
+      width: min(420px, 92vw);
+      height: 100%;
+      background: rgba(7,11,20,.98);
+      border-left: 1px solid rgba(238,243,255,.10);
+      padding: calc(16px + env(safe-area-inset-top)) 18px 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      transform: translateX(110%);
+      transition: transform .26s ease;
+    }
+    .mobile-drawer[aria-hidden="false"] .drawer-panel{ transform: translateX(0); }
+    @media (max-width: 520px){ .drawer-panel{ width: 100vw; } }
+
+    .drawer-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .brand-mini{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .drawer-links{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      margin-top: 6px;
+    }
+    .drawer-links a{
+      padding: 12px 10px;
+      border-radius: 12px;
+      color: rgba(238,243,255,.86);
+      background: transparent;
+      border: 1px solid transparent;
+      transition: .16s ease;
+    }
+    .drawer-links a:hover{
+      background: rgba(238,243,255,.06);
+      border-color: rgba(238,243,255,.10);
+    }
+    .drawer-links a + a{
+      border-top: 1px solid rgba(238,243,255,.06);
+      border-radius: 0;
+    }
+
+    /* Shared button style */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid rgba(238,243,255,.18);
+      background: rgba(238,243,255,.06);
+      color: var(--text);
+      font-weight:800;
+      font-size:13px;
+      transition:.18s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      cursor:pointer;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(238,243,255,.10); }
+
+    /* =========================
+       HERO
+       ========================= */
     .hero{
       position:relative;
       padding-top: 84px;
@@ -185,19 +278,33 @@ Matches: AIROVIA subpage layout (hero + clean sections)
       letter-spacing:.06em;
     }
 
-    /* Page */
+    /* =========================
+       PAGE
+       ========================= */
     .page{
       max-width: var(--max);
       margin:0 auto;
       padding: 44px 18px 80px;
       background: linear-gradient(to bottom, rgba(7,11,20,0.82), rgba(7,11,20,0.92));
     }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 34px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
     .section{
       padding: 22px 0;
       border-top: 1px solid rgba(238,243,255,.10);
       scroll-margin-top: 90px;
     }
     .section:first-child{ border-top: 0; padding-top:0; }
+
     h2{
       margin: 0 0 10px;
       font-size: 22px;
@@ -211,6 +318,7 @@ Matches: AIROVIA subpage layout (hero + clean sections)
       font-size: 15.5px;
       max-width: 96ch;
     }
+
     .bullets{
       margin: 12px 0 0;
       padding: 0;
@@ -234,6 +342,36 @@ Matches: AIROVIA subpage layout (hero + clean sections)
       box-shadow: 0 12px 26px rgba(76,195,255,.18);
       flex: 0 0 auto;
     }
+
+    /* Sidebar index */
+    .sidebar{
+      position: sticky;
+      top: 88px;
+      border-left: 1px solid rgba(238,243,255,.10);
+      padding-left: 18px;
+    }
+    .sidebar h3{
+      margin: 0 0 10px;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(238,243,255,.68);
+    }
+    .sidebar a{
+      display:block;
+      padding: 8px 0;
+      color: rgba(238,243,255,.78);
+      font-size: 14px;
+      border-bottom: 1px solid rgba(238,243,255,.08);
+    }
+    .sidebar a:hover{ color:#fff; }
+
+    .inline-link{
+      color: rgba(238,243,255,.90);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .fineprint{
       margin-top: 34px;
       padding-top: 14px;
@@ -245,38 +383,70 @@ Matches: AIROVIA subpage layout (hero + clean sections)
       gap: 12px;
       flex-wrap: wrap;
     }
-    .inline-link{
-      color: rgba(238,243,255,.90);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+
     @media (prefers-reduced-motion: reduce){
       html{ scroll-behavior:auto; }
+      .btn:hover{ transform:none; }
     }
   </style>
 </head>
 
 <body>
+  <!-- Header -->
   <header class="header">
-  <div class="header-inner">
-    <a class="brand" href="#s1" aria-label="AIROVIA Home">
-      <img src="images/logo.png" alt="AIROVIA" />
-     </a>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="AIROVIA Home">
+        <img src="images/logo.png" alt="AIROVIA" />
+      </a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="Infrastructure.html">Platform</a>
-      <a href="technology.html">How It Works</a>
-      <a href="air-house.html">Air House</a>
-      <a href="deployment.html">Deployment</a>
-      <a href="energy.html">Energy</a>
-      <a href="monitoring.html">Monitoring</a>
-      <a href="use-cases.html">Use Cases</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="infrastructure.html">Platform</a>
+        <a href="technology.html">How It Works</a>
+        <a href="air-house.html">Air House</a>
+        <a href="deployment.html">Deployment</a>
+        <a href="energy.html">Energy</a>
+        <a href="monitoring.html">Monitoring</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- ✅ Mobile burger -->
+      <button class="menu-btn" id="menuBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobileDrawer"
+        aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Menu
+      </button>
+    </div>
+  </header>
+
+  <!-- ✅ Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="drawer-panel" role="document">
+      <div class="drawer-top">
+        <button class="btn" id="closeDrawer" type="button">Close</button>
+      </div>
+
+      <div class="drawer-links" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="infrastructure.html">Platform</a>
+        <a href="technology.html">How It Works</a>
+        <a href="air-house.html">Air House</a>
+        <a href="deployment.html">Deployment</a>
+        <a href="energy.html">Energy</a>
+        <a href="monitoring.html">Monitoring</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </div>
-</header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">
       <div class="kicker"><span class="dot" aria-hidden="true"></span>Legal</div>
@@ -289,123 +459,172 @@ Matches: AIROVIA subpage layout (hero + clean sections)
     </div>
   </section>
 
+  <!-- Page -->
   <main class="page">
-    <section class="section" id="scope">
-      <h2>1. Scope and Acceptance</h2>
-      <p>
-        These Terms apply to your access and use of this website and any content, materials, or communications made available
-        through it (collectively, the “Site”). If you do not agree to these Terms, you must not use the Site.
-      </p>
-    </section>
+    <div class="grid">
 
-    <section class="section" id="intended-use">
-      <h2>2. Intended Use (Public Sector / Utility Context)</h2>
-      <p>
-        The Site is provided to support high-level understanding of AIROVIA’s water-from-air infrastructure platform, including
-        potential public-sector, utility, and institutional deployment models. Content is informational and may not reflect final
-        specifications, commercial terms, procurement requirements, or regulatory approvals.
-      </p>
-      <ul class="bullets">
-        <li>Materials may be updated without notice as the platform evolves.</li>
-        <li>Any deployment requires site assessment, engineering validation, and applicable approvals.</li>
-        <li>No content on the Site constitutes a binding offer or commitment to deliver services.</li>
-      </ul>
-    </section>
+      <!-- Main -->
+      <div>
+        <section class="section" id="scope">
+          <h2>1. Scope and Acceptance</h2>
+          <p>
+            These Terms apply to your access and use of this website and any content, materials, or communications made available
+            through it (collectively, the “Site”). If you do not agree to these Terms, you must not use the Site.
+          </p>
+        </section>
 
-    <section class="section" id="no-reliance">
-      <h2>3. No Reliance; No Professional Advice</h2>
-      <p>
-        The Site does not provide legal, financial, engineering, procurement, or regulatory advice. You are responsible for obtaining
-        appropriate professional advice before acting on any information. AIROVIA disclaims liability for decisions made based on
-        Site content.
-      </p>
-    </section>
+        <section class="section" id="intended-use">
+          <h2>2. Intended Use (Public Sector / Utility Context)</h2>
+          <p>
+            The Site is provided to support high-level understanding of AIROVIA’s water-from-air infrastructure platform, including
+            potential public-sector, utility, and institutional deployment models. Content is informational and may not reflect final
+            specifications, commercial terms, procurement requirements, or regulatory approvals.
+          </p>
+          <ul class="bullets">
+            <li>Materials may be updated without notice as the platform evolves.</li>
+            <li>Any deployment requires site assessment, engineering validation, and applicable approvals.</li>
+            <li>No content on the Site constitutes a binding offer or commitment to deliver services.</li>
+          </ul>
+        </section>
 
-    <section class="section" id="ip">
-      <h2>4. Intellectual Property</h2>
-      <p>
-        All Site content, including text, graphics, images, designs, trademarks, and logos, is owned by or licensed to AIROVIA and is
-        protected by applicable intellectual property laws. You may view and print pages for internal, non-commercial evaluation only.
-      </p>
-      <ul class="bullets">
-        <li>No copying, redistribution, reverse engineering, or derivative use without written permission.</li>
-        <li>AIROVIA and its marks may not be used in a manner that implies endorsement without authorization.</li>
-      </ul>
-    </section>
+        <section class="section" id="no-reliance">
+          <h2>3. No Reliance; No Professional Advice</h2>
+          <p>
+            The Site does not provide legal, financial, engineering, procurement, or regulatory advice. You are responsible for obtaining
+            appropriate professional advice before acting on any information. AIROVIA disclaims liability for decisions made based on
+            Site content.
+          </p>
+        </section>
 
-    <section class="section" id="acceptable-use">
-      <h2>5. Acceptable Use</h2>
-      <p>
-        You agree not to misuse the Site, including by attempting unauthorized access, interfering with performance, introducing malicious
-        code, or using automated systems to extract content without permission.
-      </p>
-    </section>
+        <section class="section" id="ip">
+          <h2>4. Intellectual Property</h2>
+          <p>
+            All Site content, including text, graphics, images, designs, trademarks, and logos, is owned by or licensed to AIROVIA and is
+            protected by applicable intellectual property laws. You may view and print pages for internal, non-commercial evaluation only.
+          </p>
+          <ul class="bullets">
+            <li>No copying, redistribution, reverse engineering, or derivative use without written permission.</li>
+            <li>AIROVIA and its marks may not be used in a manner that implies endorsement without authorization.</li>
+          </ul>
+        </section>
 
-    <section class="section" id="third-party">
-      <h2>6. Third-Party Links</h2>
-      <p>
-        The Site may include links to third-party websites. AIROVIA is not responsible for third-party content, security, or practices.
-        Access to third-party sites is at your own risk.
-      </p>
-    </section>
+        <section class="section" id="acceptable-use">
+          <h2>5. Acceptable Use</h2>
+          <p>
+            You agree not to misuse the Site, including by attempting unauthorized access, interfering with performance, introducing malicious
+            code, or using automated systems to extract content without permission.
+          </p>
+        </section>
 
-    <section class="section" id="confidentiality">
-      <h2>7. Confidentiality and Submissions</h2>
-      <p>
-        Do not submit confidential or sensitive information through the Site unless explicitly requested under a formal process (e.g., NDA).
-        Any information you submit may be treated as non-confidential unless otherwise agreed in writing.
-      </p>
-    </section>
+        <section class="section" id="third-party">
+          <h2>6. Third-Party Links</h2>
+          <p>
+            The Site may include links to third-party websites. AIROVIA is not responsible for third-party content, security, or practices.
+            Access to third-party sites is at your own risk.
+          </p>
+        </section>
 
-    <section class="section" id="disclaimers">
-      <h2>8. Disclaimers</h2>
-      <p>
-        The Site is provided on an “as is” and “as available” basis. AIROVIA makes no warranties regarding uninterrupted operation,
-        accuracy, completeness, or fitness for a particular purpose. To the maximum extent permitted by law, all warranties are disclaimed.
-      </p>
-    </section>
+        <section class="section" id="confidentiality">
+          <h2>7. Confidentiality and Submissions</h2>
+          <p>
+            Do not submit confidential or sensitive information through the Site unless explicitly requested under a formal process (e.g., NDA).
+            Any information you submit may be treated as non-confidential unless otherwise agreed in writing.
+          </p>
+        </section>
 
-    <section class="section" id="liability">
-      <h2>9. Limitation of Liability</h2>
-      <p>
-        To the maximum extent permitted by law, AIROVIA will not be liable for indirect, incidental, special, consequential, or punitive
-        damages, or any loss of data, profits, or goodwill, arising from or relating to your use of the Site.
-      </p>
-    </section>
+        <section class="section" id="disclaimers">
+          <h2>8. Disclaimers</h2>
+          <p>
+            The Site is provided on an “as is” and “as available” basis. AIROVIA makes no warranties regarding uninterrupted operation,
+            accuracy, completeness, or fitness for a particular purpose. To the maximum extent permitted by law, all warranties are disclaimed.
+          </p>
+        </section>
 
-    <section class="section" id="law">
-      <h2>10. Governing Law and Jurisdiction</h2>
-      <p>
-        These Terms are governed by the laws of <strong>[JURISDICTION]</strong>, without regard to conflict of laws principles. Any dispute
-        arising out of or relating to the Site or these Terms shall be subject to the exclusive jurisdiction of the courts of
-        <strong>[VENUE]</strong>.
-      </p>
-    </section>
+        <section class="section" id="liability">
+          <h2>9. Limitation of Liability</h2>
+          <p>
+            To the maximum extent permitted by law, AIROVIA will not be liable for indirect, incidental, special, consequential, or punitive
+            damages, or any loss of data, profits, or goodwill, arising from or relating to your use of the Site.
+          </p>
+        </section>
 
-    <section class="section" id="changes">
-      <h2>11. Changes to These Terms</h2>
-      <p>
-        AIROVIA may update these Terms from time to time. The “Last updated” date indicates the latest revision. Continued use of the Site
-        after changes constitutes acceptance of the revised Terms.
-      </p>
-    </section>
+        <section class="section" id="law">
+          <h2>10. Governing Law and Jurisdiction</h2>
+          <p>
+            These Terms are governed by the laws of <strong>[JURISDICTION]</strong>, without regard to conflict of laws principles. Any dispute
+            arising out of or relating to the Site or these Terms shall be subject to the exclusive jurisdiction of the courts of
+            <strong>[VENUE]</strong>.
+          </p>
+        </section>
 
-    <section class="section" id="contact">
-      <h2>12. Contact</h2>
-      <p>
-        For questions regarding these Terms, contact: <a class="inline-link" href="mailto:info@airovia.io">info@airovia.io</a>
-        (or write to <strong>[LEGAL ENTITY NAME + ADDRESS]</strong>).
-      </p>
-    </section>
+        <section class="section" id="changes">
+          <h2>11. Changes to These Terms</h2>
+          <p>
+            AIROVIA may update these Terms from time to time. The “Last updated” date indicates the latest revision. Continued use of the Site
+            after changes constitutes acceptance of the revised Terms.
+          </p>
+        </section>
 
-    <div class="fineprint">
-      <span>© <span id="year"></span> AIROVIA</span>
-      <span><a class="inline-link" href="terms.html">Terms</a> • <a class="inline-link" href="privacy.html">Privacy Policy • <a class="inline-link" href="data-protection.html">Data Protection</a></span>
+        <section class="section" id="contact">
+          <h2>12. Contact</h2>
+          <p>
+            For questions regarding these Terms, contact:
+            <a class="inline-link" href="mailto:info@airovia.io">info@airovia.io</a>.
+          </p>
+        </section>
+
+        <div class="fineprint">
+          <span>© <span id="year"></span> AIROVIA</span>
+          <!-- ✅ FIXED: no nested <a> tags -->
+          <span>
+            <a class="inline-link" href="terms.html">Terms</a> •
+            <a class="inline-link" href="privacy.html">Privacy Policy</a> •
+            <a class="inline-link" href="data-protection.html">Data Protection</a>
+          </span>
+        </div>
+      </div>
     </div>
   </main>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Year
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Mobile drawer
+    const drawer = document.getElementById("mobileDrawer");
+    const menuBtn = document.getElementById("menuBtn");
+    const closeDrawer = document.getElementById("closeDrawer");
+
+    if (drawer && menuBtn && closeDrawer) {
+      function openDrawer(){
+        drawer.setAttribute("aria-hidden","false");
+        menuBtn.setAttribute("aria-expanded","true");
+        document.documentElement.style.overflow = "hidden";
+      }
+      function hideDrawer(){
+        drawer.setAttribute("aria-hidden","true");
+        menuBtn.setAttribute("aria-expanded","false");
+        document.documentElement.style.overflow = "";
+      }
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen = drawer.getAttribute("aria-hidden") === "false";
+        isOpen ? hideDrawer() : openDrawer();
+      });
+
+      closeDrawer.addEventListener("click", hideDrawer);
+
+      drawer.addEventListener("click", (e) => {
+        if (e.target === drawer) hideDrawer();
+      });
+
+      drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", hideDrawer));
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && drawer.getAttribute("aria-hidden") === "false") hideDrawer();
+      });
+    }
   </script>
 </body>
 </html>

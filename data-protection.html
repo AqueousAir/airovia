@@ -1,7 +1,3 @@
-<!-- ============================================================
-AIROVIA — DATA PROTECTION
-File: data-protection.html
-============================================================ -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -36,8 +32,15 @@ File: data-protection.html
       line-height:1.6;
     }
     a{ color:inherit; text-decoration:none; }
-    a:focus-visible, button:focus-visible{ outline:2px solid rgba(76,195,255,.85); outline-offset:3px; border-radius:10px; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+      outline:2px solid rgba(76,195,255,.85);
+      outline-offset:3px;
+      border-radius:10px;
+    }
 
+    /* =========================
+       HEADER
+       ========================= */
     .header{
       position:fixed; top:0; left:0; right:0; z-index:50;
       background: rgba(7,11,20,.55);
@@ -57,7 +60,6 @@ File: data-protection.html
     }
     .brand{ display:flex; align-items:center; gap:12px; flex:0 0 auto; }
     .brand img{ height:40px; width:auto; object-fit:contain; }
-    .brand-text{ font-weight:900; letter-spacing:.06em; font-size:18px; line-height:1; white-space:nowrap; }
 
     .nav{
       display:flex; align-items:center; gap:10px;
@@ -70,15 +72,107 @@ File: data-protection.html
       transition:.18s ease;
     }
     .nav a:hover{ color:#fff; background: rgba(238,243,255,.06); border-color: rgba(238,243,255,.14); }
-    .nav-cta{
-      margin-left:8px;
-      border-color: rgba(76,195,255,.22) !important;
-      background: rgba(76,195,255,.10);
-      color:#eaf7ff;
-      font-weight:800;
-    }
-    .nav-cta:hover{ background: rgba(76,195,255,.16); }
 
+    /* =========================
+       MOBILE MENU BUTTON
+       ========================= */
+    .menu-btn{
+      display:none;
+      border: 1px solid rgba(238,243,255,.16);
+      background: rgba(238,243,255,.06);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .menu-btn svg{ display:block; }
+
+    @media (max-width: 980px){
+      .nav{ display:none; }
+      .menu-btn{ display:inline-flex; align-items:center; gap:10px; }
+    }
+
+    /* =========================
+       MOBILE DRAWER
+       ========================= */
+    .mobile-drawer{
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(0,0,0,.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s ease;
+    }
+    .mobile-drawer[aria-hidden="false"]{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer-panel{
+      position: absolute;
+      top: 0; right: 0;
+      height: 100%;
+      width: min(420px, 92vw);
+      background: rgba(7,11,20,.98);
+      border-left: 1px solid rgba(238,243,255,.10);
+      padding: calc(16px + env(safe-area-inset-top)) 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transform: translateX(110%);
+      transition: transform .26s ease;
+    }
+    .mobile-drawer[aria-hidden="false"] .drawer-panel{
+      transform: translateX(0);
+    }
+    @media (max-width: 520px){
+      .drawer-panel{ width: 100vw; }
+    }
+    .drawer-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .brand-mini{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .drawer-links{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      margin-top: 6px;
+    }
+    .drawer-links a{
+      padding: 12px 10px;
+      border-radius: 12px;
+      color: rgba(238,243,255,.86);
+      background: transparent;
+      border: 1px solid transparent;
+      transition: .16s ease;
+    }
+    .drawer-links a:hover{
+      background: rgba(238,243,255,.06);
+      border-color: rgba(238,243,255,.10);
+    }
+    .drawer-links a + a{
+      border-top: 1px solid rgba(238,243,255,.06);
+      border-radius: 0;
+    }
+    #closeDrawer{
+      padding: 10px 12px;
+      border-radius: 999px;
+    }
+
+    /* =========================
+       HERO
+       ========================= */
     .hero{
       position:relative;
       padding-top: 84px;
@@ -115,7 +209,11 @@ File: data-protection.html
       font-size:12px; letter-spacing:.18em; text-transform:uppercase;
       color: var(--muted2); margin-bottom:14px;
     }
-    .dot{ width:8px; height:8px; border-radius:99px; background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow: 0 12px 26px rgba(76,195,255,.18); }
+    .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 12px 26px rgba(76,195,255,.18);
+    }
 
     h1{
       margin:0 0 10px;
@@ -134,6 +232,9 @@ File: data-protection.html
     }
     .meta{ margin-top:14px; font-size:12px; color: rgba(238,243,255,.62); letter-spacing:.06em; }
 
+    /* =========================
+       PAGE
+       ========================= */
     .page{
       max-width: var(--max);
       margin:0 auto;
@@ -168,30 +269,70 @@ File: data-protection.html
       gap: 12px;
       flex-wrap: wrap;
     }
-    @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .drawer-panel{ transition:none; }
+      .mobile-drawer{ transition:none; }
+    }
   </style>
 </head>
 
 <body>
-   <header class="header">
-  <div class="header-inner">
-    <a class="brand" href="#s1" aria-label="AIROVIA Home">
-      <img src="images/logo.png" alt="AIROVIA" />
-     </a>
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="AIROVIA Home">
+        <img src="images/logo.png" alt="AIROVIA" />
+      </a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="index.html">Home</a>
-      <a href="Infrastructure.html">Platform</a>
-      <a href="technology.html">How It Works</a>
-      <a href="air-house.html">Air House</a>
-      <a href="deployment.html">Deployment</a>
-      <a href="energy.html">Energy</a>
-      <a href="monitoring.html">Monitoring</a>
-      <a href="use-cases.html">Use Cases</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="Infrastructure.html">Platform</a>
+        <a href="technology.html">How It Works</a>
+        <a href="air-house.html">Air House</a>
+        <a href="deployment.html">Deployment</a>
+        <a href="energy.html">Energy</a>
+        <a href="monitoring.html">Monitoring</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- ✅ MOBILE BURGER -->
+      <button class="menu-btn" id="menuBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobileDrawer"
+        aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Menu
+      </button>
+    </div>
+  </header>
+
+  <!-- ✅ MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="drawer-panel" role="document">
+      <div class="drawer-top">
+        <button class="btn" id="closeDrawer" type="button">Close</button>
+      </div>
+
+      <div class="drawer-links" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="Infrastructure.html">Platform</a>
+        <a href="technology.html">How It Works</a>
+        <a href="air-house.html">Air House</a>
+        <a href="deployment.html">Deployment</a>
+        <a href="energy.html">Energy</a>
+        <a href="monitoring.html">Monitoring</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      
+    </div>
   </div>
-</header>
 
   <section class="hero">
     <div class="hero-inner">
@@ -288,12 +429,54 @@ File: data-protection.html
 
     <div class="fineprint">
       <span>© <span id="year"></span> AIROVIA</span>
-      <span><a class="inline-link" href="terms.html">Terms</a> • <a class="inline-link" href="privacy.html">Privacy Policy • <a class="inline-link" href="data-protection.html">Data Protection</a></span>
+      <!-- ✅ FIXED: no nested <a> tags -->
+      <span>
+        <a class="inline-link" href="terms.html">Terms</a> •
+        <a class="inline-link" href="privacy.html">Privacy Policy</a> •
+        <a class="inline-link" href="data-protection.html">Data Protection</a>
+      </span>
     </div>
   </main>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Year
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Mobile drawer
+    const drawer = document.getElementById("mobileDrawer");
+    const menuBtn = document.getElementById("menuBtn");
+    const closeDrawer = document.getElementById("closeDrawer");
+
+    if (drawer && menuBtn && closeDrawer) {
+      function openDrawer(){
+        drawer.setAttribute("aria-hidden","false");
+        menuBtn.setAttribute("aria-expanded","true");
+        document.documentElement.style.overflow = "hidden";
+      }
+      function hideDrawer(){
+        drawer.setAttribute("aria-hidden","true");
+        menuBtn.setAttribute("aria-expanded","false");
+        document.documentElement.style.overflow = "";
+      }
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen = drawer.getAttribute("aria-hidden") === "false";
+        isOpen ? hideDrawer() : openDrawer();
+      });
+
+      closeDrawer.addEventListener("click", hideDrawer);
+
+      drawer.addEventListener("click", (e) => {
+        if (e.target === drawer) hideDrawer();
+      });
+
+      drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", hideDrawer));
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && drawer.getAttribute("aria-hidden") === "false") hideDrawer();
+      });
+    }
   </script>
 </body>
 </html>

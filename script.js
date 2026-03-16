@@ -134,7 +134,7 @@ if (contactForm) {
         window.grecaptcha.reset();
       }
       setStatus(
-        "Thank you. Your message has been sent to the AIROVIA team, and we will review it shortly.",
+        "Thank you. Your inquiry was submitted for processing. If you do not receive a response, please email info@airovia.io directly.",
         "success"
       );
     });

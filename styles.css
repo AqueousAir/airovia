@@ -4381,11 +4381,6 @@ h3 {
   grid-column: 1 / -1;
 }
 
-.contact-form-captcha {
-  display: flex;
-  justify-content: flex-start;
-}
-
 .contact-form-actions {
   display: flex;
   justify-content: flex-start;

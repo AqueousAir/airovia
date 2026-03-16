@@ -94,16 +94,7 @@ if (contactForm) {
     status.classList.add(type === "error" ? "is-error" : "is-success");
   };
 
-  contactForm.addEventListener("submit", (event) => {
-    if (window.grecaptcha) {
-      const recaptchaResponse = window.grecaptcha.getResponse();
-      if (!recaptchaResponse) {
-        event.preventDefault();
-        setStatus("Please complete the reCAPTCHA check before sending your inquiry.", "error");
-        return;
-      }
-    }
-
+  contactForm.addEventListener("submit", () => {
     awaitingSubmission = true;
 
     if (status) {
@@ -130,9 +121,6 @@ if (contactForm) {
       }
 
       contactForm.reset();
-      if (window.grecaptcha) {
-        window.grecaptcha.reset();
-      }
       setStatus(
         "Thank you. Your inquiry was submitted for processing. If you do not receive a response, please email info@airovia.io directly.",
         "success"

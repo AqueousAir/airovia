@@ -17,92 +17,6 @@
   --transition-fast: 180ms ease;
 }
 
-@media (max-width: 980px) {
-  .monitoring-hero {
-    min-height: 560px;
-    height: auto;
-  }
-
-  .monitoring-hero .page-hero-content {
-    padding-bottom: 52px;
-  }
-
-  .monitoring-intro-statement-grid,
-  .monitoring-feature-grid,
-  .monitoring-capability-grid,
-  .monitoring-closing-panel {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 680px) {
-  .monitoring-hero {
-    min-height: 460px;
-    height: 56svh;
-    max-height: none;
-    padding: 0;
-  }
-
-  .monitoring-hero .page-hero-content {
-    padding-bottom: 34px;
-  }
-
-  .monitoring-hero .page-hero-content h1 {
-    max-width: none;
-    font-size: clamp(2rem, 8vw, 3.1rem);
-  }
-
-  .monitoring-intro-statement,
-  .monitoring-feature,
-  .monitoring-capability-cards,
-  .monitoring-closing {
-    padding-bottom: 56px;
-  }
-
-  .monitoring-capability-intro {
-    padding-bottom: 56px;
-  }
-
-  .monitoring-feature-copy h2,
-  .monitoring-capability-intro-wrap h2,
-  .monitoring-closing-copy h2 {
-    font-size: clamp(1.45rem, 6.8vw, 2rem);
-  }
-
-  .monitoring-intro-statement-lead p,
-  .monitoring-intro-statement-body p,
-  .monitoring-feature-copy p,
-  .monitoring-capability-intro-wrap p,
-  .monitoring-capability-card p,
-  .monitoring-closing-copy p:last-child {
-    font-size: 0.96rem;
-    line-height: 1.72;
-  }
-
-  .monitoring-feature-visual {
-    min-height: 280px;
-  }
-
-  .monitoring-capability-card {
-    min-height: auto;
-    padding: 22px 20px;
-  }
-
-  .monitoring-capability-card h3 {
-    font-size: 1.16rem;
-  }
-
-  .monitoring-closing-panel {
-    padding: 24px 22px;
-    border-radius: 18px;
-  }
-
-  .monitoring-closing-panel .button {
-    min-width: 0;
-    width: 100%;
-  }
-}
-
 .not-found-section {
   padding-top: 200px;
   padding-bottom: 92px;
@@ -6989,6 +6903,121 @@ h2 {
   }
 
   .airhouse-closing-panel .button {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 980px) {
+  .monitoring-hero {
+    min-height: 560px;
+    height: auto;
+  }
+
+  .monitoring-hero .page-hero-content {
+    padding-bottom: 52px;
+  }
+
+  .monitoring-intro-statement-grid,
+  .monitoring-feature-grid,
+  .monitoring-feature-grid-reverse,
+  .monitoring-capability-grid,
+  .monitoring-closing-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .monitoring-intro-statement-grid,
+  .monitoring-feature-grid,
+  .monitoring-closing-panel {
+    gap: 30px;
+  }
+
+  .monitoring-feature,
+  .monitoring-capability-cards,
+  .monitoring-closing {
+    padding-bottom: 72px;
+  }
+
+  .monitoring-capability-intro {
+    padding-bottom: 64px;
+  }
+
+  .monitoring-feature-visual {
+    min-height: 380px;
+  }
+
+  .monitoring-closing-actions {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 680px) {
+  .monitoring-hero {
+    min-height: 460px;
+    height: 56svh;
+    max-height: none;
+    padding: 0;
+  }
+
+  .monitoring-hero .page-hero-content {
+    padding-bottom: 34px;
+  }
+
+  .monitoring-hero .page-hero-content h1 {
+    max-width: none;
+    font-size: clamp(2rem, 8vw, 3.1rem);
+  }
+
+  .monitoring-intro-statement,
+  .monitoring-feature,
+  .monitoring-capability-cards,
+  .monitoring-closing {
+    padding-bottom: 56px;
+  }
+
+  .monitoring-capability-intro {
+    padding-bottom: 56px;
+  }
+
+  .monitoring-feature-copy h2,
+  .monitoring-capability-intro-wrap h2,
+  .monitoring-closing-copy h2 {
+    font-size: clamp(1.45rem, 6.8vw, 2rem);
+  }
+
+  .monitoring-intro-statement-lead p,
+  .monitoring-intro-statement-body p,
+  .monitoring-feature-copy p,
+  .monitoring-capability-intro-wrap p,
+  .monitoring-capability-card p,
+  .monitoring-closing-copy p:last-child {
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
+
+  .monitoring-feature-visual {
+    min-height: 280px;
+  }
+
+  .monitoring-capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .monitoring-capability-card {
+    min-height: auto;
+    padding: 22px 20px;
+  }
+
+  .monitoring-capability-card h3 {
+    font-size: 1.16rem;
+  }
+
+  .monitoring-closing-panel {
+    padding: 24px 22px;
+    border-radius: 18px;
+  }
+
+  .monitoring-closing-panel .button {
     min-width: 0;
     width: 100%;
   }

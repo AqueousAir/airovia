@@ -2763,6 +2763,330 @@ h3 {
   justify-content: center;
 }
 
+.airhouse-process {
+  padding-top: 0;
+  padding-bottom: 88px;
+}
+
+.airhouse-process-wrap {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.airhouse-process-intro {
+  margin-bottom: 2.5rem;
+}
+
+.airhouse-process-intro h2 {
+  margin: 0 0 1rem;
+  max-width: 720px;
+}
+
+.airhouse-process-intro p:last-child {
+  margin: 0;
+  max-width: 860px;
+  font-size: 1.08rem;
+  line-height: 1.82;
+  color: rgba(27, 47, 67, 0.74);
+}
+
+.airhouse-explainer {
+  position: relative;
+}
+
+.airhouse-display {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.airhouse-display img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(100%, 1080px);
+  height: auto;
+}
+
+.airhouse-airflow {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.airhouse-airflow path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 3;
+  stroke-dasharray: 18 14;
+  animation: airflowMotion 4.8s linear infinite;
+}
+
+.airhouse-airflow .flow-primary {
+  stroke: rgba(110, 194, 255, 0.82);
+  filter: drop-shadow(0 0 9px rgba(84, 168, 255, 0.18));
+}
+
+.airhouse-airflow .flow-secondary {
+  stroke: rgba(110, 194, 255, 0.42);
+  stroke-width: 2;
+  animation-duration: 5.8s;
+}
+
+.airhouse-airflow .flow-tertiary {
+  stroke: rgba(110, 194, 255, 0.24);
+  stroke-width: 1.7;
+  stroke-dasharray: 14 16;
+  animation-duration: 6.6s;
+}
+
+.airhouse-airflow .flow-exhaust {
+  stroke: rgba(110, 194, 255, 0.32);
+  stroke-width: 2.1;
+  stroke-dasharray: 14 18;
+  animation-duration: 5.6s;
+}
+
+.airhouse-airflow .fan-ring {
+  fill: none;
+  stroke: rgba(108, 183, 255, 0.18);
+  stroke-width: 1.8;
+  animation: fanPulse 3.8s ease-in-out infinite;
+}
+
+.airhouse-airflow .fan-ring.r2 {
+  animation-delay: 0.5s;
+}
+
+.airhouse-airflow .fan-ring.r3 {
+  animation-delay: 1s;
+}
+
+.airhouse-airflow .fan-ring.r4 {
+  animation-delay: 1.5s;
+}
+
+.airhouse-airflow .fan-ring.r5 {
+  animation-delay: 2s;
+}
+
+.airhouse-airflow .fan-ring.r6 {
+  animation-delay: 2.5s;
+}
+
+.airhouse-airflow .chamber-band {
+  fill: rgba(74, 174, 255, 0.06);
+  stroke: rgba(120, 199, 255, 0.1);
+  stroke-width: 1;
+  animation: chamberPulse 4.4s ease-in-out infinite;
+}
+
+.airhouse-airflow .chamber-band.c2 {
+  animation-delay: 0.6s;
+}
+
+.airhouse-airflow .chamber-band.c3 {
+  animation-delay: 1.2s;
+}
+
+.airhouse-airflow .chamber-band.c4 {
+  animation-delay: 1.8s;
+}
+
+.airhouse-airflow .micro-particle {
+  fill: rgba(132, 214, 255, 0.62);
+  animation: particleDrift 5.8s ease-in-out infinite;
+}
+
+.airhouse-airflow .micro-particle.p2 {
+  animation-delay: 0.8s;
+}
+
+.airhouse-airflow .micro-particle.p3 {
+  animation-delay: 1.7s;
+}
+
+.airhouse-airflow .micro-particle.p4 {
+  animation-delay: 2.5s;
+}
+
+.airhouse-airflow .micro-particle.p5 {
+  animation-delay: 3.4s;
+}
+
+.airhouse-airflow .micro-particle.p6 {
+  animation-delay: 4.1s;
+}
+
+.airhouse-steps {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.airhouse-step {
+  position: absolute;
+  max-width: 116px;
+  text-align: center;
+  color: #0f2236;
+}
+
+.airhouse-step::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 6px);
+  width: 1px;
+  height: var(--line-height, 48px);
+  background: rgba(15, 34, 54, 0.18);
+  transform: translateX(-50%);
+}
+
+.airhouse-step .step-number {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 0.45rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #15263a;
+  color: #f6fbff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(16, 34, 54, 0.14);
+}
+
+.airhouse-step strong {
+  display: block;
+  padding: 0.36rem 0.56rem 0.38rem;
+  border-radius: 10px;
+  background: rgba(249, 252, 255, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(20, 42, 66, 0.06);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.airhouse-step.step-1 {
+  top: 112px;
+  right: -6px;
+  --line-height: 70px;
+  max-width: 98px;
+}
+
+.airhouse-step.step-2 {
+  top: 26px;
+  right: 162px;
+  --line-height: 84px;
+}
+
+.airhouse-step.step-3 {
+  top: 12px;
+  right: 284px;
+  --line-height: 92px;
+}
+
+.airhouse-step.step-4 {
+  top: 0;
+  right: 410px;
+  --line-height: 106px;
+}
+
+.airhouse-step.step-5 {
+  top: 0;
+  right: 534px;
+  --line-height: 108px;
+}
+
+.airhouse-step.step-6 {
+  top: 12px;
+  right: 660px;
+  --line-height: 102px;
+}
+
+.airhouse-step.step-7 {
+  top: 24px;
+  right: 786px;
+  --line-height: 92px;
+}
+
+.airhouse-step.step-8 {
+  top: 38px;
+  right: 912px;
+  --line-height: 82px;
+}
+
+.airhouse-step.step-9 {
+  top: 136px;
+  left: 8px;
+  --line-height: 112px;
+  max-width: 98px;
+}
+
+.airhouse-step.step-10 {
+  top: 308px;
+  left: -2px;
+  --line-height: 76px;
+  max-width: 116px;
+}
+
+@keyframes airflowMotion {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -96;
+  }
+}
+
+@keyframes fanPulse {
+  0%,
+  100% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.28;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes chamberPulse {
+  0%,
+  100% {
+    opacity: 0.12;
+  }
+
+  50% {
+    opacity: 0.36;
+  }
+}
+
+@keyframes particleDrift {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 0.72;
+    transform: translate3d(-18px, 0, 0);
+  }
+}
+
 .page-hero-energy {
   background-position: center 40%;
 }
@@ -6604,6 +6928,7 @@ h2 {
   }
 
   .airhouse-feature,
+  .airhouse-process,
   .airhouse-capability-cards,
   .airhouse-closing {
     padding-bottom: 72px;
@@ -6620,6 +6945,55 @@ h2 {
 
   .airhouse-capability-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .airhouse-process-wrap {
+    width: min(1180px, calc(100% - 40px));
+  }
+
+  .airhouse-step {
+    transform: scale(0.88);
+    transform-origin: center top;
+  }
+
+  .airhouse-step.step-1 {
+    right: -10px;
+  }
+
+  .airhouse-step.step-2 {
+    right: 136px;
+  }
+
+  .airhouse-step.step-3 {
+    right: 248px;
+  }
+
+  .airhouse-step.step-4 {
+    right: 364px;
+  }
+
+  .airhouse-step.step-5 {
+    right: 476px;
+  }
+
+  .airhouse-step.step-6 {
+    right: 590px;
+  }
+
+  .airhouse-step.step-7 {
+    right: 704px;
+  }
+
+  .airhouse-step.step-8 {
+    right: 816px;
+  }
+
+  .airhouse-step.step-9 {
+    left: -6px;
+  }
+
+  .airhouse-step.step-10 {
+    left: -10px;
   }
 }
 
@@ -6852,6 +7226,7 @@ h2 {
 
   .airhouse-intro-statement,
   .airhouse-feature,
+  .airhouse-process,
   .airhouse-capability-cards,
   .airhouse-closing {
     padding-bottom: 56px;
@@ -6905,6 +7280,31 @@ h2 {
   .airhouse-closing-panel .button {
     min-width: 0;
     width: 100%;
+  }
+
+  .airhouse-process-wrap {
+    width: min(100%, calc(100% - 24px));
+  }
+
+  .airhouse-process-intro {
+    margin-bottom: 1.8rem;
+  }
+
+  .airhouse-process-intro h2 {
+    font-size: clamp(1.45rem, 6.8vw, 2rem);
+  }
+
+  .airhouse-process-intro p:last-child {
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
+
+  .airhouse-airflow path {
+    stroke-width: 2.2;
+  }
+
+  .airhouse-step {
+    display: none;
   }
 }
 

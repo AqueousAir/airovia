@@ -1296,6 +1296,123 @@ h3 {
   line-height: 1.76;
 }
 
+.home-ecosystem {
+  padding-top: 0;
+  padding-bottom: 96px;
+}
+
+.home-ecosystem-wrap {
+  width: min(1220px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.home-ecosystem-copy {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.home-ecosystem-copy h2 {
+  margin: 10px 0 0;
+  max-width: none;
+  color: #081517;
+}
+
+.ecosystem-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.ecosystem-marquee-fade {
+  display: none;
+}
+
+.ecosystem-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  animation: ecosystem-marquee 30s linear infinite;
+}
+
+.ecosystem-marquee:hover .ecosystem-track {
+  animation-play-state: paused;
+}
+
+.ecosystem-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 196px;
+  height: 64px;
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease;
+}
+
+.ecosystem-logo:hover {
+  opacity: 1;
+  filter: grayscale(0.2);
+  transform: translateY(-1px);
+}
+
+.ecosystem-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.ecosystem-logo-aws {
+  width: 176px;
+}
+
+.ecosystem-logo-fortinet {
+  width: 188px;
+}
+
+.ecosystem-logo-abb {
+  width: 166px;
+}
+
+.ecosystem-logo-schneider {
+  width: 224px;
+}
+
+.ecosystem-logo-siemens {
+  width: 176px;
+}
+
+.ecosystem-logo-cisco {
+  width: 182px;
+}
+
+.ecosystem-logo-honeywell {
+  width: 214px;
+}
+
+.ecosystem-logo-openai {
+  width: 184px;
+}
+
+.ecosystem-logo-sensirion {
+  width: 186px;
+}
+
+@keyframes ecosystem-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @keyframes partner-marquee {
   from {
     transform: translateX(0);
@@ -6613,6 +6730,23 @@ h2 {
     padding-bottom: 58px;
   }
 
+  .home-ecosystem {
+    padding-bottom: 58px;
+  }
+
+  .home-ecosystem-copy {
+    margin-bottom: 22px;
+  }
+
+  .ecosystem-track {
+    gap: 36px;
+  }
+
+  .ecosystem-logo {
+    width: 164px;
+    height: 52px;
+  }
+
   .home-airhouse-reference-panel {
     padding: 24px 22px;
     border-radius: 18px;
@@ -6652,6 +6786,28 @@ h2 {
 
   .home-build-card h3 {
     font-size: 1.2rem;
+  }
+
+  .home-ecosystem-wrap {
+    width: min(100%, calc(100% - 24px));
+  }
+
+  .home-ecosystem-copy {
+    margin-bottom: 18px;
+  }
+
+  .home-ecosystem-copy h2 {
+    font-size: clamp(1.3rem, 6.6vw, 1.9rem);
+  }
+
+  .ecosystem-track {
+    gap: 28px;
+    animation-duration: 24s;
+  }
+
+  .ecosystem-logo {
+    width: 136px;
+    height: 42px;
   }
 
   .page-hero-company .page-hero-content .lede {

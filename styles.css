@@ -2746,6 +2746,58 @@ h3 {
   background-position: center 54%;
 }
 
+.airhouse-benefits {
+  padding-top: 0;
+  padding-bottom: 84px;
+}
+
+.airhouse-benefits-panel {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  padding: 28px 32px;
+  border: 1px solid rgba(20, 74, 107, 0.08);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.58));
+  box-shadow: 0 18px 42px rgba(13, 26, 38, 0.06);
+}
+
+.airhouse-benefit-item {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.airhouse-benefit-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  color: #2f7df3;
+}
+
+.airhouse-benefit-icon svg {
+  width: 42px;
+  height: 42px;
+}
+
+.airhouse-benefit-copy strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #132841;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.airhouse-benefit-copy p {
+  margin: 0;
+  color: #2f3444;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
 .airhouse-focus-intro,
 .airhouse-capability-intro {
   padding-top: 0;
@@ -7136,6 +7188,12 @@ h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .airhouse-benefits-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    padding: 24px 24px;
+  }
+
   .airhouse-process-wrap {
     width: min(1180px, calc(100% - 40px));
   }
@@ -7486,6 +7544,36 @@ h2 {
   .airhouse-process-intro p:last-child {
     font-size: 0.96rem;
     line-height: 1.72;
+  }
+
+  .airhouse-benefits-panel {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .airhouse-benefit-item {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .airhouse-benefit-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .airhouse-benefit-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .airhouse-benefit-copy strong {
+    font-size: 0.92rem;
+  }
+
+  .airhouse-benefit-copy p {
+    font-size: 0.92rem;
   }
 
   .airhouse-airflow path {

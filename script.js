@@ -6,6 +6,10 @@ const slides = document.querySelectorAll("[data-slide]");
 const dots = document.querySelectorAll("[data-slide-to]");
 const arrows = document.querySelectorAll("[data-slide-dir]");
 const contactForm = document.querySelector("[data-contact-form]");
+const overviewModal = document.querySelector("[data-overview-modal]");
+const overviewOpenButtons = document.querySelectorAll("[data-overview-open]");
+const overviewCloseButtons = document.querySelectorAll("[data-overview-close]");
+const overviewForm = document.querySelector("[data-overview-form]");
 
 if (navToggle && header) {
   navToggle.addEventListener("click", () => {
@@ -134,6 +138,96 @@ if (contactForm) {
           submitButton.textContent = defaultButtonLabel;
         }
       }, 2500);
+    });
+  }
+}
+
+if (overviewModal && overviewOpenButtons.length) {
+  const openOverviewModal = () => {
+    overviewModal.hidden = false;
+    document.body.classList.add("modal-open");
+    const firstField = overviewModal.querySelector("input, select");
+    if (firstField) {
+      window.setTimeout(() => firstField.focus(), 80);
+    }
+  };
+
+  const closeOverviewModal = () => {
+    overviewModal.hidden = true;
+    document.body.classList.remove("modal-open");
+  };
+
+  window.openExecutiveOverviewForm = openOverviewModal;
+  window.closeExecutiveOverviewForm = closeOverviewModal;
+
+  document.addEventListener("click", (event) => {
+    const openButton = event.target && event.target.closest
+      ? event.target.closest("[data-overview-open]")
+      : null;
+    if (!openButton) return;
+    event.preventDefault();
+    openOverviewModal();
+  });
+
+  overviewCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeOverviewModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !overviewModal.hidden) {
+      closeOverviewModal();
+    }
+  });
+}
+
+if (overviewForm) {
+  const submitButton = overviewForm.querySelector('button[type="submit"]');
+  const status = overviewForm.querySelector("[data-overview-status]");
+  const targetName = overviewForm.getAttribute("target");
+  const submitFrame = targetName ? document.querySelector(`iframe[name="${targetName}"]`) : null;
+  const pdfUrl = overviewForm.dataset.pdfUrl || "/investors/AIROVIA_Executive_Overview.pdf";
+  const defaultButtonLabel = submitButton ? submitButton.textContent : "";
+  let awaitingSubmission = false;
+
+  const setOverviewStatus = (message, type) => {
+    if (!status) return;
+    status.hidden = false;
+    status.textContent = message;
+    status.classList.remove("is-success", "is-error");
+    status.classList.add(type === "error" ? "is-error" : "is-success");
+  };
+
+  overviewForm.addEventListener("submit", () => {
+    awaitingSubmission = true;
+
+    if (status) {
+      status.hidden = true;
+      status.textContent = "";
+      status.classList.remove("is-success", "is-error");
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Preparing overview...";
+    }
+  });
+
+  if (submitFrame) {
+    submitFrame.addEventListener("load", () => {
+      if (!awaitingSubmission) return;
+
+      awaitingSubmission = false;
+      setOverviewStatus("Thank you. Opening the executive overview now.", "success");
+
+      window.setTimeout(() => {
+        window.location.href = pdfUrl;
+      }, 500);
+    });
+  } else {
+    overviewForm.addEventListener("submit", () => {
+      window.setTimeout(() => {
+        window.location.href = pdfUrl;
+      }, 700);
     });
   }
 }

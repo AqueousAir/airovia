@@ -13,6 +13,9 @@
     <loc>https://airovia.io/technology.html</loc>
   </url>
   <url>
+    <loc>https://airovia.io/monitoring-platform.html</loc>
+  </url>
+  <url>
     <loc>https://airovia.io/use-cases.html</loc>
   </url>
   <url>
@@ -20,6 +23,9 @@
   </url>
   <url>
     <loc>https://airovia.io/team.html</loc>
+  </url>
+  <url>
+    <loc>https://airovia.io/investors</loc>
   </url>
   <url>
     <loc>https://airovia.io/sustainability.html</loc>
@@ -44,8 +50,5 @@
   </url>
   <url>
     <loc>https://airovia.io/data-protection.html</loc>
-  </url>
-   <url>
-    <loc>https://airovia.io/monitoring-platform.html</loc>
   </url>
 </urlset>

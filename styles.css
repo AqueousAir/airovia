@@ -5605,6 +5605,1118 @@ h2 {
   color: var(--white);
 }
 
+.syria-hero {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+  background: #071018;
+  color: var(--white);
+}
+
+.syria-hero-media,
+.syria-hero-media::before,
+.syria-hero-media::after {
+  position: absolute;
+  inset: 0;
+}
+
+.syria-hero-media {
+  background-image:
+    linear-gradient(90deg, rgba(5, 10, 16, 0.84) 0%, rgba(5, 10, 16, 0.66) 42%, rgba(5, 10, 16, 0.38) 100%),
+    linear-gradient(180deg, rgba(5, 10, 16, 0.48) 0%, rgba(5, 10, 16, 0.12) 38%, rgba(5, 10, 16, 0.74) 100%),
+    url("assets/img/Deployment.png");
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.03);
+  animation: investorsHeroDrift 18s ease-in-out infinite alternate;
+}
+
+.syria-en-page .syria-hero-media {
+  background-image:
+    linear-gradient(90deg, rgba(5, 10, 16, 0.82) 0%, rgba(5, 10, 16, 0.62) 40%, rgba(5, 10, 16, 0.3) 100%),
+    linear-gradient(180deg, rgba(5, 10, 16, 0.46) 0%, rgba(5, 10, 16, 0.12) 38%, rgba(5, 10, 16, 0.78) 100%),
+    url("syria/img/syria-water-resilience-hero.png");
+  background-position: center;
+}
+
+.syria-hero-media::before {
+  content: "";
+  background-image:
+    linear-gradient(rgba(140, 199, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140, 199, 248, 0.08) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.76), transparent 82%);
+}
+
+.syria-hero-media::after {
+  content: "";
+  background:
+    radial-gradient(circle at 68% 46%, rgba(94, 148, 242, 0.18), transparent 27%),
+    radial-gradient(circle at 78% 64%, rgba(15, 124, 114, 0.14), transparent 24%);
+}
+
+.syria-hero-motion {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.syria-hero-motion span {
+  position: absolute;
+  right: 8vw;
+  width: min(46vw, 620px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(160, 210, 255, 0.44), transparent);
+  animation: investorsLineSweep 8s ease-in-out infinite;
+}
+
+.syria-hero-motion span:nth-child(1) {
+  top: 34%;
+}
+
+.syria-hero-motion span:nth-child(2) {
+  top: 52%;
+  animation-delay: 1.8s;
+}
+
+.syria-hero-motion span:nth-child(3) {
+  top: 70%;
+  animation-delay: 3.2s;
+}
+
+.syria-hero-emblem {
+  position: absolute;
+  right: max(32px, calc((100vw - var(--max)) / 2));
+  bottom: 9vh;
+  z-index: 2;
+  width: min(34vw, 420px);
+  opacity: 0.18;
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.32));
+  pointer-events: none;
+}
+
+.syria-hero-emblem img {
+  width: 100%;
+  height: auto;
+}
+
+.syria-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(calc(100% - 32px), var(--max));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 172px 0 82px;
+}
+
+.syria-hero-inner.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.syria-hero h1 {
+  max-width: 14ch;
+  font-size: clamp(3.1rem, 5.7vw, 5.8rem);
+}
+
+.syria-hero-subtitle {
+  max-width: 34ch;
+  margin: 18px 0 0;
+  color: rgba(245, 241, 232, 0.94);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  line-height: 1.18;
+}
+
+.syria-hero .lede {
+  max-width: 68ch;
+}
+
+.syria-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.syria-language-link {
+  width: fit-content;
+  margin-bottom: 22px;
+  padding: 9px 14px;
+  border: 1px solid rgba(245, 241, 232, 0.22);
+  border-radius: 999px;
+  background: rgba(245, 241, 232, 0.08);
+  color: rgba(245, 241, 232, 0.9);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1;
+  backdrop-filter: blur(12px);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.syria-language-link:hover {
+  transform: translateY(-1px);
+  background: rgba(245, 241, 232, 0.14);
+  color: var(--white);
+}
+
+.syria-initiative-mark {
+  display: grid;
+  gap: 7px;
+  width: fit-content;
+  margin-bottom: 22px;
+  padding: 12px 16px;
+  border: 1px solid rgba(245, 241, 232, 0.18);
+  border-radius: 2px;
+  background: rgba(7, 18, 28, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(245, 241, 232, 0.04);
+  backdrop-filter: blur(14px);
+}
+
+.syria-initiative-mark span {
+  color: rgba(245, 241, 232, 0.68);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+}
+
+.syria-initiative-mark strong {
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.syria-intro,
+.syria-identity,
+.syria-vision,
+.syria-airhouse,
+.syria-national-vision,
+.syria-deployment-map,
+.syria-applications,
+.syria-roadmap,
+.syria-partners,
+.syria-local,
+.syria-statement,
+.syria-contact,
+.syria-disclaimer {
+  padding-top: 86px;
+  scroll-margin-top: 118px;
+}
+
+.syria-section-header {
+  max-width: 980px;
+  margin-bottom: 34px;
+}
+
+.syria-section-header h2,
+.syria-vision-copy h2,
+.syria-feature-copy h2,
+.syria-local-copy h2,
+.syria-contact-copy h2 {
+  margin: 10px 0 20px;
+  color: #081517;
+  font-size: clamp(1.9rem, 3.1vw, 3.15rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.syria-section-header p:not(.eyebrow),
+.syria-identity-copy p,
+.syria-vision-copy p,
+.syria-feature-copy p,
+.syria-local-copy p,
+.syria-contact-copy p {
+  max-width: 68ch;
+  margin: 0;
+  color: #2f3444;
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+.syria-card-grid,
+.syria-capability-grid,
+.syria-partner-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.syria-card-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.syria-pressure-diagram,
+.syria-process-band,
+.syria-application-grid {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(20, 74, 107, 0.14);
+  border-left: 1px solid rgba(20, 74, 107, 0.14);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.syria-pressure-diagram {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.syria-pressure-diagram article,
+.syria-process-band article,
+.syria-application-grid article {
+  position: relative;
+  min-height: 252px;
+  padding: 28px 26px;
+  border-right: 1px solid rgba(20, 74, 107, 0.14);
+  border-bottom: 1px solid rgba(20, 74, 107, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.34)),
+    linear-gradient(135deg, rgba(94, 148, 242, 0.08), transparent 48%);
+}
+
+.syria-pressure-diagram article:not(:last-child)::after,
+.syria-process-band article:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 42px;
+  right: -9px;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  border-top: 1px solid rgba(20, 74, 107, 0.25);
+  border-right: 1px solid rgba(20, 74, 107, 0.25);
+  background: rgba(244, 248, 243, 0.9);
+  transform: rotate(45deg);
+}
+
+.syria-pressure-diagram span,
+.syria-process-band span,
+.syria-application-grid span {
+  display: inline-block;
+  margin-bottom: 36px;
+  color: #5e94f2;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.syria-pressure-diagram strong,
+.syria-process-band strong,
+.syria-application-grid strong {
+  display: block;
+  margin: 0 0 14px;
+  color: #081517;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+.syria-pressure-diagram p,
+.syria-process-band p,
+.syria-application-grid p {
+  margin: 0;
+  color: #2f3444;
+  font-size: 0.96rem;
+  line-height: 1.68;
+}
+
+.syria-card-grid article,
+.syria-capability-grid article,
+.syria-pillar-list article {
+  min-height: 250px;
+  padding: 28px;
+  border: 1px solid rgba(20, 74, 107, 0.09);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 14px 34px rgba(13, 26, 38, 0.05);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.syria-card-grid article:first-child {
+  background: #213b86;
+  color: var(--white);
+}
+
+.syria-card-grid article:hover,
+.syria-capability-grid article:hover,
+.syria-pillar-list article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(20, 74, 107, 0.16);
+  box-shadow: 0 20px 40px rgba(13, 26, 38, 0.08);
+}
+
+.syria-card-grid span,
+.syria-pillar-list span,
+.syria-timeline span {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #5e94f2;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.syria-card-grid h3,
+.syria-card-grid strong,
+.syria-capability-grid strong,
+.syria-pillar-list strong,
+.syria-timeline strong {
+  display: block;
+  margin: 0 0 14px;
+  color: #081517;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.16;
+}
+
+.syria-card-grid p,
+.syria-capability-grid p,
+.syria-pillar-list p,
+.syria-timeline p {
+  margin: 0;
+  color: #2f3444;
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.syria-card-grid article:first-child span,
+.syria-card-grid article:first-child h3,
+.syria-card-grid article:first-child p {
+  color: var(--white);
+}
+
+.syria-identity {
+  padding-top: 58px;
+}
+
+.syria-national-vision {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 96px 0;
+  background:
+    linear-gradient(135deg, rgba(6, 15, 24, 0.97), rgba(10, 31, 42, 0.94)),
+    radial-gradient(circle at 82% 22%, rgba(94, 148, 242, 0.14), transparent 32%);
+  color: var(--white);
+}
+
+.syria-national-vision-inner {
+  width: min(calc(100% - 32px), var(--max));
+  margin: 0 auto;
+}
+
+.syria-initiative-mark-dark {
+  border-color: rgba(195, 173, 117, 0.3);
+  background: rgba(245, 241, 232, 0.06);
+}
+
+.syria-national-vision h2 {
+  max-width: 12ch;
+  margin: 0 0 28px;
+  color: var(--white);
+  font-size: clamp(2.7rem, 5vw, 5.8rem);
+  font-weight: 500;
+  line-height: 0.98;
+}
+
+.syria-national-vision p {
+  max-width: 78ch;
+  margin: 0;
+  color: rgba(245, 241, 232, 0.82);
+  font-size: 1.08rem;
+  line-height: 1.82;
+}
+
+.syria-national-vision p + p {
+  margin-top: 18px;
+}
+
+.syria-vision-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 46px;
+  border: 1px solid rgba(245, 241, 232, 0.12);
+  background: rgba(245, 241, 232, 0.12);
+}
+
+.syria-vision-cards article {
+  min-height: 190px;
+  padding: 26px;
+  background:
+    linear-gradient(180deg, rgba(245, 241, 232, 0.08), rgba(245, 241, 232, 0.04)),
+    rgba(7, 18, 28, 0.62);
+}
+
+.syria-vision-cards strong {
+  display: block;
+  max-width: 12ch;
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.38rem;
+  line-height: 1.12;
+}
+
+.syria-vision-cards span {
+  display: block;
+  max-width: 28ch;
+  margin-top: 34px;
+  color: rgba(245, 241, 232, 0.74);
+  line-height: 1.58;
+}
+
+.syria-identity-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) minmax(300px, 0.74fr);
+  gap: 34px;
+  align-items: center;
+  overflow: hidden;
+  padding: 34px 36px;
+  border: 1px solid rgba(20, 74, 107, 0.09);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.62)),
+    radial-gradient(circle at 12% 40%, rgba(195, 173, 117, 0.22), transparent 30%),
+    radial-gradient(circle at top right, rgba(52, 169, 246, 0.08), transparent 44%);
+  box-shadow: 0 18px 40px rgba(13, 26, 38, 0.06);
+}
+
+.syria-identity-emblem {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(15, 35, 50, 0.94), rgba(9, 24, 37, 0.9));
+  box-shadow: inset 0 0 0 1px rgba(245, 241, 232, 0.1);
+}
+
+.syria-identity-emblem img {
+  width: min(82%, 150px);
+  height: auto;
+  opacity: 0.92;
+}
+
+.syria-identity-copy h2 {
+  margin: 10px 0 18px;
+  max-width: 22ch;
+  color: #081517;
+  font-size: clamp(1.6rem, 2.35vw, 2.55rem);
+  line-height: 1.08;
+}
+
+.syria-identity-points {
+  display: grid;
+  gap: 10px;
+}
+
+.syria-identity-points span {
+  position: relative;
+  padding: 14px 16px 14px 38px;
+  border: 1px solid rgba(20, 74, 107, 0.09);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  color: #132841;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.syria-identity-points span::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c3ad75;
+  transform: translateY(-50%);
+}
+
+.syria-vision-grid,
+.syria-feature-grid,
+.syria-local-panel,
+.syria-contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(380px, 1.08fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.syria-vision-copy blockquote {
+  margin: 28px 0 0;
+  padding: 24px 26px;
+  border-left: 3px solid #5e94f2;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.66);
+  color: #132841;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  line-height: 1.18;
+}
+
+.syria-pillar-list,
+.syria-value-list {
+  display: grid;
+  gap: 16px;
+}
+
+.syria-pillar-list article {
+  min-height: auto;
+}
+
+.syria-feature-grid {
+  grid-template-columns: minmax(420px, 1.08fr) minmax(0, 0.92fr);
+  margin-bottom: 28px;
+}
+
+.syria-ecosystem-grid {
+  align-items: stretch;
+}
+
+.syria-feature-visual {
+  min-height: 460px;
+  overflow: hidden;
+  border-radius: 24px;
+  background-image:
+    linear-gradient(180deg, rgba(7, 18, 28, 0.12), rgba(7, 18, 28, 0.38)),
+    url("assets/img/air-house.png");
+  background-size: cover;
+  background-position: center 42%;
+  box-shadow: 0 20px 48px rgba(13, 26, 38, 0.14);
+}
+
+.syria-airhouse-ecosystem {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid rgba(20, 74, 107, 0.1);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at center, rgba(94, 148, 242, 0.15), transparent 22%),
+    linear-gradient(rgba(20, 74, 107, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 74, 107, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.46));
+  background-size: auto, 54px 54px, 54px 54px, auto;
+  box-shadow: 0 20px 48px rgba(13, 26, 38, 0.08);
+}
+
+.syria-airhouse-ecosystem::before,
+.syria-airhouse-ecosystem::after {
+  content: "";
+  position: absolute;
+  inset: 50% 12% auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(20, 74, 107, 0.28), transparent);
+}
+
+.syria-airhouse-ecosystem::after {
+  transform: rotate(90deg);
+}
+
+.ecosystem-node {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 148px;
+  min-height: 74px;
+  padding: 14px;
+  border: 1px solid rgba(20, 74, 107, 0.13);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.74);
+  color: #132841;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  line-height: 1.18;
+  text-align: center;
+  box-shadow: 0 16px 34px rgba(13, 26, 38, 0.08);
+}
+
+.ecosystem-center {
+  left: 50%;
+  top: 50%;
+  width: 178px;
+  min-height: 102px;
+  border-color: rgba(195, 173, 117, 0.32);
+  background: linear-gradient(180deg, #132841, #091827);
+  color: var(--white);
+  transform: translate(-50%, -50%);
+}
+
+.ecosystem-top {
+  left: 50%;
+  top: 34px;
+  transform: translateX(-50%);
+}
+
+.ecosystem-right {
+  right: 34px;
+  top: 33%;
+}
+
+.ecosystem-bottom-right {
+  right: 68px;
+  bottom: 58px;
+}
+
+.ecosystem-bottom {
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+}
+
+.ecosystem-bottom-left {
+  left: 68px;
+  bottom: 58px;
+}
+
+.ecosystem-left {
+  left: 34px;
+  top: 33%;
+}
+
+.syria-capability-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.syria-capability-grid article {
+  min-height: 220px;
+}
+
+.syria-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgba(20, 74, 107, 0.14);
+  border-left: 1px solid rgba(20, 74, 107, 0.14);
+  overflow: hidden;
+}
+
+.syria-timeline article {
+  position: relative;
+  min-height: 250px;
+  padding: 26px 24px;
+  border-right: 1px solid rgba(20, 74, 107, 0.14);
+  border-bottom: 1px solid rgba(20, 74, 107, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.34));
+}
+
+.syria-timeline article::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 72px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #5e94f2;
+}
+
+.syria-timeline span {
+  margin-bottom: 46px;
+}
+
+.syria-process-band {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.syria-process-band article {
+  min-height: 230px;
+  padding: 24px 20px;
+}
+
+.syria-process-band span {
+  margin-bottom: 42px;
+}
+
+.syria-map-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(520px, 1.22fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.syria-map-panel {
+  padding: 28px;
+  border: 1px solid rgba(20, 74, 107, 0.09);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.5)),
+    radial-gradient(circle at center, rgba(94, 148, 242, 0.1), transparent 50%);
+  box-shadow: 0 18px 40px rgba(13, 26, 38, 0.06);
+}
+
+.syria-map-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.syria-map-shape {
+  fill: rgba(19, 40, 65, 0.08);
+  stroke: rgba(19, 40, 65, 0.32);
+  stroke-width: 2.2;
+}
+
+.syria-map-route {
+  fill: none;
+  stroke: rgba(94, 148, 242, 0.28);
+  stroke-width: 2;
+  stroke-dasharray: 10 12;
+}
+
+.map-marker {
+  color: #132841;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.map-marker .marker-halo {
+  fill: rgba(255, 255, 255, 0.78);
+  stroke: rgba(94, 148, 242, 0.88);
+  stroke-width: 2.4;
+  filter: drop-shadow(0 0 10px rgba(94, 148, 242, 0.24));
+  animation: syriaMarkerPulse 2.8s ease-in-out infinite;
+}
+
+.map-marker .marker-core {
+  fill: #5e94f2;
+  stroke: none;
+}
+
+.map-marker text {
+  fill: #132841;
+}
+
+.map-label-left {
+  text-anchor: end;
+}
+
+.marker-a { transform: translate(420px, 332px); }
+.marker-b { transform: translate(585px, 426px); }
+.marker-c { transform: translate(714px, 560px); }
+.marker-d { transform: translate(510px, 575px); }
+.marker-e { transform: translate(746px, 720px); }
+.marker-f { transform: translate(330px, 510px); }
+.marker-g { transform: translate(296px, 708px); }
+.marker-h { transform: translate(760px, 300px); }
+
+.marker-b circle { animation-delay: 0.25s; }
+.marker-c circle { animation-delay: 0.5s; }
+.marker-d circle { animation-delay: 0.75s; }
+.marker-e circle { animation-delay: 1s; }
+.marker-f circle { animation-delay: 1.25s; }
+.marker-g circle { animation-delay: 1.5s; }
+.marker-h circle { animation-delay: 1.75s; }
+
+.syria-map-panel p {
+  max-width: 58ch;
+  margin: 18px 0 0;
+  color: #5f6675;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.syria-map-legend {
+  display: none;
+}
+
+.syria-application-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.syria-application-grid article {
+  min-height: 230px;
+}
+
+.syria-partner-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(20, 74, 107, 0.14);
+  border-left: 1px solid rgba(20, 74, 107, 0.14);
+}
+
+.syria-partner-grid article {
+  min-height: 152px;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  border-right: 1px solid rgba(20, 74, 107, 0.14);
+  border-bottom: 1px solid rgba(20, 74, 107, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.36));
+  color: #132841;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.05rem, 1.4vw, 1.38rem);
+  font-weight: 700;
+  line-height: 1.16;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.syria-partner-grid article:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.syria-local-panel,
+.syria-contact-panel,
+.syria-disclaimer-panel {
+  padding: 34px 36px;
+  border: 1px solid rgba(20, 74, 107, 0.09);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.62)),
+    radial-gradient(circle at top left, rgba(52, 169, 246, 0.08), transparent 48%);
+  box-shadow: 0 18px 40px rgba(13, 26, 38, 0.06);
+}
+
+.syria-value-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.syria-value-list span {
+  position: relative;
+  min-height: 72px;
+  padding: 18px 18px 18px 42px;
+  border: 1px solid rgba(20, 74, 107, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+  color: #132841;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.syria-value-list span::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 25px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #5e94f2;
+}
+
+.syria-statement-panel {
+  padding: clamp(36px, 6vw, 76px);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(9, 24, 37, 0.94), rgba(15, 50, 65, 0.88)),
+    url("assets/img/Infrastructure-Architecture.png");
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  box-shadow: 0 24px 60px rgba(13, 26, 38, 0.16);
+}
+
+.syria-statement-panel h2 {
+  max-width: 18ch;
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.02;
+}
+
+.syria-statement-panel p {
+  max-width: 58ch;
+  margin: 24px 0 0;
+  color: rgba(245, 241, 232, 0.82);
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+.syria-contact-panel {
+  grid-template-columns: minmax(0, 0.72fr) minmax(480px, 1.28fr);
+  align-items: start;
+}
+
+.syria-form .contact-form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.syria-disclaimer {
+  padding-top: 34px;
+}
+
+.syria-disclaimer-panel {
+  padding: 24px 28px;
+}
+
+.syria-disclaimer-panel p {
+  margin: 0;
+  color: #2f3444;
+  font-size: 0.94rem;
+  line-height: 1.72;
+}
+
+.rtl-page {
+  direction: ltr;
+  text-align: right;
+  font-family: "Noto Sans Arabic", "Public Sans", sans-serif;
+}
+
+.rtl-page main,
+.rtl-page .site-footer {
+  direction: rtl;
+}
+
+.rtl-page input,
+.rtl-page select,
+.rtl-page textarea,
+.rtl-page button {
+  font-family: "Noto Sans Arabic", "Public Sans", sans-serif;
+}
+
+.rtl-page h1,
+.rtl-page h2,
+.rtl-page h3,
+.rtl-page .syria-hero-subtitle,
+.rtl-page .syria-card-grid h3,
+.rtl-page .syria-capability-grid strong,
+.rtl-page .syria-pillar-list strong,
+.rtl-page .syria-timeline strong,
+.rtl-page .syria-partner-grid article,
+.rtl-page .syria-vision-copy blockquote,
+.rtl-page .footer-message h2 {
+  font-family: "Noto Sans Arabic", "Space Grotesk", sans-serif;
+}
+
+.rtl-page .site-header {
+  direction: ltr;
+  flex-direction: row-reverse;
+}
+
+.rtl-page .brand {
+  justify-content: flex-end;
+}
+
+.rtl-page .site-nav,
+.rtl-page .footer-links-grid,
+.rtl-page .footer-bottom,
+.rtl-page .footer-nav,
+.rtl-page .footer-social {
+  direction: rtl;
+}
+
+.rtl-page .site-nav {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.rtl-page .nav-toggle {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.rtl-page .hero-kicker,
+.rtl-page .eyebrow,
+.rtl-page .syria-card-grid span,
+.rtl-page .syria-pillar-list span,
+.rtl-page .syria-timeline span,
+.rtl-page .contact-field span {
+  letter-spacing: 0.04em;
+}
+
+.rtl-page .syria-hero-inner {
+  align-items: flex-start;
+  text-align: right;
+}
+
+.rtl-page .syria-hero .hero-kicker,
+.rtl-page .syria-hero h1,
+.rtl-page .syria-hero-subtitle,
+.rtl-page .syria-hero .lede,
+.rtl-page .syria-language-link {
+  direction: rtl;
+}
+
+.rtl-page .syria-hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1.1;
+}
+
+.rtl-page .syria-hero .lede {
+  max-width: 62ch;
+}
+
+.rtl-page .syria-hero h1,
+.rtl-page .syria-hero-subtitle,
+.rtl-page .syria-hero .lede,
+.rtl-page .syria-section-header,
+.rtl-page .syria-section-header h2,
+.rtl-page .syria-identity-copy h2,
+.rtl-page .syria-vision-copy h2,
+.rtl-page .syria-feature-copy h2,
+.rtl-page .syria-local-copy h2,
+.rtl-page .syria-contact-copy h2,
+.rtl-page .syria-statement-panel h2 {
+  text-wrap: balance;
+}
+
+.rtl-page .syria-hero-emblem {
+  right: auto;
+  left: max(32px, calc((100vw - var(--max)) / 2));
+}
+
+.rtl-page .syria-hero-motion span {
+  right: auto;
+  left: 8vw;
+}
+
+.rtl-page .syria-hero-actions,
+.rtl-page .contact-form-actions {
+  justify-content: flex-start;
+}
+
+.rtl-page .syria-identity-points span,
+.rtl-page .syria-value-list span {
+  padding-left: 16px;
+  padding-right: 42px;
+}
+
+.rtl-page .syria-identity-points span::before,
+.rtl-page .syria-value-list span::before {
+  left: auto;
+  right: 18px;
+}
+
+.rtl-page .syria-timeline article::before {
+  left: auto;
+  right: 24px;
+}
+
+.rtl-page .syria-vision-copy blockquote {
+  border-left: 0;
+  border-right: 3px solid #5e94f2;
+}
+
+.rtl-page .contact-field input,
+.rtl-page .contact-field select,
+.rtl-page .contact-field textarea {
+  text-align: right;
+}
+
+.rtl-page .contact-field input[dir="ltr"] {
+  text-align: left;
+}
+
+.rtl-page .footer-message h2 {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: right;
+}
+
 .investors-hero {
   position: relative;
   width: 100vw;
@@ -6294,6 +7406,19 @@ h2 {
   }
 }
 
+@keyframes syriaMarkerPulse {
+  0%,
+  100% {
+    opacity: 0.62;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.94;
+    transform: scale(1.08);
+  }
+}
+
 .site-footer {
   margin-top: 80px;
   width: 100vw;
@@ -6482,6 +7607,174 @@ h2 {
   transform: translateY(0);
 }
 
+/* Data centers application */
+.data-centers-page { overflow-x: clip; background: #eef2ef; }
+.data-centers-page main > .section { padding-top: clamp(78px, 7vw, 112px); }
+.dc-hero {
+  position: relative;
+  min-height: min(900px, 100svh);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: #fff;
+}
+.dc-hero-media { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4, 13, 22, .92) 0%, rgba(5, 18, 30, .68) 45%, rgba(4, 15, 24, .18) 78%), linear-gradient(0deg, rgba(3, 12, 20, .82), transparent 55%), url("assets/img/data-center-hero.png") center/cover no-repeat; transform: scale(1.01); animation: dcHeroDrift 18s ease-in-out infinite alternate; }
+.dc-hero-media::after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(126, 179, 218, .09) 1px, transparent 1px), linear-gradient(90deg, rgba(126, 179, 218, .09) 1px, transparent 1px); background-size: 96px 96px; mask-image: linear-gradient(90deg, #000, transparent 72%); }
+@keyframes dcHeroDrift { to { transform: scale(1.045); } }
+.dc-hero-inner { position: relative; z-index: 1; width: min(calc(100% - 112px), 1460px); margin: 0 auto; padding: 220px 0 92px; }
+.dc-hero h1 { max-width: 900px; color: #fff; font-size: clamp(3.3rem, 6.4vw, 7rem); line-height: .96; }
+.dc-hero-lede { max-width: 750px; margin-top: 28px; font-size: clamp(1.08rem, 1.55vw, 1.35rem); line-height: 1.65; color: rgba(255,255,255,.9); }
+.dc-hero-note { max-width: 700px; margin-top: 18px; padding-left: 18px; border-left: 2px solid #70bdf4; color: rgba(255,255,255,.7); line-height: 1.6; }
+.dc-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.dc-button-ghost { border-color: rgba(255,255,255,.48); background: rgba(255,255,255,.07); color: #fff; backdrop-filter: blur(12px); }
+.dc-button-ghost:hover { background: rgba(255,255,255,.14); }
+.dc-scroll-cue { position: absolute; z-index: 2; right: 56px; bottom: 46px; display: flex; align-items: center; gap: 12px; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.7); }
+.dc-scroll-cue span { width: 38px; height: 1px; background: currentColor; }
+.dc-split { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(48px, 7vw, 104px); align-items: start; }
+.dc-split h2, .dc-section-heading h2, .dc-dome-copy h2 { max-width: 25ch; font-size: clamp(2.25rem, 3.55vw, 4rem); line-height: 1.05; }
+.dc-body p, .dc-dome-copy > p:last-child { margin-bottom: 20px; color: var(--ink-soft); font-size: 1.06rem; line-height: 1.75; }
+.dc-three-grid, .dc-deployment-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); margin-top: 54px; border-top: 1px solid rgba(18,48,66,.18); border-bottom: 1px solid rgba(18,48,66,.18); }
+.dc-three-grid article, .dc-deployment-grid article { min-height: 280px; padding: 36px; border-right: 1px solid rgba(18,48,66,.15); background: rgba(255,255,255,.42); transition: background-color .3s ease, transform .3s ease; }
+.dc-three-grid article:hover, .dc-deployment-grid article:hover { background: rgba(255,255,255,.68); transform: translateY(-3px); }
+.dc-three-grid article:last-child, .dc-deployment-grid article:last-child { border-right: 0; }
+.dc-three-grid span, .dc-deployment-grid span, .dc-monitor-grid span { color: #408ad2; font-family: "Space Grotesk", sans-serif; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.dc-three-grid h3, .dc-deployment-grid h3 { max-width: 20ch; margin-top: 54px; font-size: 1.42rem; }
+.dc-three-grid p, .dc-deployment-grid p { margin-top: 14px; color: var(--ink-soft); line-height: 1.65; }
+.dc-three-grid .dc-accent, .dc-deployment-grid .dc-accent { background: #123b61; color: #fff; }
+.dc-three-grid .dc-accent p, .dc-deployment-grid .dc-accent p { color: rgba(255,255,255,.72); }
+.dc-three-grid .dc-accent:hover, .dc-deployment-grid .dc-accent:hover { background: #194b77; color: #fff; }
+.dc-three-grid .dc-accent:hover h3, .dc-deployment-grid .dc-accent:hover h3 { color: #fff; }
+.dc-three-grid .dc-accent:hover p, .dc-deployment-grid .dc-accent:hover p { color: rgba(255,255,255,.78); }
+.dc-three-grid .dc-accent:hover span, .dc-deployment-grid .dc-accent:hover span { color: #82c7f4; }
+.dc-dome-section { width: 100vw; margin-left: calc(50% - 50vw); padding-left: max(56px, calc((100vw - 1460px)/2)); padding-right: max(56px, calc((100vw - 1460px)/2)); padding-bottom: 84px; background: #e3e9e7; }
+.dc-dome-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: 64px; align-items: stretch; }
+.dc-dome-copy { padding: 48px 0; align-self: center; }
+.dc-dome-copy > p:last-child { margin-top: 24px; }
+.dc-dome-visual { min-height: 540px; background: linear-gradient(0deg, rgba(8,25,37,.28), transparent 45%), url("assets/img/data-center-sec-01.png") center/cover no-repeat; }
+.dc-metrics { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid rgba(18,48,66,.18); border-bottom: 1px solid rgba(18,48,66,.12); margin-top: 38px; }
+.dc-metrics article { padding: 30px 26px 26px; border-right: 1px solid rgba(18,48,66,.12); }
+.dc-metrics article:first-child { padding-left: 0; }
+.dc-metrics article:last-child { border-right: 0; }
+.dc-metrics strong { display: block; color: #125f9a; font-family: "Space Grotesk", sans-serif; font-size: clamp(2rem,3.6vw,4.2rem); line-height: 1; }
+.dc-metrics span { display: block; margin-top: 8px; color: #125f9a; font-weight: 700; }
+.dc-metrics p { margin-top: 16px; color: var(--ink-soft); font-size: .9rem; }
+.dc-technical-note { max-width: 1000px; margin: 28px 0 0; padding: 18px 22px; border-left: 2px solid #5e9fe2; background: rgba(255,255,255,.5); color: var(--ink-soft); line-height: 1.6; font-size: .9rem; }
+.dc-section-heading { display: grid; grid-template-columns: minmax(0, 1.62fr) minmax(280px, 1fr); column-gap: clamp(50px, 7vw, 110px); align-items: start; }
+.dc-section-heading .eyebrow { grid-column: 1/-1; }
+.dc-section-heading > p:last-child { max-width: 52ch; padding-top: 8px; color: var(--ink-soft); line-height: 1.7; font-size: 1.05rem; }
+.dc-application-heading { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); }
+.dc-application-aside { display: grid; min-width: 0; gap: 22px; }
+.dc-application-aside p { color: var(--ink-soft); line-height: 1.7; font-size: 1.05rem; }
+.dc-application-visual { width: 100%; min-height: 390px; aspect-ratio: 16 / 10; background: linear-gradient(0deg, rgba(6,22,35,.22), transparent 50%), url("assets/img/data-center-sec-02.png") center/cover no-repeat; }
+.dc-usecase-list { display: grid; grid-template-columns: 1fr 1fr; margin-top: 64px; border-top: 1px solid rgba(18,48,66,.18); }
+.dc-usecase-list article { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding: 30px 30px 30px 0; border-bottom: 1px solid rgba(18,48,66,.16); }
+.dc-usecase-list article:nth-child(odd) { border-right: 1px solid rgba(18,48,66,.16); }
+.dc-usecase-list article:nth-child(even) { padding-left: 30px; }
+.dc-usecase-list span { color: #4f91d8; font-family: "Space Grotesk",sans-serif; font-weight: 700; }
+.dc-usecase-list h3 { font-size: 1.18rem; }
+.dc-usecase-list p { margin-top: 8px; color: var(--ink-soft); line-height: 1.6; }
+.dc-deployment { scroll-margin-top: 80px; }
+.dc-deployment-grid strong { display: block; margin-top: 14px; color: #187cbf; font-size: 1.05rem; }
+.dc-deployment-grid .dc-accent strong { color: #84c9f5; }
+.dc-scale-table { width: 100%; margin: 48px 0 0; border-top: 2px solid #163d5e; }
+.dc-scale-table > div { display: grid; grid-template-columns: 1fr 1fr; padding: 18px 20px; border-bottom: 1px solid rgba(18,48,66,.14); }
+.dc-scale-table > div:not(.dc-table-head):hover { background: rgba(255,255,255,.4); }
+.dc-scale-table strong { color: #135f99; text-align: right; }
+.dc-scale-table .dc-table-head { color: var(--ink-soft); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.dc-flow-section { width: 100vw; margin-left: calc(50% - 50vw); padding-left: max(56px, calc((100vw - 1460px)/2)); padding-right: max(56px, calc((100vw - 1460px)/2)); padding-bottom: 84px; background: #10283d; color: #fff; }
+.dc-flow-section h2 { color: #fff; }
+.dc-flow-section .dc-section-heading > p:last-child { color: rgba(255,255,255,.67); }
+.dc-flow { display: grid; grid-template-columns: repeat(9,minmax(124px,1fr)); margin-top: 58px; overflow-x: auto; padding: 6px 0 18px; scrollbar-color: rgba(112,189,244,.55) rgba(255,255,255,.08); }
+.dc-flow div { position: relative; min-height: 168px; padding: 24px 18px; border-top: 1px solid rgba(123,197,241,.55); border-right: 1px solid rgba(255,255,255,.1); }
+.dc-flow div::before { content: ""; position: absolute; top: -5px; left: 18px; width: 9px; height: 9px; border-radius: 50%; background: #70bdf4; box-shadow: 0 0 0 5px rgba(112,189,244,.12); }
+.dc-flow span { display: block; margin-bottom: 54px; color: #70bdf4; font: 700 .72rem "Space Grotesk",sans-serif; }
+.dc-flow strong { font-size: .9rem; line-height: 1.35; }
+.dc-flow-section .dc-technical-note { border-color: #70bdf4; background: rgba(255,255,255,.05); color: rgba(255,255,255,.7); }
+.dc-integration-list { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(18,48,66,.16); }
+.dc-integration-list span { position: relative; padding: 18px 18px 18px 30px; border-bottom: 1px solid rgba(18,48,66,.16); font-weight: 600; }
+.dc-integration-list span::before { content: "+"; position: absolute; left: 2px; color: #3c8ed4; }
+.dc-monitor-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 52px; border-top: 1px solid rgba(18,48,66,.16); border-bottom: 1px solid rgba(18,48,66,.16); }
+.dc-monitor-grid article { min-height: 260px; padding: 30px; border-left: 1px solid rgba(18,48,66,.16); transition: background-color .3s ease; }
+.dc-monitor-grid article:hover { background: rgba(255,255,255,.45); }
+.dc-monitor-grid h3 { margin-top: 52px; font-size: 1.25rem; }
+.dc-monitor-grid p { margin-top: 12px; color: var(--ink-soft); line-height: 1.6; }
+.dc-boundaries { width: 100vw; margin-left: calc(50% - 50vw); padding-left: max(56px, calc((100vw - 1460px)/2)); padding-right: max(56px, calc((100vw - 1460px)/2)); padding-bottom: 84px; background: #e4e9e7; }
+.dc-boundary-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 52px; }
+.dc-boundary-grid article { padding: 42px; background: #fff; }
+.dc-boundary-grid .dc-boundary-caution { background: #182d3f; color: #fff; }
+.dc-boundary-grid h3 { margin-bottom: 24px; font-size: 1.35rem; }
+.dc-boundary-grid ul { list-style: none; padding: 0; }
+.dc-boundary-grid li { position: relative; padding: 13px 0 13px 26px; border-bottom: 1px solid rgba(18,48,66,.12); line-height: 1.45; }
+.dc-boundary-grid li::before { content: ""; position: absolute; left: 0; top: 20px; width: 8px; height: 8px; border-radius: 50%; background: #55a1df; }
+.dc-boundary-caution li { border-color: rgba(255,255,255,.12); color: rgba(255,255,255,.78); }
+.dc-boundary-caution li::before { background: transparent; border: 1px solid rgba(255,255,255,.5); }
+.dc-timeline { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); list-style: none; padding: 0; margin: 58px 0 0; border-top: 1px solid rgba(18,48,66,.18); }
+.dc-timeline li { position: relative; padding: 28px 28px 0 0; }
+.dc-timeline li::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: #4d94d7; }
+.dc-timeline span { color: #4d94d7; font: 700 .78rem "Space Grotesk",sans-serif; }
+.dc-timeline h3 { margin-top: 42px; font-size: 1.08rem; }
+.dc-timeline p { margin-top: 10px; color: var(--ink-soft); line-height: 1.55; font-size: .92rem; }
+.dc-final-panel { display: flex; align-items: flex-end; justify-content: space-between; gap: 64px; padding: clamp(40px,5vw,68px); border-radius: 8px; background: linear-gradient(110deg,#123d62,#176da4); color: #fff; }
+.dc-final-panel h2 { max-width: 700px; color: #fff; font-size: clamp(2.1rem,4vw,4.4rem); }
+.dc-final-panel p:not(.eyebrow) { max-width: 680px; margin-top: 18px; color: rgba(255,255,255,.72); line-height: 1.65; }
+.dc-final-panel .dc-actions { flex: 0 0 420px; width: 420px; min-width: 0; flex-direction: column; align-items: stretch; }
+.dc-final-panel .dc-actions .button { width: 100%; min-height: 58px; padding: 12px 28px; text-align: center; line-height: 1.25; white-space: normal; }
+.dc-text-link { font-weight: 700; color: rgba(255,255,255,.9); }
+.home-data-centers-panel { display: flex; align-items: flex-end; justify-content: space-between; gap: 52px; padding: 42px 46px; border-top: 1px solid rgba(18,48,66,.2); border-bottom: 1px solid rgba(18,48,66,.2); transition: background .3s ease; }
+.home-data-centers-panel:hover { background: rgba(255,255,255,.42); }
+.home-data-centers-panel h2 { font-size: clamp(2rem,3vw,3.4rem); }
+.home-data-centers-panel p:not(.eyebrow) { max-width: 760px; margin-top: 12px; color: var(--ink-soft); line-height: 1.65; }
+.home-data-centers-link { flex: 0 0 auto; color: #176fa9; font-weight: 700; }
+
+@media (max-width: 980px) {
+  .dc-hero-inner { width: calc(100% - 48px); padding-bottom: 70px; }
+  .dc-scroll-cue { display: none; }
+  .dc-split, .dc-dome-grid, .dc-section-heading { grid-template-columns: 1fr; gap: 28px; }
+  .dc-three-grid, .dc-deployment-grid { grid-template-columns: 1fr; }
+  .dc-three-grid article, .dc-deployment-grid article { min-height: 0; border-right: 0; border-bottom: 1px solid rgba(18,48,66,.15); }
+  .dc-three-grid h3, .dc-deployment-grid h3 { margin-top: 36px; }
+  .dc-dome-section, .dc-flow-section, .dc-boundaries { padding-left: 24px; padding-right: 24px; }
+  .dc-dome-visual { min-height: 430px; }
+  .dc-application-visual { min-height: 420px; }
+  .dc-metrics, .dc-monitor-grid { grid-template-columns: 1fr 1fr; }
+  .dc-monitor-grid article:nth-child(odd) { border-left: 0; }
+  .dc-timeline { grid-template-columns: 1fr; border-top: 0; border-left: 1px solid rgba(18,48,66,.18); margin-left: 5px; }
+  .dc-timeline li { padding: 0 0 32px 30px; }
+  .dc-timeline li::before { top: 4px; left: -5px; }
+  .dc-timeline h3 { margin-top: 14px; }
+  .dc-final-panel, .home-data-centers-panel { align-items: flex-start; flex-direction: column; }
+  .dc-final-panel .dc-actions { flex: 0 0 auto; width: 100%; }
+}
+
+@media (max-width: 680px) {
+  .dc-hero { min-height: 760px; }
+  .dc-hero-media { background-position: 62% center; }
+  .dc-hero-inner { width: calc(100% - 32px); padding: 180px 0 46px; }
+  .dc-hero h1 { font-size: clamp(2.65rem,13vw,4.4rem); }
+  .dc-hero-lede { font-size: 1rem; }
+  .dc-actions { align-items: stretch; flex-direction: column; }
+  .dc-actions .button { width: 100%; text-align: center; }
+  .dc-usecase-list, .dc-integration-list, .dc-boundary-grid { grid-template-columns: 1fr; }
+  .dc-usecase-list article, .dc-usecase-list article:nth-child(even) { padding: 24px 0; border-right: 0; }
+  .dc-dome-section, .dc-flow-section, .dc-boundaries { padding-left: 16px; padding-right: 16px; }
+  .dc-dome-visual { min-height: 340px; }
+  .dc-application-visual { min-height: 0; }
+  .dc-metrics { grid-template-columns: 1fr 1fr; }
+  .dc-metrics article { padding-right: 12px; }
+  .dc-metrics strong { font-size: 2rem; }
+  .dc-monitor-grid { grid-template-columns: 1fr; }
+  .dc-monitor-grid article { border-left: 0; border-bottom: 1px solid rgba(18,48,66,.15); }
+  .dc-monitor-grid h3 { margin-top: 30px; }
+  .dc-boundary-grid article, .dc-final-panel { padding: 30px 22px; }
+  .dc-scale-table > div { gap: 16px; }
+  .dc-final-panel .dc-actions { min-width: 0; width: 100%; }
+  .home-data-centers-panel { padding: 30px 0; gap: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) { .dc-hero-media { animation: none; } }
+
 @media (max-width: 980px) {
   .site-header {
     padding: 18px 24px;
@@ -6494,6 +7787,11 @@ h2 {
   .nav-toggle {
     display: block;
     margin-left: auto;
+  }
+
+  .rtl-page .nav-toggle {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .header-center {
@@ -6581,8 +7879,35 @@ h2 {
   .investors-why-grid,
   .investors-platform-grid,
   .investors-economics-panel,
-  .investors-final-panel {
+  .investors-final-panel,
+  .syria-vision-grid,
+  .syria-feature-grid,
+  .syria-map-grid,
+  .syria-local-panel,
+  .syria-contact-panel,
+  .syria-identity-panel {
     grid-template-columns: 1fr;
+  }
+
+  .syria-pressure-diagram,
+  .syria-process-band,
+  .syria-application-grid,
+  .syria-vision-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .syria-process-band article,
+  .syria-pressure-diagram article,
+  .syria-application-grid article {
+    min-height: 220px;
+  }
+
+  .syria-map-grid {
+    gap: 32px;
+  }
+
+  .syria-airhouse-ecosystem {
+    min-height: 500px;
   }
 
   .hero {
@@ -7019,6 +8344,60 @@ h2 {
 
   .investors-timeline {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .syria-hero-inner {
+    min-height: 100vh;
+    padding: 146px 0 64px;
+  }
+
+  .syria-hero h1 {
+    max-width: 16ch;
+    font-size: clamp(2.55rem, 7vw, 4rem);
+  }
+
+  .syria-card-grid,
+  .syria-capability-grid,
+  .syria-timeline,
+  .syria-partner-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .syria-vision-grid,
+  .syria-feature-grid,
+  .syria-local-panel,
+  .syria-contact-panel {
+    gap: 34px;
+  }
+
+  .syria-feature-visual {
+    min-height: 360px;
+  }
+
+  .syria-hero-emblem {
+    right: 28px;
+    bottom: 8vh;
+    width: min(42vw, 320px);
+    opacity: 0.12;
+  }
+
+  .rtl-page .syria-hero-emblem {
+    right: auto;
+    left: 28px;
+  }
+
+  .syria-identity-panel {
+    gap: 24px;
+    padding: 28px;
+  }
+
+  .syria-identity-emblem {
+    min-height: 132px;
+  }
+
+  .syria-local-panel,
+  .syria-contact-panel {
+    padding: 28px;
   }
 
   .investors-economics-panel,
@@ -7779,6 +9158,35 @@ h2 {
     min-width: 0;
   }
 
+  .syria-hero-inner {
+    width: min(calc(100% - 20px), var(--max));
+    min-height: 100svh;
+    padding: 132px 0 44px;
+  }
+
+  .syria-hero h1 {
+    max-width: none;
+    font-size: clamp(2.35rem, 11.5vw, 3.35rem);
+  }
+
+  .syria-hero-subtitle {
+    font-size: clamp(1.08rem, 5.2vw, 1.45rem);
+  }
+
+  .syria-hero .lede {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .syria-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .syria-hero-actions .button {
+    width: 100%;
+  }
+
   .overview-modal {
     padding: 14px;
   }
@@ -7809,6 +9217,261 @@ h2 {
   .investors-execution,
   .investors-final {
     padding-top: 58px;
+  }
+
+  .syria-intro,
+  .syria-identity,
+  .syria-vision,
+  .syria-airhouse,
+  .syria-national-vision,
+  .syria-deployment-map,
+  .syria-applications,
+  .syria-roadmap,
+  .syria-partners,
+  .syria-local,
+  .syria-statement,
+  .syria-contact {
+    padding-top: 58px;
+  }
+
+  .syria-section-header h2,
+  .syria-vision-copy h2,
+  .syria-feature-copy h2,
+  .syria-local-copy h2,
+  .syria-contact-copy h2 {
+    font-size: clamp(1.45rem, 6.8vw, 2rem);
+  }
+
+  .syria-section-header p:not(.eyebrow),
+  .syria-identity-copy p,
+  .syria-vision-copy p,
+  .syria-feature-copy p,
+  .syria-local-copy p,
+  .syria-contact-copy p,
+  .syria-card-grid p,
+  .syria-capability-grid p,
+  .syria-pillar-list p,
+  .syria-timeline p {
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
+
+  .syria-card-grid,
+  .syria-capability-grid,
+  .syria-pressure-diagram,
+  .syria-process-band,
+  .syria-application-grid,
+  .syria-vision-cards,
+  .syria-timeline,
+  .syria-partner-grid,
+  .syria-value-list,
+  .syria-identity-points,
+  .syria-form .contact-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .syria-card-grid article,
+  .syria-capability-grid article,
+  .syria-pressure-diagram article,
+  .syria-process-band article,
+  .syria-application-grid article,
+  .syria-timeline article,
+  .syria-partner-grid article {
+    min-height: auto;
+    padding: 22px 20px;
+  }
+
+  .syria-pressure-diagram article:not(:last-child)::after,
+  .syria-process-band article:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    bottom: -9px;
+    left: 28px;
+    transform: rotate(135deg);
+  }
+
+  .syria-initiative-mark {
+    max-width: 100%;
+  }
+
+  .syria-initiative-mark strong {
+    font-size: 0.78rem;
+  }
+
+  .syria-national-vision {
+    padding: 64px 0;
+  }
+
+  .syria-national-vision-inner {
+    width: min(calc(100% - 20px), var(--max));
+  }
+
+  .syria-national-vision h2 {
+    max-width: 10ch;
+    font-size: clamp(2.15rem, 11vw, 3.35rem);
+  }
+
+  .syria-national-vision p {
+    font-size: 0.98rem;
+    line-height: 1.74;
+  }
+
+  .syria-vision-cards article {
+    min-height: auto;
+    padding: 22px 20px;
+  }
+
+  .syria-airhouse-ecosystem {
+    min-height: 560px;
+    border-radius: 18px;
+  }
+
+  .ecosystem-node {
+    width: 130px;
+    min-height: 62px;
+    padding: 12px;
+    font-size: 0.88rem;
+  }
+
+  .ecosystem-center {
+    width: 150px;
+    min-height: 86px;
+  }
+
+  .ecosystem-top {
+    top: 22px;
+  }
+
+  .ecosystem-left {
+    left: 16px;
+  }
+
+  .ecosystem-right {
+    right: 16px;
+  }
+
+  .ecosystem-bottom-left {
+    left: 16px;
+    bottom: 92px;
+  }
+
+  .ecosystem-bottom-right {
+    right: 16px;
+    bottom: 92px;
+  }
+
+  .ecosystem-bottom {
+    bottom: 18px;
+  }
+
+  .syria-map-panel {
+    padding: 18px 14px;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .syria-map-svg {
+    min-width: 0;
+    transform: none;
+  }
+
+  .map-marker {
+    font-size: 13px;
+  }
+
+  .map-marker text {
+    display: none;
+  }
+
+  .syria-map-legend {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .syria-map-legend span {
+    position: relative;
+    min-height: 38px;
+    padding: 10px 10px 10px 25px;
+    border: 1px solid rgba(20, 74, 107, 0.09);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.58);
+    color: #132841;
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .syria-map-legend span::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 16px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #5e94f2;
+  }
+
+  .syria-pillar-list article {
+    padding: 22px 20px;
+  }
+
+  .syria-feature-visual {
+    min-height: 280px;
+    border-radius: 18px;
+  }
+
+  .syria-local-panel,
+  .syria-contact-panel,
+  .syria-identity-panel,
+  .syria-disclaimer-panel {
+    padding: 24px 22px;
+    border-radius: 18px;
+  }
+
+  .syria-hero-emblem {
+    right: -30px;
+    bottom: 18vh;
+    width: 260px;
+    opacity: 0.09;
+  }
+
+  .rtl-page .syria-hero-emblem {
+    right: auto;
+    left: -30px;
+  }
+
+  .syria-identity-emblem {
+    min-height: 118px;
+    border-radius: 18px;
+  }
+
+  .syria-identity-emblem img {
+    width: min(62%, 118px);
+  }
+
+  .syria-identity-copy h2 {
+    font-size: clamp(1.45rem, 6.8vw, 2rem);
+  }
+
+  .syria-identity-points span {
+    border-radius: 18px;
+  }
+
+  .syria-statement-panel {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+
+  .syria-statement-panel h2 {
+    font-size: clamp(1.55rem, 7.2vw, 2.25rem);
+  }
+
+  .syria-statement-panel p {
+    font-size: 0.96rem;
+    line-height: 1.72;
   }
 
   .investors-section-copy h2,

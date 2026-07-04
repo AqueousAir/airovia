@@ -88,6 +88,8 @@ if (contactForm) {
   const targetName = contactForm.getAttribute("target");
   const submitFrame = targetName ? document.querySelector(`iframe[name="${targetName}"]`) : null;
   const defaultButtonLabel = submitButton ? submitButton.textContent : "";
+  const successMessage = contactForm.dataset.successMessage ||
+    "Thank you. Your inquiry was submitted for processing. If you do not receive a response, please email info@airovia.io directly.";
   let awaitingSubmission = false;
 
   const setStatus = (message, type) => {
@@ -125,10 +127,7 @@ if (contactForm) {
       }
 
       contactForm.reset();
-      setStatus(
-        "Thank you. Your inquiry was submitted for processing. If you do not receive a response, please email info@airovia.io directly.",
-        "success"
-      );
+      setStatus(successMessage, "success");
     });
   } else {
     contactForm.addEventListener("submit", () => {
